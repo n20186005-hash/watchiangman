@@ -94,7 +94,14 @@ const guideImgs = [
                 {guide.transport.items.map((it) => (
                   <li>
                     <div class="font-semibold text-teak">{it.title}</div>
-                    <div class="text-ink/70">{it.desc}</div>
+                    {it.desc && <div class="text-ink/70">{it.desc}</div>}
+                    {it.steps && (
+                      <ol class="list-decimal list-inside text-ink/70 mt-1 space-y-1">
+                        {it.steps.map((step) => (
+                          <li>{step}</li>
+                        ))}
+                      </ol>
+                    )}
                   </li>
                 ))}
               </ul>

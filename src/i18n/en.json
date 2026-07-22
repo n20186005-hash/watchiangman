@@ -133,7 +133,7 @@
       "tag": "Getting there",
       "title": "How to arrive",
       "items": [
-        { "title": "From the airport", "desc": "Chiang Mai International Airport is ~5 km from the Old City. A Grab or taxi takes 15–20 min (≈150–200 THB) straight to the Old City, then walk or hop a red songthaew to the temple." },
+        { "title": "From the airport", "desc": "Chiang Mai International Airport (CNX) is ~5 km from the Old City. Specific steps:", "steps": [ "Arrive at the domestic or international arrival hall.", "Book an official airport taxi near Exit 1 or use the Grab/Bolt app (approx. 150–200 THB).", "Ask the driver to go to 'Wat Chiang Man' inside the Old City.", "The driver will drop you off right at the main entrance on Ratchapakhinai Road." ] },
         { "title": "On foot", "desc": "10–15 min walk from Tha Phae Gate or most old-city guesthouses." },
         { "title": "Songthaew / red truck", "desc": "Hop a red songthaew and ask for 'Wat Chiang Man' near Ratchapakhinai Rd." },
         { "title": "Tuk-tuk / Grab", "desc": "A short, inexpensive ride from anywhere in the city centre." }
