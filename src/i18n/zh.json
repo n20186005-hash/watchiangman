@@ -18,7 +18,8 @@
     "goldenHourLabel": "黄金时刻", "sunsetLabel": "日落", "blueHourLabel": "蓝调时刻",
     "defaultGolden": "18:10", "defaultSunset": "18:50", "defaultBlue": "19:10",
     "crowdWarningLabel": "人流提示", "defaultTip": "08:00 前与 17:00 后最安静，清晨光线最适合拍照。",
-    "lightCaption": "光线预测采用当地太阳时（Asia/Bangkok）。", "weatherError": "天气暂不可用", "goldenChanceLabel": "黄金时刻概率"
+    "lightCaption": "光线预测采用当地太阳时（Asia/Bangkok）。", "weatherError": "天气暂不可用", "goldenChanceLabel": "黄金时刻概率",
+    "quickFacts": { "duration": "建议用时", "durationVal": "约 45 分钟", "fee": "门票费用", "feeVal": "免费（接受捐赠）", "dress": "着装要求", "dressVal": "遮肩盖膝 · 需脱鞋", "mustSee": "三大必看", "mustSeeVal": "象托佛塔 · 水晶佛 · 石佛" }
   },
   "about": {
     "label": "关于", "heading": "清迈的第一座寺庙",
@@ -26,6 +27,7 @@
     "paragraph1": "1296 年，兰纳国王孟莱王（Mangrai）选址于此作为建城的大本营，并搭建行宫驻跸，直至新城成型 —— 这使清曼寺成为清迈护城河内最古老的寺庙。",
     "paragraph2": "数百年后，这里仍是活跃的礼佛之所。粉墙、斑驳柚木与小巧规模，赋予它大寺所无的亲切感，同时守护着兰纳最受崇敬的两尊佛像。",
     "quote": "“立于清曼寺，便是立于清迈诞生之处。”", "quoteAuthor": "—— 兰纳编年史",
+    "etymology": { "tag": "词源", "title": "“清曼”何意", "text": "在兰纳语／泰语中，“Chiang”（เชียง）意为“城市”，“Man”（มั่น）意为“稳固、长青”。“清曼”即“稳固之城”，寄托孟莱王建城时对新都长治久安的祈愿。" },
     "stats": [ { "value": "1296", "label": "孟莱王创立" }, { "value": "第一", "label": "清迈最古老寺庙" }, { "value": "05:00–19:00", "label": "每日开放" } ],
     "highlights": [ { "tag": "水晶佛", "title": "帕圣当卡玛尼", "desc": "公元 11 世纪的水晶立佛，被认为能护城降雨。" }, { "tag": "石佛", "title": "帕西拉", "desc": "与斯里兰卡及雨季相关的圣石佛像。" }, { "tag": "象托佛塔", "title": "清曼式佛塔", "desc": "两座方形佛塔，坐落于繁复装饰的象背之上。" } ],
     "editorTip": { "tag": "编辑注", "text": "衣着端庄，入殿脱鞋，并尽量清晨到访以享静谧。", "ctaLabel": "查看游览提示" }
@@ -34,7 +36,7 @@
     "label": "建筑与圣物", "heading": "兰纳王室的神圣艺术",
     "intro": "清曼寺是一座袖珍的兰纳工艺博物馆 —— 从象托方塔到近千年来吸引信众的两尊小佛像。",
     "treasuresTitle": "两尊佛像，数世纪信仰", "treasures": [ { "tag": "帕圣当卡玛尼", "title": "水晶佛", "text": "整块水晶雕成，约公元 11 世纪，又称帕娇（Phra Kaew Khao，白宝石）。宋干节时绕古城巡游以祈雨纳福。" }, { "tag": "帕西拉", "title": "石佛", "text": "砂岩浮雕佛像，与斯里兰卡相关，长久以来被认为掌控雨水，信众仍祈求护佑与丰收。" } ],
-    "archTitle": "看点", "architecture": [ { "title": "象托佛塔", "desc": "两座立方佛塔（13 世纪）立于灰塑大象层叠之上 —— 清曼寺独有的『清曼式』造型。" }, { "title": "大雄宝殿（Viharn Luang）", "desc": "主殿，1920 年代于原基址重建，古老柚木柱仍保留于内。" }, { "title": "戒堂（Ubosot）", "desc": "较小而安静的殿堂，用于僧侣仪轨，兰纳木作精美。" } ],
+    "archTitle": "看点", "architecture": [ { "title": "象托佛塔", "desc": "两座立方佛塔（13 世纪）立于灰塑大象层叠之上 —— 清曼寺独有的『清曼式』造型，建筑学名 Chedi Chang Lom（เจดีย์ช้างล้อม，象围绕佛塔）。" }, { "title": "大雄宝殿（Viharn Luang）", "desc": "主殿，1920 年代于原基址重建，古老柚木柱仍保留于内。" }, { "title": "戒堂（Ubosot）", "desc": "较小而安静的殿堂，用于僧侣仪轨，兰纳木作精美。" } ],
     "noteTag": "游览提示", "noteText": "两尊圣物供奉于右侧的藏经阁（ho trai），若想近观可向僧人请求。"
   },
   "history": {
@@ -48,13 +50,14 @@
   "guide": {
     "label": "游览指南", "heading": "规划一次安静而恭敬的参访",
     "lead": "清曼寺免费开放，从古城任何处步行可达，稍作规划体验更佳。",
+    "hub": { "t1": "交通与门票", "t2": "摄影建议与光线", "t3": "礼仪与着装", "t4": "无障碍设施" },
     "hours": { "tag": "开放时间", "time": "05:00 – 19:00", "items": [ { "label": "光线最佳", "value": "06:00 – 08:00" }, { "label": "最安静", "value": "清晨与 17:00 后" }, { "label": "闭馆", "value": "不闭馆（每日）" } ] },
     "fees": { "tag": "门票与供养", "title": "费用", "items": [ { "title": "入寺", "desc": "免费。在摊位小额供养以支持维护与僧团。" }, { "title": "着装", "desc": "遮肩盖膝；所有殿堂内脱鞋。" }, { "title": "拍照", "desc": "院内可拍；勿用闪光，未经许可不拍僧侣。" } ] },
-    "transport": { "tag": "交通", "title": "如何抵达", "items": [ { "title": "步行", "desc": "从塔佩门或多数古城旅馆步行 10–15 分钟。" }, { "title": "红顶双条车", "desc": "搭乘红色双条车，告知司机『Wat Chiang Man』，近 Ratchapakhinai 路。" }, { "title": "嘟嘟车 / Grab", "desc": "从市中心乘车短程、便宜。" } ] },
+    "transport": { "tag": "交通", "title": "如何抵达", "items": [ { "title": "从机场出发", "desc": "清迈国际机场距古城约 5 公里。乘 Grab 或出租车约 15–20 分钟、150–200 泰铢直达古城，再步行或搭红色双条车至寺院。" }, { "title": "步行", "desc": "从塔佩门或多数古城旅馆步行 10–15 分钟。" }, { "title": "红顶双条车", "desc": "搭乘红色双条车，告知司机『Wat Chiang Man』，近 Ratchapakhinai 路。" }, { "title": "嘟嘟车 / Grab", "desc": "从市中心乘车短程、便宜。" } ] },
     "photography": { "title": "摄影指南", "intro": "寺院浅墙与温润柚木在日影边缘熠熠生辉。", "timesTitle": "最佳光线", "times": [ { "period": "黎明", "desc": "柔和均匀的光与空旷庭院 —— 适合象托佛塔。" }, { "period": "午后", "desc": "低斜阳光掠过灰塑大象与镏金殿堂。" } ], "spotsTitle": "拍摄点", "spots": [ { "name": "象托佛塔", "view": "从庭院仰望象层。", "tip": "低角度拍出塔基的震撼。" }, { "name": "大殿门廊", "view": "柚木檐口框景。", "tip": "等僧人或当地人经过作比例。" } ], "settingsTitle": "参数", "settings": [ { "style": "广角 / 风景", "camera": "f/8, ISO 200, 16–24mm", "phone": "0.5× / 1×，点按以墙体曝光" }, { "style": "细节 / 质感", "camera": "f/4, ISO 400, 50mm", "phone": "2×，稳住拍灰塑" } ], "tipsTitle": "礼仪", "tips": [ "勿立于塔上或攀爬。", "绕行而非跨过拜垫与供品。", "拍摄礼拜者前先征得同意。" ] },
     "bestTime": { "title": "最佳游览时节", "intro": "清迈终年温暖，凉季与旱季寺院最美。", "seasons": [ { "tag": "凉", "months": "11–2 月", "name": "最佳", "desc": "清晨宜人、光线清朗，临近宋干节。" }, { "tag": "热", "months": "3–5 月", "name": "安静明亮", "desc": "正午酷热 —— 清晨前往；四月宋干节有水晶佛巡游。" }, { "tag": "雨", "months": "6–10 月", "name": "青翠宁静", "desc": "午后阵雨、人少、寺园葱郁。" } ] },
     "safety": { "title": "安全与恭敬", "items": [ { "title": "衣着端庄", "desc": "遮肩盖膝；纱笼或披肩有帮助。" }, { "title": "看管财物", "desc": "古城寺院安全，但人多时妥善保管贵重物品。" }, { "title": "注意防晒", "desc": "带水 —— 3 至 5 月正午炎热。" } ] },
-    "accessibility": { "title": "无障碍", "intro": "寺院地面平坦、几乎无台阶；殿堂有几处门槛。", "items": [ { "title": "路径", "desc": "铺平步道连接山门、佛塔与殿堂。" }, { "title": "轮椅", "desc": "庭院可通行；殿内较窄 —— 必要时请僧人协助。" } ] },
+    "accessibility": { "title": "无障碍", "intro": "寺院地面平坦、几乎无台阶；殿堂有几处门槛。", "items": [ { "title": "路径", "desc": "铺平步道连接山门、佛塔与殿堂。" }, { "title": "轮椅", "desc": "庭院可通行；殿内较窄 —— 必要时请僧人协助。" }, { "title": "留意现场告示", "desc": "戒堂（Ubosot）等核心区域有时限制入内或需脱鞋，请遵照现场标志与僧人指引。" } ] },
     "faqTitle": "须知", "faqs": [ { "q": "清曼寺有多古老？", "a": "由孟莱王于 1296 年创立，是清迈最古老的寺庙。" }, { "q": "真的免费吗？", "a": "是。欢迎供养，但不强制。" }, { "q": "能看到水晶佛吗？", "a": "供奉于藏经阁，宋干节（四月）公开展出；其余时间可向僧人请求。" }, { "q": "应停留多久？", "a": "30–60 分钟足以从容看完重点。" } ],
     "nearby": { "title": "古城周边", "items": [ { "name": "三王纪念碑", "desc": "城市象征性建城广场，向南步行 10 分钟。", "url": "https://maps.google.com/?q=Three+Kings+Monument+Chiang+Mai" }, { "name": "帕辛寺", "desc": "向西 15 分钟的大型兰纳寺院。", "url": "https://maps.google.com/?q=Wat+Phra+Singh+Chiang+Mai" }, { "name": "周日步行街", "desc": "清迈著名夜市，南面 Ratchadamnoen 路。", "url": "https://maps.google.com/?q=Sunday+Walking+Street+Chiang+Mai" } ], "cta": "在地图上探索更多" }
   },
@@ -83,7 +86,7 @@
     "intro": "关键事实取自公开参考资料；图片为寺院示意。",
     "photoTitle": "图片署名", "photoItems": [ { "text": "图集图片为清曼寺建筑与环境的示意。", "linkLabel": "参考", "url": "https://en.wikipedia.org/wiki/Wat_Chiang_Man" } ],
     "factTitle": "事实与核实", "factText": "创立年份、水晶佛与石佛、象托佛塔均依清曼寺的公开记载。",
-    "correctionTitle": "发现错误？", "correctionText": "若有细节有误，欢迎指正。", "correctionMailto": "mailto:hello@watchiangman.com", "correctionCta": "邮件纠错", "copyright": "© 2026 清曼寺指南。独立访客资源。"
+    "correctionTitle": "发现错误？", "correctionText": "若有细节有误，欢迎指正。", "correctionMailto": "mailto:n20186005@gmail.com", "correctionCta": "邮件纠错", "copyright": "© 2026 清曼寺指南。独立访客资源。"
   },
   "mapSection": {
     "label": "地图与位置", "heading": "找到清曼寺",
@@ -98,6 +101,7 @@
     "noteTitle": "须知", "note": "免费开放，每日 05:00–19:00。衣着端庄，入殿脱鞋。",
     "mapsLabel": "Google Maps →", "sourcesTitle": "来源", "sourcesNote": "事实取自公开参考，图片为示意。",
     "privacy": "隐私", "terms": "条款", "cookies": "Cookie",
+    "verified": { "label": "内容核实", "text": "核实于 2026 年 3 月 · 事实审核：泰北历史文献库" },
     "disclaimerLead": "独立指南", "unofficial": "本网站与清曼寺或 Google 无隶属或背书关系。", "dataSource": "地图与地点数据：Google Maps。", "copyright": "© 2026 清曼寺指南。保留所有权利。"
   },
   "legal": {

@@ -16,6 +16,11 @@ const about = messages.about;
         <p class="text-lg text-teak font-medium">{about.lead}</p>
         <p>{about.paragraph1}</p>
         <p>{about.paragraph2}</p>
+        <div class="rounded-xl bg-gold/10 border border-gold/30 p-4">
+          <span class="chip text-gold border-gold/40">{about.etymology.tag}</span>
+          <h3 class="font-display text-xl text-teak mt-2">{about.etymology.title}</h3>
+          <p class="text-sm text-ink/75 mt-1">{about.etymology.text}</p>
+        </div>
         <blockquote class="border-l-4 border-gold pl-5 italic text-teak font-display text-xl my-6">
           “{about.quote}”
           <footer class="text-sm not-italic text-ink/60 mt-2">— {about.quoteAuthor}</footer>

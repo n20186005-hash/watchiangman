@@ -55,102 +55,154 @@ const guideImgs = [
       </div>
     )}
 
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      <!-- hours -->
-      <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
-        <span class="font-display text-gold text-2xl">{guide.hours.tag}</span>
-        <p class="font-semibold text-teak mt-1 mb-3">{guide.hours.time}</p>
-        <ul class="mt-3 space-y-2 text-sm text-ink/75">
-          {guide.hours.items.map((it) => (
-            <li class="flex justify-between gap-3 border-b border-gold/15 pb-2">
-              <span>{it.label}</span><span class="text-teak font-medium whitespace-nowrap">{it.value}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <!-- Visitor Hub: native exclusive <details> tabs (no JS, cross-browser safe) -->
+    <div class="visitor-hub mt-10 max-w-4xl space-y-3">
+      <details name="visitor" open class="vh-tab">
+        <summary class="vh-summary"><span class="vh-ico" aria-hidden="true">🎫</span>{guide.hub.t1}</summary>
+        <div class="vh-panel">
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- hours -->
+            <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
+              <span class="font-display text-gold text-2xl">{guide.hours.tag}</span>
+              <p class="font-semibold text-teak mt-1 mb-3">{guide.hours.time}</p>
+              <ul class="mt-3 space-y-2 text-sm text-ink/75">
+                {guide.hours.items.map((it) => (
+                  <li class="flex justify-between gap-3 border-b border-gold/15 pb-2">
+                    <span>{it.label}</span><span class="text-teak font-medium whitespace-nowrap">{it.value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <!-- fees -->
+            <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
+              <span class="font-display text-gold text-2xl">{guide.fees.tag}</span>
+              <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.fees.title}</h3>
+              <ul class="space-y-3 text-sm">
+                {guide.fees.items.map((it) => (
+                  <li>
+                    <div class="font-semibold text-teak">{it.title}</div>
+                    <div class="text-ink/70">{it.desc}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <!-- transport -->
+            <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
+              <span class="font-display text-gold text-2xl">{guide.transport.tag}</span>
+              <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.transport.title}</h3>
+              <ul class="space-y-3 text-sm">
+                {guide.transport.items.map((it) => (
+                  <li>
+                    <div class="font-semibold text-teak">{it.title}</div>
+                    <div class="text-ink/70">{it.desc}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
 
-      <!-- fees -->
-      <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
-        <span class="font-display text-gold text-2xl">{guide.fees.tag}</span>
-        <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.fees.title}</h3>
-        <ul class="space-y-3 text-sm">
-          {guide.fees.items.map((it) => (
-            <li>
-              <div class="font-semibold text-teak">{it.title}</div>
-              <div class="text-ink/70">{it.desc}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <details name="visitor" class="vh-tab">
+        <summary class="vh-summary"><span class="vh-ico" aria-hidden="true">📷</span>{guide.hub.t2}</summary>
+        <div class="vh-panel">
+          {guide.photography && (
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-display text-2xl text-teak mb-2">{guide.photography.title}</h3>
+                <p class="text-sm text-ink/75 mb-4">{guide.photography.intro}</p>
+              </div>
+              <div>
+                <h4 class="font-display text-lg text-gold mb-3">{guide.photography.timesTitle}</h4>
+                <div class="grid sm:grid-cols-3 gap-3">
+                  {guide.photography.times.map((t) => (
+                    <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
+                      <div class="font-semibold text-teak">{t.period}</div>
+                      <p class="mt-1 text-sm text-ink/70">{t.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 class="font-display text-lg text-gold mb-3">{guide.photography.spotsTitle}</h4>
+                <div class="space-y-3">
+                  {guide.photography.spots.map((s) => (
+                    <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
+                      <div class="font-semibold text-teak">{s.name}</div>
+                      <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.viewLabel}</span> {s.view}</p>
+                      <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.tipLabel}</span> {s.tip}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 class="font-display text-lg text-gold mb-3">{guide.photography.settingsTitle}</h4>
+                <div class="space-y-3">
+                  {guide.photography.settings.map((st) => (
+                    <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
+                      <div class="font-semibold text-teak">{st.style}</div>
+                      <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.cameraLabel}</span> {st.camera}</p>
+                      <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.phoneLabel}</span> {st.phone}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 class="font-display text-lg text-gold mb-3">{guide.photography.tipsTitle}</h4>
+                <ul class="space-y-2 text-sm text-ink/75">
+                  {guide.photography.tips.map((tp) => (
+                    <li class="flex gap-2"><span class="text-gold mt-0.5" aria-hidden="true">•</span><span>{tp}</span></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+      </details>
 
-      <!-- transport -->
-      <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
-        <span class="font-display text-gold text-2xl">{guide.transport.tag}</span>
-        <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.transport.title}</h3>
-        <ul class="space-y-3 text-sm">
-          {guide.transport.items.map((it) => (
-            <li>
-              <div class="font-semibold text-teak">{it.title}</div>
-              <div class="text-ink/70">{it.desc}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <details name="visitor" class="vh-tab">
+        <summary class="vh-summary"><span class="vh-ico" aria-hidden="true">🙏</span>{guide.hub.t3}</summary>
+        <div class="vh-panel">
+          {guide.safety && (
+            <div class="rounded-2xl border border-amber-300 bg-amber-50 p-6 shadow-sm">
+              <h3 class="font-display text-xl text-amber-800 flex items-center gap-2">
+                <span aria-hidden="true">⚠</span> {guide.safety.title}
+              </h3>
+              <ul class="mt-3 space-y-2 text-sm text-amber-900/85">
+                {guide.safety.items.map((it) => (
+                  <li class="flex gap-2">
+                    <span class="text-amber-600 mt-0.5" aria-hidden="true">•</span>
+                    <span><span class="font-semibold">{it.title}</span> — {it.desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </details>
+
+      <details name="visitor" class="vh-tab">
+        <summary class="vh-summary"><span class="vh-ico" aria-hidden="true">♿</span>{guide.hub.t4}</summary>
+        <div class="vh-panel">
+          {guide.accessibility && (
+            <div class="rounded-2xl border border-teal-300 bg-teal-50 p-6 shadow-sm">
+              <h3 class="font-display text-xl text-teal-800 flex items-center gap-2">
+                <span aria-hidden="true">♿</span> {guide.accessibility.title}
+              </h3>
+              <p class="mt-2 text-sm text-teal-900/85 leading-relaxed">{guide.accessibility.intro}</p>
+              <ul class="mt-3 space-y-2 text-sm text-teal-900/85">
+                {guide.accessibility.items.map((it) => (
+                  <li class="flex gap-2">
+                    <span class="text-teal-600 mt-0.5" aria-hidden="true">✓</span>
+                    <span><span class="font-semibold">{it.title}</span> — {it.desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </details>
     </div>
-
-    <!-- Photography & rainbow guide -->
-    {guide.photography && (
-      <div class="mt-14 max-w-4xl">
-        <h3 class="font-display text-2xl text-teak mb-2">{guide.photography.title}</h3>
-        <p class="text-sm text-ink/75 mb-5">{guide.photography.intro}</p>
-
-        <!-- Best light / rainbow windows -->
-        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.timesTitle}</h4>
-        <div class="grid sm:grid-cols-3 gap-3 mb-6">
-          {guide.photography.times.map((t) => (
-            <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
-              <div class="font-semibold text-teak">{t.period}</div>
-              <p class="mt-1 text-sm text-ink/70">{t.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <!-- Photo spots -->
-        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.spotsTitle}</h4>
-        <div class="space-y-3 mb-6">
-          {guide.photography.spots.map((s) => (
-            <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
-              <div class="font-semibold text-teak">{s.name}</div>
-              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.viewLabel}</span> {s.view}</p>
-              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.tipLabel}</span> {s.tip}</p>
-            </div>
-          ))}
-        </div>
-
-        <!-- Camera & phone settings -->
-        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.settingsTitle}</h4>
-        <div class="space-y-3 mb-6">
-          {guide.photography.settings.map((st) => (
-            <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
-              <div class="font-semibold text-teak">{st.style}</div>
-              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.cameraLabel}</span> {st.camera}</p>
-              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.phoneLabel}</span> {st.phone}</p>
-            </div>
-          ))}
-        </div>
-
-        <!-- Tips -->
-        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.tipsTitle}</h4>
-        <ul class="space-y-2 text-sm text-ink/75">
-          {guide.photography.tips.map((tp) => (
-            <li class="flex gap-2">
-              <span class="text-gold mt-0.5" aria-hidden="true">•</span>
-              <span>{tp}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )}
 
     <!-- Best time to visit / flowering -->
     {guide.bestTime && (
@@ -169,23 +221,6 @@ const guideImgs = [
             </div>
           ))}
         </div>
-      </div>
-    )}
-
-    <!-- Safety -->
-    {guide.safety && (
-      <div class="mt-14 rounded-2xl border border-amber-300 bg-amber-50 p-6 max-w-4xl shadow-sm">
-        <h3 class="font-display text-xl text-amber-800 flex items-center gap-2">
-          <span aria-hidden="true">⚠</span> {guide.safety.title}
-        </h3>
-        <ul class="mt-3 space-y-2 text-sm text-amber-900/85">
-          {guide.safety.items.map((it) => (
-            <li class="flex gap-2">
-              <span class="text-amber-600 mt-0.5" aria-hidden="true">•</span>
-              <span><span class="font-semibold">{it.title}</span> — {it.desc}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     )}
 
@@ -210,24 +245,6 @@ const guideImgs = [
             </a>
           ))}
         </div>
-      </div>
-    )}
-
-    <!-- Accessibility / Senior-friendly -->
-    {guide.accessibility && (
-      <div class="mt-14 rounded-2xl border border-teal-300 bg-teal-50 p-6 max-w-4xl shadow-sm">
-        <h3 class="font-display text-xl text-teal-800 flex items-center gap-2">
-          <span aria-hidden="true">♿</span> {guide.accessibility.title}
-        </h3>
-        <p class="mt-2 text-sm text-teal-900/85 leading-relaxed">{guide.accessibility.intro}</p>
-        <ul class="mt-3 space-y-2 text-sm text-teal-900/85">
-          {guide.accessibility.items.map((it) => (
-            <li class="flex gap-2">
-              <span class="text-teal-600 mt-0.5" aria-hidden="true">✓</span>
-              <span><span class="font-semibold">{it.title}</span> — {it.desc}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     )}
 

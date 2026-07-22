@@ -46,7 +46,8 @@
     "defaultTip": "Quietest before 08:00 and after 17:00; mornings have the best light for photography.",
     "lightCaption": "Light forecast uses local sun times (Asia/Bangkok).",
     "weatherError": "Weather unavailable",
-    "goldenChanceLabel": "Golden-hour chance"
+    "goldenChanceLabel": "Golden-hour chance",
+    "quickFacts": { "duration": "Plan for", "durationVal": "~45 minutes", "fee": "Entry fee", "feeVal": "Free (donations welcome)", "dress": "Dress code", "dressVal": "Cover shoulders & knees · remove shoes", "mustSee": "Top three", "mustSeeVal": "Elephant chedis · Crystal Buddha · Stone Buddha" }
   },
   "about": {
     "label": "About",
@@ -56,6 +57,7 @@
     "paragraph2": "Centuries later the temple remains a living place of worship. Its whitewashed walls, weathered teak and small scale give it an intimacy the larger city temples lack, even as it guards two of northern Thailand’s most revered Buddha images.",
     "quote": "“To stand in Wat Chiang Man is to stand where Chiang Mai itself was born.”",
     "quoteAuthor": "— Northern Thai chroniclers",
+    "etymology": { "tag": "Name origin", "title": "What “Chiang Man” means", "text": "In Lanna / Thai, “Chiang” (เชียง) means “city”, and “Man” (มั่น) means “firm, enduring”. So “Chiang Man” reads as “the stable city” — King Mangrai’s wish that his new capital would endure." },
     "stats": [
       { "value": "1296", "label": "Founded by King Mangrai" },
       { "value": "#1", "label": "Oldest temple in Chiang Mai" },
@@ -83,7 +85,7 @@
     ],
     "archTitle": "What to look for",
     "architecture": [
-      { "title": "Elephant-backed chedis", "desc": "Two cubical stupas (13th c.) sit on tiers of stucco elephants — the iconic 'Chiang Man' form unique to this temple." },
+      { "title": "Elephant-backed chedis", "desc": "Two cubical stupas (13th c.) sit on tiers of stucco elephants — the iconic 'Chiang Man' form unique to this temple, formally named Chedi Chang Lom (เจดีย์ช้างล้อม, 'stupa surrounded by elephants')." },
       { "title": "Viharn Luang", "desc": "The main hall, rebuilt in the 1920s on the original foundations; its old teak pillars are preserved inside." },
       { "title": "Ubosot (ordination hall)", "desc": "A smaller, quieter hall used for monastic rites, with fine Lanna woodwork." }
     ],
@@ -108,6 +110,7 @@
     "label": "Visitor Guide",
     "heading": "Plan a calm, respectful visit",
     "lead": "Wat Chiang Man is free to enter and easy to reach on foot from anywhere in the old city. A little planning makes the experience far richer.",
+    "hub": { "t1": "Getting there & tickets", "t2": "Photography & light", "t3": "Etiquette & dress", "t4": "Accessibility" },
     "hours": {
       "tag": "Opening hours",
       "time": "05:00 – 19:00",
@@ -130,6 +133,7 @@
       "tag": "Getting there",
       "title": "How to arrive",
       "items": [
+        { "title": "From the airport", "desc": "Chiang Mai International Airport is ~5 km from the Old City. A Grab or taxi takes 15–20 min (≈150–200 THB) straight to the Old City, then walk or hop a red songthaew to the temple." },
         { "title": "On foot", "desc": "10–15 min walk from Tha Phae Gate or most old-city guesthouses." },
         { "title": "Songthaew / red truck", "desc": "Hop a red songthaew and ask for 'Wat Chiang Man' near Ratchapakhinai Rd." },
         { "title": "Tuk-tuk / Grab", "desc": "A short, inexpensive ride from anywhere in the city centre." }
@@ -182,7 +186,8 @@
       "intro": "The temple grounds are flat and mostly step-free; the halls have a few thresholds.",
       "items": [
         { "title": "Paths", "desc": "Paved, level walkways connect the gates, chedis and halls." },
-        { "title": "Wheelchairs", "desc": "The courtyard is navigable; hall interiors are tight — ask a monk for help if needed." }
+        { "title": "Wheelchairs", "desc": "The courtyard is navigable; hall interiors are tight — ask a monk for help if needed." },
+        { "title": "Watch on-site signs", "desc": "Core areas such as the Ubosot (ordination hall) may restrict entry or require shoe removal — follow posted signs and monk guidance." }
       ]
     },
     "faqTitle": "Good to know",
@@ -275,7 +280,7 @@
     "factText": "Founding date, the crystal and stone Buddhas, and the elephant chedis follow widely published accounts of Wat Chiang Man.",
     "correctionTitle": "Spot an error?",
     "correctionText": "If any detail looks wrong, we’d love to fix it.",
-    "correctionMailto": "mailto:hello@watchiangman.com",
+    "correctionMailto": "mailto:n20186005@gmail.com",
     "correctionCta": "Email a correction",
     "copyright": "© 2026 Wat Chiang Man Guide. Independent visitor resource."
   },
@@ -311,6 +316,7 @@
     "sourcesTitle": "Sources",
     "sourcesNote": "Facts from public references; photos illustrative.",
     "privacy": "Privacy",
+    "verified": { "label": "Content verified", "text": "Verified March 2026 · Fact-check: Northern Thai Historical Archive" },
     "terms": "Terms",
     "cookies": "Cookies",
     "disclaimerLead": "Independent guide",

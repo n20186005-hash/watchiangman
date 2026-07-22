@@ -149,3 +149,38 @@ body {
   font-size: 0.78rem;
   letter-spacing: 0.04em;
 }
+
+/* Visitor Hub — native <details> tabs (no JS, cross-browser safe) */
+.visitor-hub .vh-tab {
+  border: 1px solid rgba(201, 169, 98, 0.30);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+.visitor-hub .vh-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #0d2a2e;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.visitor-hub .vh-summary::-webkit-details-marker { display: none; }
+.visitor-hub .vh-summary::marker { content: ''; }
+.visitor-hub .vh-ico { font-size: 1.25rem; line-height: 1; }
+.visitor-hub .vh-tab[open] > .vh-summary {
+  background: #0d2a2e;
+  color: #f5ecd7;
+}
+.visitor-hub .vh-tab[open] > .vh-summary .vh-ico {
+  filter: drop-shadow(0 0 6px rgba(230, 198, 117, 0.6));
+}
+.visitor-hub .vh-panel { padding: 0.25rem 1.25rem 1.25rem; }
+@media (max-width: 640px) {
+  .visitor-hub .vh-summary { font-size: 1rem; padding: 0.85rem 1rem; }
+}

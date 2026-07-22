@@ -43,7 +43,7 @@ export const siteConfig: SiteConfig = {
   openMeteo: { latitude: 18.7938, longitude: 98.9867, timezone: 'Asia/Bangkok' },
 };
 
-export const email = 'hello@watchiangman.com';
+export const email = 'n20186005@gmail.com';
 
 // Light textual fallbacks — real per-locale strings live in i18n/*.json
 export const fallbackMeta = {

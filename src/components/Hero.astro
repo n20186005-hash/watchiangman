@@ -74,6 +74,26 @@ const weatherMap = Object.fromEntries(
         <span>{coordsLabel}</span>
       </div>
 
+      <!-- 30-second quick facts -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-xl">
+        <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-3 py-2">
+          <div class="text-[10px] uppercase tracking-wide text-gold/80">{hero.quickFacts.duration}</div>
+          <div class="text-sm font-semibold text-ivory mt-0.5">{hero.quickFacts.durationVal}</div>
+        </div>
+        <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-3 py-2">
+          <div class="text-[10px] uppercase tracking-wide text-gold/80">{hero.quickFacts.fee}</div>
+          <div class="text-sm font-semibold text-ivory mt-0.5">{hero.quickFacts.feeVal}</div>
+        </div>
+        <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-3 py-2">
+          <div class="text-[10px] uppercase tracking-wide text-gold/80">{hero.quickFacts.dress}</div>
+          <div class="text-sm font-semibold text-ivory mt-0.5">{hero.quickFacts.dressVal}</div>
+        </div>
+      </div>
+      <div class="mt-2 rounded-xl bg-gold/15 border border-gold/30 px-4 py-2 max-w-xl text-ivory">
+        <span class="text-[10px] uppercase tracking-wide text-gold">{hero.quickFacts.mustSee}</span>
+        <span class="text-sm ml-2">{hero.quickFacts.mustSeeVal}</span>
+      </div>
+
       <a href={mapsUrl} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-goldBright hover:text-gold underline-offset-4 hover:underline text-sm">
         {hero.viewLocation}
       </a>

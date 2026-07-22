@@ -22,40 +22,50 @@ function fallbackDesc() {
 
 const canonical = new URL(Astro.url.pathname, `https://${siteConfig.domain}/`);
 const ogImage = `https://${siteConfig.domain}/gallery/wat-chiang-man-1.jpg`;
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'TouristAttraction',
-  name: siteConfig.name,
-  description: pageDesc,
-  image: ogImage,
-  url: canonical.toString(),
-  touristType: ['Buddhist', 'Heritage', 'Architecture'],
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '171 Ratchapakhinai Rd, Old City, Si Phum',
-    addressLocality: 'Mueang Chiang Mai District',
-    addressRegion: 'Chiang Mai',
-    postalCode: '50200',
-    addressCountry: 'TH',
+const faqs = (messages?.guide?.faqs ?? []).map((f) => ({
+  '@type': 'Question',
+  name: f.q,
+  acceptedAnswer: { '@type': 'Answer', text: f.a },
+}));
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: siteConfig.name,
+    alternateName: ['清曼寺', 'วัดเชียงมั่น', 'Wat Chiang Man Temple'],
+    description: pageDesc,
+    image: ogImage,
+    url: canonical.toString(),
+    isAccessibleForFree: true,
+    touristType: ['Buddhist', 'Heritage', 'Architecture'],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '171 Ratchapakhinai Rd, Old City, Si Phum',
+      addressLocality: 'Mueang Chiang Mai District',
+      addressRegion: 'Chiang Mai',
+      postalCode: '50200',
+      addressCountry: 'TH',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: siteConfig.coords.lat,
+      longitude: siteConfig.coords.lng,
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: siteConfig.rating,
+      reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '05:00',
+      closes: '19:00',
+    },
+    sameAs: siteConfig.sameAs,
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: siteConfig.coords.lat,
-    longitude: siteConfig.coords.lng,
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: siteConfig.rating,
-    reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '05:00',
-    closes: '19:00',
-  },
-  sameAs: siteConfig.sameAs,
-};
+  ...(faqs.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs }] : []),
+];
 
 const mUi = htmlLang[lang] ?? 'en';
 const mRegion = lang === 'zh' ? 'us' : lang === 'th' ? 'th' : lang === 'en' ? 'gb' : 'us';
