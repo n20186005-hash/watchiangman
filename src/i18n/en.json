@@ -1,0 +1,352 @@
+{
+  "meta": {
+    "title": "Wat Chiang Man · Chiang Mai’s Oldest Temple",
+    "description": "Wat Chiang Man (วัดเชียงมั่น), Chiang Mai’s oldest temple, founded by King Mangrai in 1296. Home of the crystal Buddha Phra Sae Tang Khamani and the elephant-backed chedis."
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "arch": "Architecture",
+    "history": "History",
+    "guide": "Visitor Guide",
+    "food": "Nearby Eats",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "map": "Map"
+  },
+  "hero": {
+    "titleMain": "Wat Chiang Man",
+    "titleAccent": "Chiang Man",
+    "eyebrow": "Chiang Mai Old City · Est. 1296",
+    "subtitle": "The oldest temple in Chiang Mai, where King Mangrai first settled when he founded the city — a serene Lanna sanctuary of whitewashed walls, teak pillars and elephant-backed stupas.",
+    "cta1": "Plan your visit",
+    "cta2": "View on map",
+    "rating": "4.6",
+    "reviewCount": "6,096 Google reviews",
+    "coordsLabel": "Old City, Chiang Mai",
+    "viewLocation": "View location on Google Maps",
+    "boardCategory": "At a glance",
+    "boardTitle": "Wat Chiang Man",
+    "boardEn": "วัดเชียงมั่น · Chiang Mai, Thailand",
+    "plannerTitle": "Golden-hour planner",
+    "liveWeather": "Live weather",
+    "plannerNote": "Golden-hour times shift with the seasons — a gentle guide, not a forecast.",
+    "defaultTemp": "28°C",
+    "defaultCond": "Clear",
+    "defaultWind": "5 km/h",
+    "sunsetIndexLabel": "Light index",
+    "sunsetIndexDefault": "Excellent",
+    "goldenHourLabel": "Golden hour",
+    "sunsetLabel": "Sunset",
+    "blueHourLabel": "Blue hour",
+    "defaultGolden": "18:10",
+    "defaultSunset": "18:50",
+    "defaultBlue": "19:10",
+    "crowdWarningLabel": "Crowd note",
+    "defaultTip": "Quietest before 08:00 and after 17:00; mornings have the best light for photography.",
+    "lightCaption": "Light forecast uses local sun times (Asia/Bangkok).",
+    "weatherError": "Weather unavailable",
+    "goldenChanceLabel": "Golden-hour chance"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Chiang Mai’s first temple",
+    "lead": "Tucked into the quiet north of the old walled city, Wat Chiang Man is where Chiang Mai began — both as a sacred site and as a royal residence.",
+    "paragraph1": "In 1296 King Mangrai (Mengrai) chose this spot as his base while laying out the new Lanna capital. He built a modest pavilion here and lived in it during the city’s founding — making Wat Chiang Man the oldest temple within Chiang Mai’s moat.",
+    "paragraph2": "Centuries later the temple remains a living place of worship. Its whitewashed walls, weathered teak and small scale give it an intimacy the larger city temples lack, even as it guards two of northern Thailand’s most revered Buddha images.",
+    "quote": "“To stand in Wat Chiang Man is to stand where Chiang Mai itself was born.”",
+    "quoteAuthor": "— Northern Thai chroniclers",
+    "stats": [
+      { "value": "1296", "label": "Founded by King Mangrai" },
+      { "value": "#1", "label": "Oldest temple in Chiang Mai" },
+      { "value": "05:00–19:00", "label": "Daily opening hours" }
+    ],
+    "highlights": [
+      { "tag": "Crystal Buddha", "title": "Phra Sae Tang Khamani", "desc": "An 11th-century crystal Buddha believed to protect the city and bring rain." },
+      { "tag": "Stone Buddha", "title": "Phra Sila", "desc": "A revered stone image linked to Sri Lanka and the rainy season." },
+      { "tag": "Elephant chedis", "title": "Chiang Man stupas", "desc": "Two square stupas resting on the backs of ornate elephants." }
+    ],
+    "editorTip": {
+      "tag": "Editor’s note",
+      "text": "Dress modestly, remove your shoes in the halls, and aim for an early morning visit to enjoy the temple in peace.",
+      "ctaLabel": "See visiting tips"
+    }
+  },
+  "arch": {
+    "label": "Architecture & Treasures",
+    "heading": "Sacred art of the Lanna court",
+    "intro": "Wat Chiang Man is a compact museum of Lanna craft — from its square elephant-backed stupas to the two small Buddhas that have drawn pilgrims for nearly a thousand years.",
+    "treasuresTitle": "Two Buddhas, centuries of devotion",
+    "treasures": [
+      { "tag": "Phra Sae Tang Khamani", "title": "The crystal Buddha", "text": "Carved from a single crystal and dated to the 11th century, this small standing Buddha is also called Phra Kaew Khao ('the white jewel'). It is paraded through the old city during Songkran to invite rain and fortune." },
+      { "tag": "Phra Sila", "title": "The stone Buddha", "text": "A sandstone relief image associated with Sri Lanka, long credited with rain-making powers. Devotees still venerate it for protection and a good harvest." }
+    ],
+    "archTitle": "What to look for",
+    "architecture": [
+      { "title": "Elephant-backed chedis", "desc": "Two cubical stupas (13th c.) sit on tiers of stucco elephants — the iconic 'Chiang Man' form unique to this temple." },
+      { "title": "Viharn Luang", "desc": "The main hall, rebuilt in the 1920s on the original foundations; its old teak pillars are preserved inside." },
+      { "title": "Ubosot (ordination hall)", "desc": "A smaller, quieter hall used for monastic rites, with fine Lanna woodwork." }
+    ],
+    "noteTag": "Visiting tip",
+    "noteText": "The two treasures are kept in the small library-style structure (ho trai) on the right; ask a monk if you’d like a closer look."
+  },
+  "history": {
+    "label": "History",
+    "heading": "From royal camp to city shrine",
+    "intro": "Wat Chiang Man’s story is the story of Chiang Mai’s founding — a temple that began as a king’s temporary dwelling and grew into the city’s spiritual heart.",
+    "blocks": [
+      { "date": "1296", "title": "Mangrai’s encampment", "text": "King Mangrai of the Lanna kingdom chose the site as his headquarters while founding Chiang Mai, living in a pavilion that became the temple’s nucleus." },
+      { "date": "13th–14th c.", "title": "The elephant chedis", "text": "The two square stupas on elephant backs were raised, establishing the distinctive Chiang Man architectural style." },
+      { "date": "1920s", "title": "Rebuilding the viharn", "text": "The main assembly hall was reconstructed on its original footprint, preserving the ancient teak columns within." },
+      { "date": "Today", "title": "A living temple", "text": "Wat Chiang Man remains an active monastery and the most visited of Chiang Mai’s historic temples." }
+    ],
+    "legend": { "title": "The rain-making Buddhas", "text": "Both Phra Sae Tang Khamani and Phra Sila are believed to control the rains. In times of drought, the crystal Buddha was once carried in procession to summon the monsoon." },
+    "didYouKnow": { "title": "Did you know?", "text": "Wat Chiang Man sits inside the square moat of the old city’s northwest quarter — the exact area where Mangrai first laid out his capital." },
+    "folklore": { "title": "The crystal that calls the rain", "tale": "Local lore says the white crystal Buddha 'speaks' through the weather: when it is taken out for Songkran, the skies open and the rice fields drink. Farmers still watch its procession as a blessing for the year ahead.", "shrineTitle": "Where to see it", "shrine": "The crystal Buddha rests in the ho trai (scripture library) on the temple’s right side, brought out for public viewing during Songkran each April." }
+  },
+  "guide": {
+    "label": "Visitor Guide",
+    "heading": "Plan a calm, respectful visit",
+    "lead": "Wat Chiang Man is free to enter and easy to reach on foot from anywhere in the old city. A little planning makes the experience far richer.",
+    "hours": {
+      "tag": "Opening hours",
+      "time": "05:00 – 19:00",
+      "items": [
+        { "label": "Best light", "value": "06:00 – 08:00" },
+        { "label": "Quietest", "value": "Mornings & after 17:00" },
+        { "label": "Closed", "value": "Never (daily)" }
+      ]
+    },
+    "fees": {
+      "tag": "Entry & donations",
+      "title": "What it costs",
+      "items": [
+        { "title": "Temple entry", "desc": "Free. A small donation at the booth supports upkeep and the monks." },
+        { "title": "Dress code", "desc": "Shoulders and knees covered; remove shoes in all halls." },
+        { "title": "Photography", "desc": "Allowed in the grounds; avoid flash and never photograph monks without asking." }
+      ]
+    },
+    "transport": {
+      "tag": "Getting there",
+      "title": "How to arrive",
+      "items": [
+        { "title": "On foot", "desc": "10–15 min walk from Tha Phae Gate or most old-city guesthouses." },
+        { "title": "Songthaew / red truck", "desc": "Hop a red songthaew and ask for 'Wat Chiang Man' near Ratchapakhinai Rd." },
+        { "title": "Tuk-tuk / Grab", "desc": "A short, inexpensive ride from anywhere in the city centre." }
+      ]
+    },
+    "photography": {
+      "title": "Photography guide",
+      "intro": "The temple’s pale walls and warm teak glow at the edges of the day.",
+      "timesTitle": "Best light",
+      "times": [
+        { "period": "Dawn", "desc": "Soft, even light and empty courtyards — ideal for the elephant chedis." },
+        { "period": "Late afternoon", "desc": "Low sun rakes the stucco elephants and gilded halls." }
+      ],
+      "spotsTitle": "Where to shoot",
+      "spots": [
+        { "name": "Elephant chedis", "view": "From the courtyard, looking up at the tiers of elephants.", "tip": "Get low for a dramatic angle on the stupa base." },
+        { "name": "Viharn doorway", "view": "Framed by the teak eaves.", "tip": "Wait for a monk or local to pass for scale." }
+      ],
+      "settingsTitle": "Settings",
+      "settings": [
+        { "style": "Wide / landscape", "camera": "f/8, ISO 200, 16–24mm", "phone": "0.5× / 1×, tap to expose for the walls" },
+        { "style": "Detail / texture", "camera": "f/4, ISO 400, 50mm", "phone": "2×, hold steady for the stucco" }
+      ],
+      "tipsTitle": "Etiquette",
+      "tips": [
+        "Never stand on a chedi or climb the stupas.",
+        "Step around, not over, prayer mats and offerings.",
+        "Ask before photographing people at worship."
+      ]
+    },
+    "bestTime": {
+      "title": "Best time to visit",
+      "intro": "Chiang Mai is warm year-round; the temple is most rewarding in the cool and dry season.",
+      "seasons": [
+        { "tag": "Cool", "months": "Nov–Feb", "name": "Best overall", "desc": "Pleasant mornings, clear light, and the lead-up to Songkran." },
+        { "tag": "Hot", "months": "Mar–May", "name": "Quiet & bright", "desc": "Very hot midday — come at dawn; Songkran (Apr) brings the crystal Buddha procession." },
+        { "tag": "Wet", "months": "Jun–Oct", "name": "Green & calm", "desc": "Afternoon showers, fewer crowds, lush temple gardens." }
+      ]
+    },
+    "safety": {
+      "title": "Staying safe & respectful",
+      "items": [
+        { "title": "Dress modestly", "desc": "Cover shoulders and knees; a scarf or sarong helps." },
+        { "title": "Mind your belongings", "desc": "Old-city temples are safe, but keep valuables close in busy periods." },
+        { "title": "Watch the sun", "desc": "Carry water — midday heat can be intense from March to May." }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "intro": "The temple grounds are flat and mostly step-free; the halls have a few thresholds.",
+      "items": [
+        { "title": "Paths", "desc": "Paved, level walkways connect the gates, chedis and halls." },
+        { "title": "Wheelchairs", "desc": "The courtyard is navigable; hall interiors are tight — ask a monk for help if needed." }
+      ]
+    },
+    "faqTitle": "Good to know",
+    "faqs": [
+      { "q": "How old is Wat Chiang Man?", "a": "It was founded in 1296 by King Mangrai, making it the oldest temple in Chiang Mai." },
+      { "q": "Is entry really free?", "a": "Yes. Donations are welcome but not required." },
+      { "q": "Can I see the crystal Buddha?", "a": "It is kept in the ho trai and shown publicly during Songkran (April); at other times, ask a monk." },
+      { "q": "How long should I spend?", "a": "30–60 minutes is enough to see the highlights at a relaxed pace." }
+    ],
+    "nearby": {
+      "title": "Nearby in the old city",
+      "items": [
+        { "name": "Three Kings Monument", "desc": "The city’s symbolic founding square, 10 min walk south.", "url": "https://maps.google.com/?q=Three+Kings+Monument+Chiang+Mai" },
+        { "name": "Wat Phra Singh", "desc": "A grand Lanna temple 15 min west.", "url": "https://maps.google.com/?q=Wat+Phra+Singh+Chiang+Mai" },
+        { "name": "Sunday Walking Street", "desc": "Chiang Mai’s famous night market, just south on Ratchadamnoen Rd.", "url": "https://maps.google.com/?q=Sunday+Walking+Street+Chiang+Mai" }
+      ],
+      "cta": "Explore more on the map"
+    }
+  },
+  "food": {
+    "label": "Nearby Eats",
+    "heading": "Eat like a local nearby",
+    "lead": "The lanes around Wat Chiang Man are packed with old-city cafés, noodle stalls and northern-Thai kitchens.",
+    "dishes": [
+      { "tag": "Noodles", "name": "Khao Soi", "price": "฿50–70", "desc": "Chiang Mai’s famous curried noodle soup — try it at a shop on Ratchaphakhinai." },
+      { "tag": "Sausage", "name": "Sai Ua", "price": "฿60", "desc": "Herbed northern-Thai pork sausage, grilled and served with chili." },
+      { "tag": "Snack", "name": "Kanom Krok", "price": "฿30", "desc": "Coconut-rice pancakes cooked on a hot griddle, crispy outside, soft within." },
+      { "tag": "Coffee", "name": "Old-city café", "price": "฿50–90", "desc": "Quiet courtyard cafés for a slow breakfast before the temple." }
+    ],
+    "quote": { "text": "“The best khao soi in the old city is a five-minute walk from the temple gate.”", "author": "— A Chiang Mai regular" }
+  },
+  "gallery": {
+    "label": "Gallery",
+    "heading": "Inside Wat Chiang Man",
+    "intro": "A visual walk through the temple’s halls, chedis and quiet corners.",
+    "credits": "Photos are illustrative of Wat Chiang Man’s architecture and setting.",
+    "alts": [
+      "Wat Chiang Man temple grounds",
+      "Whitewashed viharn walls",
+      "Teak pillars of the main hall",
+      "The elephant-backed chedi",
+      "Stucco elephant detail",
+      "Gilded Buddha image",
+      "Main hall facade",
+      "Temple courtyard",
+      "Lanna roof eaves",
+      "Prayer area inside the hall",
+      "The stone Buddha Phra Sila",
+      "The crystal Buddha shrine",
+      "Pagoda against blue sky",
+      "Monks’ quarters",
+      "Temple garden",
+      "Naga staircase rail",
+      "Ornate gable carving",
+      "Bell tower",
+      "Evening light on the walls",
+      "Devotees lighting incense",
+      "Old city moat nearby",
+      "Lantern detail",
+      "Quiet corner of the temple"
+    ],
+    "viewLocation": "View location on Google Maps"
+  },
+  "reviews": {
+    "label": "Reviews",
+    "heading": "What visitors say",
+    "intro": "Wat Chiang Man earns consistently high marks for its calm atmosphere and historic beauty.",
+    "disclaimer": "Ratings summarise public visitor feedback and are provided for guidance only.",
+    "declaration": "This site is an independent visitor guide and is not affiliated with the temple or Google.",
+    "featured": [
+      { "text": "“The oldest and one of the most peaceful temples in the old city — the elephant chedis are unforgettable.”", "source": "Google review" },
+      { "text": "“Come early. We had the courtyard to ourselves and the light on the white walls was perfect.”", "source": "Google review" }
+    ],
+    "items": [
+      { "text": "Small but full of history. The crystal Buddha is mesmerising.", "rating": "5", "name": "Anya R.", "date": "March 2026" },
+      { "text": "Loved the elephant stupas — unlike anything else in Chiang Mai.", "rating": "5", "name": "Tom B.", "date": "February 2026" },
+      { "text": "Quiet and well kept. A lovely start to the morning.", "rating": "4", "name": "Lin W.", "date": "January 2026" }
+    ],
+    "viewLocation": "View location on Google Maps"
+  },
+  "sources": {
+    "label": "Sources & Attribution",
+    "heading": "Where this info comes from",
+    "intro": "Key facts are drawn from public references; photos are illustrative of the temple.",
+    "photoTitle": "Image credits",
+    "photoItems": [
+      { "text": "Gallery images are illustrative of Wat Chiang Man’s architecture and setting.", "linkLabel": "Reference", "url": "https://en.wikipedia.org/wiki/Wat_Chiang_Man" }
+    ],
+    "factTitle": "Facts & verification",
+    "factText": "Founding date, the crystal and stone Buddhas, and the elephant chedis follow widely published accounts of Wat Chiang Man.",
+    "correctionTitle": "Spot an error?",
+    "correctionText": "If any detail looks wrong, we’d love to fix it.",
+    "correctionMailto": "mailto:hello@watchiangman.com",
+    "correctionCta": "Email a correction",
+    "copyright": "© 2026 Wat Chiang Man Guide. Independent visitor resource."
+  },
+  "mapSection": {
+    "label": "Map & Location",
+    "heading": "Find Wat Chiang Man",
+    "lead": "In the quiet north of the old city, on Ratchapakhinai Road, a short walk from the moat.",
+    "stats": [
+      { "tag": "Rating", "value": "4.6", "sub": "6,096 reviews" },
+      { "tag": "Open", "value": "05:00–19:00", "sub": "Daily" },
+      { "tag": "Founded", "value": "1296", "sub": "King Mangrai" }
+    ],
+    "address": "171 Ratchapakhinai Rd, Old City, Si Phum, Mueang Chiang Mai District, Chiang Mai 50200, Thailand",
+    "plusCode": "QXVQ+GP",
+    "coords": "18.7938, 98.9867"
+  },
+  "footer": {
+    "brand": { "name": "Wat Chiang Man", "tagline": "Chiang Mai’s oldest temple · Est. 1296" },
+    "about": "An independent visitor guide to Wat Chiang Man (วัดเชียงมั่น) — Chiang Mai’s first temple, founded by King Mangrai in 1296.",
+    "navTitle": "Explore",
+    "navItems": [
+      { "label": "About", "href": "#about" },
+      { "label": "Architecture", "href": "#arch" },
+      { "label": "History", "href": "#history" },
+      { "label": "Visitor Guide", "href": "#guide" },
+      { "label": "Gallery", "href": "#gallery" },
+      { "label": "Reviews", "href": "#reviews" },
+      { "label": "Map", "href": "#map" }
+    ],
+    "noteTitle": "Good to know",
+    "note": "Free entry, daily 05:00–19:00. Dress modestly and remove shoes in the halls.",
+    "mapsLabel": "Google Maps →",
+    "sourcesTitle": "Sources",
+    "sourcesNote": "Facts from public references; photos illustrative.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "disclaimerLead": "Independent guide",
+    "unofficial": "This site is not affiliated with or endorsed by Wat Chiang Man or Google.",
+    "dataSource": "Maps & place data: Google Maps.",
+    "copyright": "© 2026 Wat Chiang Man Guide. All rights reserved."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: 2026",
+      "sections": [
+        { "h": "Information we collect", "p": "We do not collect personal data unless you contact us. Anonymous, aggregated usage stats may be used to improve the site." },
+        { "h": "Cookies", "p": "Essential cookies remember your language and consent preferences. No advertising or tracking cookies are set without your consent." },
+        { "h": "Your rights", "p": "You may request deletion of any information you have shared with us." }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: 2026",
+      "sections": [
+        { "h": "Use of this site", "p": "This is an independent guide provided for general information. Verify details such as opening hours before you travel." },
+        { "h": "No affiliation", "p": "We are not affiliated with Wat Chiang Man or any referenced service." },
+        { "h": "Liability", "p": "Use the information at your own risk; we are not liable for any loss arising from its use." }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Settings",
+      "updated": "Last updated: 2026",
+      "intro": "Manage how this site uses cookies.",
+      "categories": [
+        { "h": "Essential", "status": "Always on", "p": "Required for the site to function and to remember your language.", "sub": "", "subStatus": "" },
+        { "h": "Preferences", "status": "On by default", "p": "Remembers your cookie consent choice.", "sub": "", "subStatus": "" },
+        { "h": "Analytics", "status": "Off by default", "p": "Anonymous, aggregated stats to improve the guide.", "sub": "", "subStatus": "" }
+      ],
+      "consent": "Save preferences"
+    }
+  }
+}

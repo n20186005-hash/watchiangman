@@ -1,0 +1,40 @@
+---
+import { languagesList } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Ecosystem from '../../components/Ecosystem.astro';
+import History from '../../components/History.astro';
+  import Guide from '../../components/Guide.astro';
+  import Sources from '../../components/Sources.astro';
+  import Food from '../../components/Food.astro';
+import Gallery from '../../components/Gallery.astro';
+import Reviews from '../../components/Reviews.astro';
+import MapSection from '../../components/MapSection.astro';
+import Footer from '../../components/Footer.astro';
+import { getI18n } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = await getI18n(Astro.url);
+---
+
+<BaseLayout lang={lang} title={messages.meta.title} description={messages.meta.description} messages={messages}>
+  <Header lang={lang} messages={messages} />
+  <main>
+    <Hero lang={lang} messages={messages} />
+    <About messages={messages} />
+    <Ecosystem messages={messages} />
+    <History messages={messages} />
+    <Guide messages={messages} />
+    <Food messages={messages} />
+    <Gallery messages={messages} />
+    <Reviews messages={messages} />
+    <Sources messages={messages} />
+    <MapSection lang={lang} messages={messages} />
+  </main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

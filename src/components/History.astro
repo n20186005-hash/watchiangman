@@ -1,0 +1,60 @@
+---
+import Timeline from './Timeline.astro';
+import ImageCompare from './ImageCompare.astro';
+
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const history = messages.history;
+
+import { siteConfig } from '../config';
+const prefix = siteConfig.galleryPrefix;
+---
+
+<section id="history" class="py-20 bg-teakDeep text-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{history.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{history.heading}</h2>
+    <p class="mt-4 max-w-2xl text-ivory/80">{history.intro}</p>
+
+    <div class="mt-12 mb-16 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <Timeline items={history.blocks} />
+      </div>
+      <div class="lg:sticky lg:top-24 self-start">
+        <ImageCompare 
+          beforeImg={`/gallery/${prefix}7.jpg`} 
+          afterImg={`/gallery/${prefix}13.jpg`} 
+          beforeAlt="清曼寺主殿正面" 
+          afterAlt="大象承托的佛塔"
+        />
+        <p class="text-xs text-ivory/50 mt-4 text-center">向左右拖拽滑块，对比建筑细部</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      <div class="rounded-2xl bg-gold/10 border border-gold/30 p-6">
+        <h3 class="font-display text-xl text-goldBright mb-2">{history.legend.title}</h3>
+        <p class="text-sm text-ivory/80 leading-relaxed">{history.legend.text}</p>
+      </div>
+      <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6">
+        <h3 class="font-display text-xl text-goldBright mb-2">{history.didYouKnow.title}</h3>
+        <p class="text-sm text-ivory/80 leading-relaxed">{history.didYouKnow.text}</p>
+      </div>
+    </div>
+
+    {history.folklore && (
+      <div class="mt-6 grid md:grid-cols-2 gap-6 items-stretch">
+        <div class="rounded-2xl bg-gradient-to-br from-gold/15 to-teak/40 border border-gold/30 p-6 md:p-8">
+          <h3 class="font-display text-2xl text-goldBright mb-3">{history.folklore.title}</h3>
+          <p class="text-sm md:text-base text-ivory/85 leading-relaxed">{history.folklore.tale}</p>
+        </div>
+        <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6 md:p-8">
+          <h3 class="font-display text-xl text-goldBright mb-3">{history.folklore.shrineTitle}</h3>
+          <p class="text-sm md:text-base text-ivory/80 leading-relaxed">{history.folklore.shrine}</p>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

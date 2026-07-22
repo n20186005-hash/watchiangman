@@ -1,0 +1,266 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const guide = messages.guide;
+const guideImgs = [
+  `/gallery/${siteConfig.galleryPrefix}2.jpg`,
+  `/gallery/${siteConfig.galleryPrefix}3.jpg`,
+];
+---
+
+<section id="guide" class="py-20 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{guide.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{guide.heading}</h2>
+    <p class="mt-4 max-w-2xl text-ink/80">{guide.lead}</p>
+
+    <!-- Two-Zone guide -->
+    {guide.twoZone && (
+      <div class="mt-10 rounded-2xl border border-gold/30 bg-white/60 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-2xl text-teak mb-1">{guide.twoZone.title}</h3>
+        <p class="text-sm text-ink/75 mb-5">{guide.twoZone.intro}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {guide.twoZone.items.map((z) => (
+            <div class="rounded-xl border border-gold/25 bg-teak/5 p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div class="font-display text-teak font-semibold text-lg">{z.name}</div>
+                {z.difficulty && (
+                  <span class="shrink-0 text-gold text-base tracking-tight" title={guide.twoZone.difficultyLabel} aria-label={`${guide.twoZone.difficultyLabel}${z.difficulty}`}>{z.difficulty}</span>
+                )}
+              </div>
+              {z.difficulty && (
+                <p class="mt-1 text-xs text-ink/60">{guide.twoZone.difficultyLabel}<span class="text-gold">{z.difficulty}</span>{z.note && <span class="ml-1 text-teak font-medium">· {z.note}</span>}</p>
+              )}
+              <p class="mt-2 text-sm text-ink/75"><span class="font-medium text-gold">{guide.twoZone.suitsLabel}</span> {z.suits}</p>
+              <p class="mt-2 text-sm text-ink/70">{z.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Anti Scam Tip -->
+    {guide.scamTip && (
+      <div class="mt-8 rounded-xl bg-red-50 border border-red-200 p-5 max-w-4xl shadow-sm">
+        <h3 class="font-display text-red-700 text-lg font-semibold flex items-center gap-2">
+          {guide.scamTip.tag}
+        </h3>
+        <p class="mt-2 text-red-900/80 text-sm leading-relaxed">
+          {guide.scamTip.text}
+        </p>
+      </div>
+    )}
+
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <!-- hours -->
+      <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
+        <span class="font-display text-gold text-2xl">{guide.hours.tag}</span>
+        <p class="font-semibold text-teak mt-1 mb-3">{guide.hours.time}</p>
+        <ul class="mt-3 space-y-2 text-sm text-ink/75">
+          {guide.hours.items.map((it) => (
+            <li class="flex justify-between gap-3 border-b border-gold/15 pb-2">
+              <span>{it.label}</span><span class="text-teak font-medium whitespace-nowrap">{it.value}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- fees -->
+      <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
+        <span class="font-display text-gold text-2xl">{guide.fees.tag}</span>
+        <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.fees.title}</h3>
+        <ul class="space-y-3 text-sm">
+          {guide.fees.items.map((it) => (
+            <li>
+              <div class="font-semibold text-teak">{it.title}</div>
+              <div class="text-ink/70">{it.desc}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- transport -->
+      <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
+        <span class="font-display text-gold text-2xl">{guide.transport.tag}</span>
+        <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.transport.title}</h3>
+        <ul class="space-y-3 text-sm">
+          {guide.transport.items.map((it) => (
+            <li>
+              <div class="font-semibold text-teak">{it.title}</div>
+              <div class="text-ink/70">{it.desc}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Photography & rainbow guide -->
+    {guide.photography && (
+      <div class="mt-14 max-w-4xl">
+        <h3 class="font-display text-2xl text-teak mb-2">{guide.photography.title}</h3>
+        <p class="text-sm text-ink/75 mb-5">{guide.photography.intro}</p>
+
+        <!-- Best light / rainbow windows -->
+        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.timesTitle}</h4>
+        <div class="grid sm:grid-cols-3 gap-3 mb-6">
+          {guide.photography.times.map((t) => (
+            <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
+              <div class="font-semibold text-teak">{t.period}</div>
+              <p class="mt-1 text-sm text-ink/70">{t.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Photo spots -->
+        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.spotsTitle}</h4>
+        <div class="space-y-3 mb-6">
+          {guide.photography.spots.map((s) => (
+            <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
+              <div class="font-semibold text-teak">{s.name}</div>
+              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.viewLabel}</span> {s.view}</p>
+              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.tipLabel}</span> {s.tip}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Camera & phone settings -->
+        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.settingsTitle}</h4>
+        <div class="space-y-3 mb-6">
+          {guide.photography.settings.map((st) => (
+            <div class="rounded-xl border border-gold/25 bg-white/50 p-4">
+              <div class="font-semibold text-teak">{st.style}</div>
+              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.cameraLabel}</span> {st.camera}</p>
+              <p class="mt-1 text-sm text-ink/70"><span class="font-medium">{guide.photography.phoneLabel}</span> {st.phone}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Tips -->
+        <h4 class="font-display text-lg text-gold mb-3">{guide.photography.tipsTitle}</h4>
+        <ul class="space-y-2 text-sm text-ink/75">
+          {guide.photography.tips.map((tp) => (
+            <li class="flex gap-2">
+              <span class="text-gold mt-0.5" aria-hidden="true">•</span>
+              <span>{tp}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Best time to visit / flowering -->
+    {guide.bestTime && (
+      <div class="mt-14 max-w-4xl">
+        <h3 class="font-display text-2xl text-teak mb-2">{guide.bestTime.title}</h3>
+        <p class="text-sm text-ink/75 mb-5">{guide.bestTime.intro}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {guide.bestTime.seasons.map((sn) => (
+            <div class="rounded-2xl border border-gold/25 bg-white/50 p-5">
+              <div class="flex items-center justify-between">
+                <span class="font-display text-gold text-xl">{sn.tag}</span>
+                <span class="text-xs text-teak font-medium bg-gold/15 px-2 py-1 rounded-full">{sn.months}</span>
+              </div>
+              <h4 class="font-display text-teak font-semibold text-lg mt-2">{sn.name}</h4>
+              <p class="mt-1 text-sm text-ink/75">{sn.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Safety -->
+    {guide.safety && (
+      <div class="mt-14 rounded-2xl border border-amber-300 bg-amber-50 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-xl text-amber-800 flex items-center gap-2">
+          <span aria-hidden="true">⚠</span> {guide.safety.title}
+        </h3>
+        <ul class="mt-3 space-y-2 text-sm text-amber-900/85">
+          {guide.safety.items.map((it) => (
+            <li class="flex gap-2">
+              <span class="text-amber-600 mt-0.5" aria-hidden="true">•</span>
+              <span><span class="font-semibold">{it.title}</span> — {it.desc}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Haze / burning season warning -->
+    {guide.hazeSeason && (
+      <div class="mt-8 rounded-2xl bg-orange-50 border border-orange-300 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-orange-800 text-lg font-semibold">{guide.hazeSeason.tag}</h3>
+        <p class="mt-2 text-orange-900/85 text-sm leading-relaxed">{guide.hazeSeason.text}</p>
+      </div>
+    )}
+
+    <!-- Emergency & rescue -->
+    {guide.emergency && (
+      <div class="mt-8 rounded-2xl border border-red-300 bg-red-50 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-xl text-red-700 font-semibold">{guide.emergency.title}</h3>
+        <p class="mt-2 text-sm text-red-900/80">{guide.emergency.intro}</p>
+        <div class="mt-4 grid sm:grid-cols-3 gap-3">
+          {guide.emergency.items.map((it) => (
+            <a href={`tel:${(it.value || '').replace(/[^+0-9]/g, '')}`} class="block rounded-xl border border-red-200 bg-white/70 p-4 hover:border-red-400 hover:shadow-md transition">
+              <div class="text-xs text-red-700/80">{it.title}</div>
+              <div class="mt-1 font-display text-lg font-semibold text-red-800">{it.value}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Accessibility / Senior-friendly -->
+    {guide.accessibility && (
+      <div class="mt-14 rounded-2xl border border-teal-300 bg-teal-50 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-xl text-teal-800 flex items-center gap-2">
+          <span aria-hidden="true">♿</span> {guide.accessibility.title}
+        </h3>
+        <p class="mt-2 text-sm text-teal-900/85 leading-relaxed">{guide.accessibility.intro}</p>
+        <ul class="mt-3 space-y-2 text-sm text-teal-900/85">
+          {guide.accessibility.items.map((it) => (
+            <li class="flex gap-2">
+              <span class="text-teal-600 mt-0.5" aria-hidden="true">✓</span>
+              <span><span class="font-semibold">{it.title}</span> — {it.desc}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- FAQ -->
+    <div class="mt-14 max-w-3xl">
+      <h3 class="font-display text-2xl text-teak mb-5">{guide.faqTitle}</h3>
+      <div class="space-y-3">
+        {guide.faqs.map((f) => (
+          <details class="group rounded-xl border border-gold/25 bg-white/50 p-4 open:bg-teak/5">
+            <summary class="cursor-pointer font-medium text-teak flex justify-between items-center">
+              {f.q}
+              <span class="text-gold transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-2 text-sm text-ink/75">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <!-- Nearby attractions -->
+    {guide.nearby && (
+      <div class="mt-14 max-w-4xl">
+        <h3 class="font-display text-2xl text-teak mb-5">{guide.nearby.title}</h3>
+        <div class="grid sm:grid-cols-3 gap-4">
+          {guide.nearby.items.map((it) => (
+            <a href={it.url} target="_blank" rel="noopener" class="group rounded-2xl border border-gold/25 bg-white/50 p-5 hover:border-gold hover:shadow-md transition">
+              <div class="font-display text-teak font-semibold text-lg">{it.name}</div>
+              <p class="mt-1 text-sm text-ink/70">{it.desc}</p>
+              <span class="mt-3 inline-block text-sm text-gold group-hover:text-goldBright">→ {guide.nearby.cta}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>

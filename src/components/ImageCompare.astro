@@ -1,0 +1,45 @@
+---
+interface Props {
+  beforeImg: string;
+  afterImg: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+}
+const { beforeImg, afterImg, beforeAlt = "2017 年（整治前）", afterAlt = "如今（复兴后）" } = Astro.props;
+---
+
+<div class="relative w-full rounded-2xl overflow-hidden border border-gold/20 shadow-xl group aspect-video" style="container-type: inline-size;">
+  <!-- After Image (Background) -->
+  <img src={afterImg} alt={afterAlt} class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+  
+  <!-- Before Image (Foreground with CSS resize) -->
+  <div class="absolute top-0 left-0 h-full w-[50%] overflow-hidden bg-teakDeep/20 z-10 before-container border-r-2 border-goldBright shadow-[2px_0_10px_rgba(0,0,0,0.5)]">
+    <!-- Using 100cqw ensures the image matches the outer container's width exactly, preventing squishing during resize -->
+    <img src={beforeImg} alt={beforeAlt} class="absolute top-0 left-0 h-full object-cover object-left max-w-none pointer-events-none" style="width: 100cqw;" />
+    
+    <!-- Drag Handle UI (Visual only) -->
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 bg-goldBright rounded-full flex items-center justify-center shadow-lg pointer-events-none z-20">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-teakDeep">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" transform="rotate(90 12 12)" />
+      </svg>
+    </div>
+  </div>
+  
+  <div class="absolute top-4 left-4 z-20 bg-black/60 text-white/90 text-xs px-2.5 py-1 rounded backdrop-blur-md pointer-events-none">{beforeAlt}</div>
+  <div class="absolute top-4 right-4 z-0 bg-black/60 text-white/90 text-xs px-2.5 py-1 rounded backdrop-blur-md pointer-events-none">{afterAlt}</div>
+</div>
+
+<style>
+  /* The resize trick relies on user dragging the right edge of the container. */
+  .before-container {
+    resize: horizontal;
+    /* We make the whole right side draggable */
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+  
+  /* Hide the default browser resize handle */
+  .before-container::-webkit-resizer {
+    display: none;
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  lang: any;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const map = messages.mapSection;
+const { lat, lng } = siteConfig.coords;
+
+// 按站点语言切换 Google Maps 嵌入界面语言（保留定位坐标不变）
+const mapLang: Record<string, [string, string]> = {
+  zh: ['zh-CN', 'us'],
+  en: ['en', 'us'],
+  th: ['th', 'th'],
+};
+const [mUi, mRegion] = mapLang[lang] || ['en', 'us'];
+const googleMapsEmbed = siteConfig.googleMapsEmbed.replace(
+  /!1s[a-zA-Z-]+!2s[a-zA-Z]+/g,
+  `!1s${mUi}!2s${mRegion}`
+);
+---
+
+<section id="map" class="py-20 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{map.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{map.heading}</h2>
+    <p class="mt-4 max-w-2xl text-ink/80">{map.lead}</p>
+
+    <div class="grid md:grid-cols-2 gap-8 mt-10">
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-gold/30 bg-white/50 p-5">
+          <div class="text-xs uppercase tracking-wider text-gold">{map.stats[0].tag}</div>
+          <div class="font-display text-2xl text-teak mt-1">{map.stats[0].value}</div>
+          <div class="text-sm text-ink/70">{map.stats[0].sub}</div>
+        </div>
+        <div class="space-y-3 text-sm">
+          <p><span class="text-gold font-semibold">📍 </span>{map.address}</p>
+          {siteConfig.phone && (
+            <p><span class="text-gold font-semibold">📞 </span><a href={`tel:${siteConfig.phone}`} class="hover:text-gold">{siteConfig.phoneDisplay}</a></p>
+          )}
+          <p><span class="text-gold font-semibold">🧭 </span>{map.plusCode}</p>
+          <p><span class="text-gold font-semibold">🌐 </span>{map.coords}</p>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          {map.stats.slice(1).map((s) => (
+            <div class="rounded-xl bg-teak text-ivory p-4">
+              <div class="text-xs text-ivory/60 uppercase tracking-wider">{s.tag}</div>
+              <div class="font-display text-xl text-goldBright mt-1">{s.value}</div>
+              <div class="text-xs text-ivory/70">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-gold/30 h-[320px] md:h-full min-h-[360px]">
+        <iframe src={googleMapsEmbed} width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

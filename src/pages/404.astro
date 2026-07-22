@@ -1,0 +1,23 @@
+---
+const home = { th: '/th/', en: '/en/', zh: '/zh/' };
+const labels = { th: 'ไทย', en: 'English', zh: '中文' };
+---
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Wat Chiang Man</title>
+  </head>
+  <body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f5ecd7;font-family:'Sarabun',sans-serif;color:#5b4a2f;">
+    <div style="text-align:center;padding:24px;">
+      <h1 style="font-size:3.5rem;margin:0;color:#a07d3a;font-weight:700;">404</h1>
+      <p style="font-size:1.1rem;margin-top:8px;">Page not found · 页面未找到 · ไม่พบหน้านี้</p>
+      <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        {Object.entries(home).map(([l, href]) => (
+          <a href={href} style="color:#a07d3a;text-decoration:none;border:1px solid #c9a962;padding:8px 18px;border-radius:9999px;font-weight:600;">{labels[l]}</a>
+        ))}
+      </div>
+    </div>
+  </body>
+</html>

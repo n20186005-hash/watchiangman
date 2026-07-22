@@ -1,0 +1,80 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  lang: any;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const footer = messages.footer;
+const mapsUrl = siteConfig.mapsUrl;
+---
+
+<footer class="bg-teakDeep text-ivory pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="font-display text-2xl text-goldBright">{footer.brand.name}</div>
+        <p class="font-hand text-gold text-lg mt-1">{footer.brand.tagline}</p>
+        <p class="mt-4 text-sm text-ivory/70 max-w-sm">{footer.about}</p>
+      </div>
+
+      <div>
+        <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.navTitle}</div>
+        <ul class="grid grid-cols-2 gap-2 text-sm">
+          {footer.navItems.map((n) => (
+            <li><a href={n.href} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.noteTitle}</div>
+        <p class="text-sm text-ivory/70">{footer.note}</p>
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener"
+          class="mt-5 inline-flex items-center gap-2 bg-gold text-teak font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
+        >
+          {footer.mapsLabel}
+        </a>
+      </div>
+    </div>
+
+    <!-- Sources / References -->
+    <div class="mt-12 border-t border-ivory/10 pt-8">
+      <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.sourcesTitle}</div>
+      <p class="text-sm text-ivory/70 max-w-2xl mb-4">{footer.sourcesNote}</p>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-sm">
+        {siteConfig.sources.map((s) => (
+          <li>
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-goldBright hover:underline inline-flex items-center gap-1"
+            >
+              {s.name} <span class="text-ivory/40">↗</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+      <a href={`/${lang}/privacy-policy`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.privacy}</a>
+      <a href={`/${lang}/terms-of-service`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.terms}</a>
+      <a href={`/${lang}/cookie-settings`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.cookies}</a>
+    </div>
+
+    <div class="ornament my-10 opacity-60"></div>
+
+    <div class="text-xs text-ivory/50 leading-relaxed space-y-2">
+      <p>{footer.disclaimerLead}</p>
+      <p class="text-ivory/70">{footer.unofficial}</p>
+      <p>{footer.dataSource}</p>
+      <p class="pt-2 text-ivory/40">{footer.copyright}</p>
+    </div>
+  </div>
+</footer>

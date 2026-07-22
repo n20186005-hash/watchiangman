@@ -1,0 +1,25 @@
+---
+interface Props {
+  items: {
+    date?: string;
+    title: string;
+    text: string;
+  }[];
+}
+const { items } = Astro.props;
+---
+
+<div class="relative border-l border-gold/30 ml-3 md:ml-6 space-y-10">
+  {items.map((item) => (
+    <div class="relative pl-6 md:pl-10">
+      <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_0_4px_rgba(212,175,55,0.2)]"></span>
+      {item.date && (
+        <div class="font-display text-sm font-semibold tracking-wider text-goldBright mb-1">
+          {item.date}
+        </div>
+      )}
+      <h3 class="font-display text-xl md:text-2xl text-ivory mb-2">{item.title}</h3>
+      <p class="text-sm md:text-base text-ivory/75 leading-relaxed">{item.text}</p>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,43 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const food = messages.food;
+const foodImg = `/gallery/${siteConfig.galleryPrefix}5.jpg`;
+---
+
+<section id="food" class="py-20 bg-teak text-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{food.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{food.heading}</h2>
+    <p class="mt-4 max-w-2xl text-ivory/80">{food.lead}</p>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
+      <div class="space-y-4">
+        {food.dishes.map((d) => (
+          <div class="flex gap-4 rounded-xl bg-teakDeep/60 border border-gold/20 p-4">
+            <span class="font-display text-goldBright text-xl mt-0.5">{d.tag}</span>
+            <div>
+              <div class="flex items-baseline justify-between gap-3">
+                <span class="font-semibold text-ivory">{d.name}</span>
+                <span class="text-xs text-gold whitespace-nowrap">{d.price}</span>
+              </div>
+              <p class="text-sm text-ivory/75 mt-1">{d.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="photo-frame rounded-2xl min-h-[280px]">
+        <img src={foodImg} alt={food.heading} class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <blockquote class="mt-12 border-l-4 border-gold pl-5 italic font-display text-2xl text-goldBright max-w-3xl">
+      “{food.quote.text}”
+      <footer class="text-sm not-italic text-ivory/60 mt-2">— {food.quote.author}</footer>
+    </blockquote>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import { siteConfig } from '../config';
+import { languages, htmlLang, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  messages: any;
+}
+const { lang, title, description, messages } = Astro.props;
+
+const defaultTitle = 'Wat Chiang Man · Chiang Mai Old City Temple';
+const pageTitle = title ?? messages?.meta?.title ?? defaultTitle;
+const pageDesc =
+  description ?? messages?.meta?.description ?? fallbackDesc();
+function fallbackDesc() {
+  return 'Wat Chiang Man (วัดเชียงมั่น), the oldest temple in Chiang Mai, founded by King Mangrai in 1296 — home of the crystal Buddha and the elephant-backed chedis.';
+}
+
+const canonical = new URL(Astro.url.pathname, `https://${siteConfig.domain}/`);
+const ogImage = `https://${siteConfig.domain}/gallery/wat-chiang-man-1.jpg`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: siteConfig.name,
+  description: pageDesc,
+  image: ogImage,
+  url: canonical.toString(),
+  touristType: ['Buddhist', 'Heritage', 'Architecture'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '171 Ratchapakhinai Rd, Old City, Si Phum',
+    addressLocality: 'Mueang Chiang Mai District',
+    addressRegion: 'Chiang Mai',
+    postalCode: '50200',
+    addressCountry: 'TH',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: siteConfig.coords.lat,
+    longitude: siteConfig.coords.lng,
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: siteConfig.rating,
+    reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '05:00',
+    closes: '19:00',
+  },
+  sameAs: siteConfig.sameAs,
+};
+
+const mUi = htmlLang[lang] ?? 'en';
+const mRegion = lang === 'zh' ? 'us' : lang === 'th' ? 'th' : lang === 'en' ? 'gb' : 'us';
+const altLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
+---
+
+<!doctype html>
+<html lang={mUi}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/jpeg" href={`/gallery/wat-chiang-man-1.jpg`} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDesc} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="alternate" hreflang={mUi} href={canonical} />
+    {
+      altLangs.map((l) => (
+        <link
+          rel="alternate"
+          hreflang={htmlLang[l]}
+          href={new URL(`/${l}/`, `https://${siteConfig.domain}/`).toString()}
+        />
+      ))
+    }
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <ViewTransitions />
+  </head>
+  <body class="bg-stone-50 text-stone-800 antialiased">
+    <slot />
+  </body>
+</html>

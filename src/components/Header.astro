@@ -1,0 +1,73 @@
+---
+import { siteConfig } from '../config';
+import { languages, languagesList, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const h = messages.header;
+
+const navItems = [
+  { label: h.home, href: '#home' },
+  { label: h.about, href: '#about' },
+  { label: h.arch, href: '#arch' },
+  { label: h.history, href: '#history' },
+  { label: h.guide, href: '#guide' },
+  { label: h.food, href: '#food' },
+  { label: h.gallery, href: '#gallery' },
+  { label: h.reviews, href: '#reviews' },
+  { label: h.map, href: '#map' },
+];
+
+const switchTo = (target: Lang) => `/${target}/`;
+---
+
+<header class="fixed top-0 inset-x-0 z-50 bg-teak/90 backdrop-blur-md border-b border-gold/20">
+  <div class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href={`/${lang}/`} class="font-display text-goldBright tracking-wide text-lg whitespace-nowrap">
+      {siteConfig.name}
+    </a>
+
+    <nav class="hidden md:flex items-center md:gap-4 lg:gap-7 text-sm text-ivory/80">
+      {navItems.map((item) => (
+        <a href={item.href} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div class="flex items-center rounded-full border border-gold/30 overflow-hidden text-xs">
+        {languagesList.map((l) => (
+          <a
+            href={switchTo(l)}
+            class={`px-2.5 py-1 transition-colors ${l === lang ? 'bg-gold text-teak font-semibold' : 'text-ivory/80 hover:text-goldBright'}`}
+          >
+            {languages[l]}
+          </a>
+        ))}
+      </div>
+      <button id="menu-btn" class="md:hidden text-ivory p-2" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-gold/20 bg-teakDeep">
+    <div class="max-w-7xl mx-auto px-5 py-3 grid grid-cols-2 gap-2 text-sm text-ivory/80">
+      {navItems.map((item) => (
+        <a href={item.href} class="py-1.5 hover:text-goldBright transition-colors">{item.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
