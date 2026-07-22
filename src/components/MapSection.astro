@@ -31,14 +31,14 @@ const googleMapsEmbed = siteConfig.googleMapsEmbed.replace(
     <div class="grid md:grid-cols-2 gap-8 mt-10">
       <div class="space-y-4">
         <div class="rounded-2xl border border-gold/30 bg-white/50 p-5">
-          <div class="text-xs uppercase tracking-wider text-gold">{map.stats[0].tag}</div>
-          <div class="font-display text-2xl text-teak mt-1">{map.stats[0].value}</div>
-          <div class="text-sm text-ink/70">{map.stats[0].sub}</div>
+          <div class="text-xs uppercase tracking-wider text-gold">{map.stats[0]?.tag ?? '—'}</div>
+          <div class="font-display text-2xl text-teak mt-1">{map.stats[0]?.value ?? '—'}</div>
+          <div class="text-sm text-ink/70">{map.stats[0]?.sub ?? ''}</div>
         </div>
         <div class="space-y-3 text-sm">
           <p><span class="text-gold font-semibold">📍 </span>{map.address}</p>
           {siteConfig.phone && (
-            <p><span class="text-gold font-semibold">📞 </span><a href={`tel:${siteConfig.phone}`} class="hover:text-gold">{siteConfig.phoneDisplay}</a></p>
+            <p><span class="text-gold font-semibold">📞 </span><a href={`tel:${siteConfig.phone}`} class="hover:text-gold">{siteConfig.phone}</a></p>
           )}
           <p><span class="text-gold font-semibold">🧭 </span>{map.plusCode}</p>
           <p><span class="text-gold font-semibold">🌐 </span>{map.coords}</p>

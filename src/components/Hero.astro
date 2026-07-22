@@ -202,7 +202,6 @@ const weatherMap = Object.fromEntries(
         if (sEl) sEl.textContent = fmt(ss);
         if (bEl) bEl.textContent = fmt(addMin(ss, 20)) + ' – ' + fmt(addMin(ss, 50));
 
-        if (statusEl) statusEl.textContent = weatherError ? '' : '';
         if (bodyEl) bodyEl.classList.remove('hidden');
       })
       .catch(() => {
