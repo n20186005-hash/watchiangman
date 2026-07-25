@@ -101,6 +101,17 @@ const altLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
       ))
     }
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HXM22WWPKP');
+    </script>
+
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <ViewTransitions />
   </head>
