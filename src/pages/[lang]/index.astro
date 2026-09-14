@@ -4,14 +4,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
+import Ecosystem from '../../components/Ecosystem.astro';
 import History from '../../components/History.astro';
   import Guide from '../../components/Guide.astro';
+import Etiquette from '../../components/Etiquette.astro';
+import DeepDive from '../../components/DeepDive.astro';
   import Sources from '../../components/Sources.astro';
   import Food from '../../components/Food.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
 import MapSection from '../../components/MapSection.astro';
 import Footer from '../../components/Footer.astro';
+import Weather from '../../components/Weather.astro';
+import Seasons from '../../components/Seasons.astro';
+import Routes from '../../components/Routes.astro';
+import Itinerary from '../../components/Itinerary.astro';
+import Facilities from '../../components/Facilities.astro';
+import Responsibility from '../../components/Responsibility.astro';
+import Legends from '../../components/Legends.astro';
 import { getI18n } from '../../i18n/ui';
 
 export async function getStaticPaths() {
@@ -26,12 +36,31 @@ const { lang, messages } = await getI18n(Astro.url);
   <main>
     <Hero lang={lang} messages={messages} />
     <About messages={messages} />
+    <Ecosystem messages={messages} />
+    <Legends messages={messages} />
     <History messages={messages} />
+    <!-- Server island: rendered in the Cloudflare Worker on request, never shipped as JS -->
+    <Weather lang={lang} server:defer>
+      <div slot="fallback" class="py-20 bg-teakDeep text-ivory">
+        <div class="max-w-7xl mx-auto px-5 animate-pulse">
+          <div class="h-4 w-28 rounded bg-ivory/15"></div>
+          <div class="mt-3 h-10 w-72 rounded bg-ivory/10"></div>
+          <div class="mt-4 h-4 w-96 rounded bg-ivory/10"></div>
+        </div>
+      </div>
+    </Weather>
+    <Seasons messages={messages} />
     <Guide messages={messages} />
+    <Etiquette lang={lang} messages={messages} />
+    <Routes messages={messages} />
+    <Itinerary messages={messages} />
     <Food messages={messages} />
     <Gallery messages={messages} />
+    <Facilities messages={messages} />
+    <Responsibility messages={messages} />
     <Reviews messages={messages} />
     <Sources messages={messages} />
+    <DeepDive lang={lang} messages={messages} />
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />

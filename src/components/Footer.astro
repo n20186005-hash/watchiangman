@@ -7,6 +7,31 @@ interface Props {
 }
 const { lang, messages } = Astro.props;
 const footer = messages.footer;
+const h = messages.header;
+// Footer navigation mirrors the section headings (single source of truth)
+const navOrder = [
+  'about',
+  'arch',
+  'legends',
+  'history',
+  'weather',
+  'seasons',
+  'guide',
+  'routes',
+  'itinerary',
+  'food',
+  'gallery',
+  'facilities',
+  'responsibility',
+  'reviews',
+  'map',
+];
+const navItems = navOrder
+  .map((k) => ({ label: h?.[k], href: `#${k}` }))
+  .filter((n) => Boolean(n.label));
+
+const sync = messages.sync;
+const imageCopyright = messages.imageCopyright;
 const mapsUrl = siteConfig.mapsUrl;
 ---
 
@@ -22,7 +47,7 @@ const mapsUrl = siteConfig.mapsUrl;
       <div>
         <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.navTitle}</div>
         <ul class="grid grid-cols-2 gap-2 text-sm">
-          {footer.navItems.map((n) => (
+          {navItems.map((n) => (
             <li><a href={n.href} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
           ))}
         </ul>
@@ -75,6 +100,13 @@ const mapsUrl = siteConfig.mapsUrl;
       <p>{footer.disclaimerLead}</p>
       <p class="text-ivory/70">{footer.unofficial}</p>
       <p>{footer.dataSource}</p>
+      <p>
+        {sync?.ratingNote} · {sync?.time} ·
+        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright hover:underline">
+          {sync?.viewAll} ↗
+        </a>
+      </p>
+      {imageCopyright && <p class="text-ivory/45">{imageCopyright}</p>}
       <p class="pt-2 text-ivory/40">{footer.copyright}</p>
     </div>
   </div>

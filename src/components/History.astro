@@ -15,7 +15,10 @@ const prefix = siteConfig.galleryPrefix;
 <section id="history" class="py-20 bg-teakDeep text-ivory">
   <div class="max-w-7xl mx-auto px-5">
     <p class="font-hand text-gold text-xl md:text-2xl">{history.label}</p>
-    <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{history.heading}</h2>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">
+      {history.headingEntity ?? history.heading}
+    </h2>
+    {history.headingEntity && <p class="mt-2 font-display text-lg text-ivory/70">{history.heading}</p>}
     <p class="mt-4 max-w-2xl text-ivory/80">{history.intro}</p>
 
     <div class="mt-12 mb-16 grid lg:grid-cols-2 gap-12 items-center">
@@ -26,10 +29,10 @@ const prefix = siteConfig.galleryPrefix;
         <ImageCompare 
           beforeImg={`/gallery/${prefix}7.jpg`} 
           afterImg={`/gallery/${prefix}13.jpg`} 
-          beforeAlt="清曼寺主殿正面" 
-          afterAlt="大象承托的佛塔"
+          beforeAlt={history.compareBefore ?? 'Wat Chiang Man main viharn facade'} 
+          afterAlt={history.compareAfter ?? 'Elephant-backed chedi at Wat Chiang Man'}
         />
-        <p class="text-xs text-ivory/50 mt-4 text-center">向左右拖拽滑块，对比建筑细部</p>
+        <p class="text-xs text-ivory/50 mt-4 text-center">{history.compareHint ?? ''}</p>
       </div>
     </div>
 

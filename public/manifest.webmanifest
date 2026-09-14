@@ -1,0 +1,48 @@
+{
+  "id": "/",
+  "name": "Wat Chiang Man · Chiang Mai Old City Temple",
+  "short_name": "Wat Chiang Man",
+  "description": "Independent visitor guide to Wat Chiang Man (วัดเชียงมั่น) in Chiang Mai, Chiang Mai, Thailand — location map, opening hours, nearby landmarks and travel tips.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/th/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#f5ecd7",
+  "theme_color": "#0d2a2e",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/gallery/wat-chiang-man-13.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Visitor Guide",
+      "short_name": "Guide",
+      "url": "/en/#guide"
+    },
+    {
+      "name": "Map & Location",
+      "short_name": "Map",
+      "url": "/en/#map"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Wat Chiang Man">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d2a2e" />
+      <stop offset="1" stop-color="#071a1c" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3dca0" />
+      <stop offset="0.5" stop-color="#e6c675" />
+      <stop offset="1" stop-color="#c9a962" />
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="url(#bg)" />
+
+  <!-- halo -->
+  <circle cx="256" cy="176" r="128" fill="#c9a962" opacity="0.08" />
+
+  <!-- chedi spire -->
+  <path d="M256 84 L268 132 L244 132 Z" fill="url(#gold)" />
+  <rect x="250" y="128" width="12" height="34" rx="4" fill="url(#gold)" />
+
+  <!-- bell-shaped stupa -->
+  <path d="M256 158 C300 214 330 272 330 306 L182 306 C182 272 212 214 256 158 Z" fill="url(#gold)" />
+  <path d="M256 158 C272 178 286 200 297 222 L215 222 C226 200 240 178 256 158 Z" fill="#0d2a2e" opacity="0.22" />
+
+  <!-- tiers of elephants (stylised) -->
+  <g fill="url(#gold)">
+    <rect x="150" y="306" width="212" height="26" rx="8" />
+    <rect x="164" y="332" width="184" height="8" rx="4" />
+    <rect x="172" y="348" width="168" height="22" rx="7" />
+    <rect x="140" y="378" width="232" height="30" rx="10" />
+  </g>
+  <g fill="#071a1c" opacity="0.55">
+    <circle cx="186" cy="319" r="4" />
+    <circle cx="256" cy="319" r="4" />
+    <circle cx="326" cy="319" r="4" />
+    <circle cx="200" cy="359" r="4" />
+    <circle cx="256" cy="359" r="4" />
+    <circle cx="312" cy="359" r="4" />
+  </g>
+
+  <!-- base platform -->
+  <rect x="118" y="416" width="276" height="18" rx="9" fill="url(#gold)" />
+
+  <!-- ornament line -->
+  <path d="M256 456 L268 470 L244 470 Z" fill="url(#gold)" />
+</svg>

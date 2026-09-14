@@ -1,0 +1,38 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const it = messages.itinerary;
+const plans = [it.halfDay, it.fullDay].filter(Boolean);
+---
+
+<section id="itinerary" class="py-20 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{it.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{it.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{it.intro}</p>
+
+    <div class="mt-10 grid lg:grid-cols-2 gap-8">
+      {
+        plans.map((p: any) => (
+          <div class="rounded-2xl border border-gold/25 bg-white/70 p-6">
+            <h3 class="font-display text-2xl text-teak">{p.title}</h3>
+            <p class="mt-1 text-sm text-ink/65">{p.summary}</p>
+
+            <ol class="mt-6 relative border-l border-gold/40 pl-6 space-y-5">
+              {(p.steps ?? []).map((s: any) => (
+                <li class="relative">
+                  <span class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-gold border-2 border-ivory"></span>
+                  <div class="font-display text-gold text-sm">{s.time}</div>
+                  <div class="font-display text-lg text-teak">{s.title}</div>
+                  <p class="mt-1 text-sm text-ink/80">{s.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

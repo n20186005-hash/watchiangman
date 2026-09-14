@@ -1,0 +1,39 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const r = messages.routes;
+const audiences: any[] = r.audiences ?? [];
+---
+
+<section id="routes" class="py-20 bg-white text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{r.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{r.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{r.intro}</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      {
+        audiences.map((a: any) => (
+          <article class="rounded-2xl border border-gold/25 bg-ivory/60 p-6 flex flex-col">
+            <div class="flex items-baseline gap-3">
+              <span class="font-display text-3xl text-gold">{a.tag}</span>
+              <h3 class="font-display text-xl text-teak">{a.title}</h3>
+            </div>
+            <p class="mt-1 text-xs uppercase tracking-wider text-ink/50">{a.meta}</p>
+            <p class="mt-4 text-sm text-ink/80 flex-1">{a.text}</p>
+            <ul class="mt-5 space-y-1.5">
+              {(a.stops ?? []).map((st: string) => (
+                <li class="flex items-start gap-2 text-sm text-teak">
+                  <span class="text-gold mt-0.5">•</span>
+                  <span>{st}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

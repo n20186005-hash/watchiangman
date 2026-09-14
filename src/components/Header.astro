@@ -13,30 +13,37 @@ const navItems = [
   { label: h.home, href: '#home' },
   { label: h.about, href: '#about' },
   { label: h.arch, href: '#arch' },
+  { label: h.legends, href: '#legends' },
   { label: h.history, href: '#history' },
+  { label: h.weather, href: '#weather' },
+  { label: h.seasons, href: '#seasons' },
   { label: h.guide, href: '#guide' },
+  { label: h.routes, href: '#routes' },
+  { label: h.itinerary, href: '#itinerary' },
   { label: h.food, href: '#food' },
   { label: h.gallery, href: '#gallery' },
+  { label: h.facilities, href: '#facilities' },
+  { label: h.responsibility, href: '#responsibility' },
   { label: h.reviews, href: '#reviews' },
   { label: h.map, href: '#map' },
-];
+].filter((i) => Boolean(i.label));
 
 const switchTo = (target: Lang) => `/${target}/`;
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-teak/90 backdrop-blur-md border-b border-gold/20">
-  <div class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-5 h-16 flex items-center gap-4">
     <a href={`/${lang}/`} class="font-display text-goldBright tracking-wide text-lg whitespace-nowrap">
       {siteConfig.name}
     </a>
 
-    <nav class="hidden md:flex items-center md:gap-4 lg:gap-7 text-sm text-ivory/80">
+    <nav class="hidden md:flex flex-1 min-w-0 items-center gap-4 lg:gap-6 text-sm text-ivory/80 overflow-x-auto no-scrollbar">
       {navItems.map((item) => (
         <a href={item.href} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
       ))}
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 ml-auto md:ml-0">
       <div class="flex items-center rounded-full border border-gold/30 overflow-hidden text-xs">
         {languagesList.map((l) => (
           <a

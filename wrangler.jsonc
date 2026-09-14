@@ -1,0 +1,28 @@
+{
+  // Cloudflare Workers (Workers + Assets) — generated for @astrojs/cloudflare
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "watchiangman",
+  "compatibility_date": "2026-09-14",
+  "compatibility_flags": ["nodejs_compat"],
+  // Worker entry produced by `astro build` (handles the on-demand weather island)
+  "main": "./dist/_worker.js/index.js",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Deploy:  npm run deploy   (wrangler deploy)
+  // Preview: npm run preview  (astro preview, runs on workerd)
+  //
+  // Domain canonicalisation — the site is served on the BARE domain
+  // (canonical tags, hreflang and the sitemap all use https://watchiangman.com).
+  //   · src/middleware.ts issues the 301 for requests handled by the Worker
+  //     (server islands, any future SSR route).
+  //   · Prerendered pages are served directly by the static-asset binding, so
+  //     also add this Cloudflare rule for full coverage:
+  //       Bulk Redirect / Page Rule
+  //       https://www.watchiangman.com/*  →  https://watchiangman.com/:splat  (301)
+  //     (`assets.run_worker_first` was tried and breaks the ASSETS binding → 500.)
+}

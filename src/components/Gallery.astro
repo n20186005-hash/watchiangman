@@ -1,5 +1,6 @@
 ---
-import { siteConfig } from '../config';
+import { siteConfig, entity } from '../config';
+import Pic from './Pic.astro';
 
 interface Props {
   messages: Record<string, any>;
@@ -9,6 +10,12 @@ const gallery = messages.gallery;
 const alts: string[] = gallery.alts;
 const count = alts.length;
 const mapsUrl = siteConfig.mapsUrl;
+const imageCopyright = messages.imageCopyright;
+// Alt 语义绑定：实体名 + 城市
+const altFor = (alt: string, i: number) =>
+  i === 0
+    ? `${entity.fullName} - Main view in ${entity.city}, ${entity.country}`
+    : `${alt} — ${entity.fullName}, ${entity.city}`;
 ---
 
 <section id="gallery" class="py-20 bg-ivory text-ink">
@@ -18,16 +25,18 @@ const mapsUrl = siteConfig.mapsUrl;
     <p class="mt-4 max-w-2xl text-ink/80">{gallery.intro}</p>
     {gallery.historicalNote && <p class="mt-2 max-w-2xl text-ink/70 italic text-sm">{gallery.historicalNote}</p>}
     <p class="mt-3 text-xs text-ink/50">{gallery.credits}</p>
+    {imageCopyright && <p class="mt-1 text-xs text-ink/50">{imageCopyright}</p>}
 
     <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[180px]">
       {Array.from({ length: count }).map((_, i) => {
         const big = i === 0; // first photo spans larger
         return (
           <div class={`photo-frame rounded-xl ${big ? 'col-span-2 row-span-2' : ''}`}>
-            <img
+            <Pic
               src={`/gallery/${siteConfig.galleryPrefix}${i + 1}.jpg`}
-              alt={alts[i]}
-              loading="lazy"
+              alt={altFor(alts[i], i)}
+              pictureClass="w-full h-full"
+              loading={i === 0 ? 'eager' : 'lazy'}
             />
           </div>
         );

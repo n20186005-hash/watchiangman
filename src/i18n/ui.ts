@@ -6,13 +6,17 @@ export const defaultLang = 'th';
 export const languagesList = ['th', 'en', 'zh'] as const;
 export type Lang = (typeof languagesList)[number];
 
+// Language switcher labels (default locale: th)
 export const languages: Record<Lang, string> = {
   th: 'ไทย',
-  en: 'English',
-  zh: '中文',
+  zh: '中',
+  en: 'EN',
 };
 
 const messagesMap: Record<Lang, any> = { th, en, zh };
+
+/** Direct access to a locale bundle — used by server islands (which receive only `lang`). */
+export const messagesFor = (lang: Lang): any => messagesMap[lang] ?? messagesMap[defaultLang];
 
 // mapping for <html lang> / hreflang
 export const htmlLang: Record<Lang, string> = {

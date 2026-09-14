@@ -1,18 +1,31 @@
 ---
+import { richParts } from '../config';
+
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
 const about = messages.about;
+const entityLead = about.entityLead ? richParts(about.entityLead) : [];
 ---
 
 <section id="about" class="py-20 bg-ivory text-ink">
   <div class="max-w-7xl mx-auto px-5">
     <p class="font-hand text-gold text-xl md:text-2xl">{about.label}</p>
-    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{about.heading}</h2>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">
+      {about.headingEntity ?? about.heading}
+    </h2>
+    {about.headingEntity && <p class="mt-2 font-display text-lg text-teak/70">{about.heading}</p>}
 
     <div class="grid lg:grid-cols-12 gap-10 mt-10">
       <div class="lg:col-span-7 space-y-4 text-ink/85">
+        {
+          entityLead.length > 0 && (
+            <p class="text-lg text-teak font-medium">
+              {entityLead.map((p) => (p.bold ? <strong class="font-semibold">{p.text}</strong> : <span>{p.text}</span>))}
+            </p>
+          )
+        }
         <p class="text-lg text-teak font-medium">{about.lead}</p>
         <p>{about.paragraph1}</p>
         <p>{about.paragraph2}</p>

@@ -27,6 +27,19 @@ const stars = (r: string) => {
     </div>
     <p class="mt-2 text-xs text-ivory/50">{reviews.declaration}</p>
 
+    <!-- 评价来源与同步时间（评价仅在本页展示，不写入 JSON-LD） -->
+    <p class="mt-4 max-w-3xl rounded-xl border border-gold/25 bg-teak/40 px-4 py-3 text-xs leading-relaxed text-ivory/75">
+      <span class="text-goldBright font-semibold">{reviews.sourceNotesLabel}</span> — {reviews.sourceNote}
+      <a
+        href={mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ml-1 text-goldBright underline underline-offset-2 hover:text-gold"
+      >
+        {reviews.viewAllCta} ↗
+      </a>
+    </p>
+
     <div class="grid md:grid-cols-2 gap-4 mt-8">
       {reviews.featured.map((f) => (
         <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6 italic font-display text-lg">
@@ -63,8 +76,11 @@ const stars = (r: string) => {
       })}
     </div>
 
-    <div class="mt-10 text-center">
-      <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-ivory border border-gold/50 px-6 py-3 rounded-full hover:bg-gold hover:text-teak transition-colors">
+    <div class="mt-10 flex flex-col items-center gap-3">
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-ivory border border-gold/50 px-6 py-3 rounded-full hover:bg-gold hover:text-teak transition-colors">
+        {reviews.viewAllCta ?? reviews.viewLocation}
+      </a>
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-xs text-ivory/50 hover:text-goldBright underline underline-offset-2">
         {reviews.viewLocation}
       </a>
     </div>

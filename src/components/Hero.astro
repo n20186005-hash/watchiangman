@@ -1,5 +1,6 @@
 ---
-import { siteConfig } from '../config';
+import { siteConfig, entity } from '../config';
+import Pic from './Pic.astro';
 import type { Lang } from '../i18n/ui';
 
 interface Props {
@@ -8,13 +9,18 @@ interface Props {
 }
 const { lang, messages } = Astro.props;
 const hero = messages.hero;
+const sync = messages.sync;
 
 const main = hero.titleMain as string;
 const accent = hero.titleAccent as string;
 const parts = main.split(accent);
-const heroImg = '/gallery/wat-chiang-man-13.jpg';
+const heroImg = entity.heroImage;
 const mapsUrl = siteConfig.mapsUrl;
 const coordsLabel = hero.coordsLabel;
+
+// Breadcrumb: attraction → city → province → country
+const crumbs: string[] = (messages?.breadcrumb?.items ?? []).map((i: any) => i.name);
+const breadcrumbLabel = messages?.breadcrumb?.label ?? 'Breadcrumb';
 
 // Full weather-code labels (all languages); only the current language is shipped per page.
 const WEATHER_CODES: Record<number, Record<string, { t: string; s: string }>> = {
@@ -46,15 +52,47 @@ const weatherMap = Object.fromEntries(
 ---
 
 <section id="home" class="relative min-h-screen flex items-end overflow-hidden">
-  <img src={heroImg} alt={main} class="absolute inset-0 w-full h-full object-cover" />
+  <Pic
+    src={heroImg}
+    alt={hero.heroAlt ?? `${entity.fullName} - Main view in ${entity.city}, ${entity.country}`}
+    pictureClass="absolute inset-0"
+    imgClass="w-full h-full object-cover"
+    loading="eager"
+  />
   <div class="absolute inset-0 bg-gradient-to-t from-teakDeep via-teakDeep/70 to-teak/40"></div>
   <div class="hero-glow absolute inset-0"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto w-full px-5 pb-16 pt-28 grid lg:grid-cols-12 gap-10 items-end">
     <div class="lg:col-span-7 text-ivory">
       <p class="font-hand text-gold text-xl md:text-2xl mb-3">{hero.eyebrow}</p>
+
+      <!-- Breadcrumb: {{ATTRACTION_FULL_NAME}} → {{CITY_NAME}} → {{STATE_PROVINCE}} → {{COUNTRY_NAME}} -->
+      {
+        crumbs.length > 0 && (
+          <nav aria-label={breadcrumbLabel} class="mb-4">
+            <ol class="flex flex-wrap items-center gap-1 text-[11px] md:text-xs text-ivory/60">
+              {crumbs.map((c: string, i: number) => (
+                <li class="flex items-center gap-1">
+                  {i === 0 ? (
+                    <a href={`/${lang}/`} class="hover:text-goldBright transition-colors">{c}</a>
+                  ) : (
+                    <span>{c}</span>
+                  )}
+                  {i < crumbs.length - 1 && <span class="text-ivory/35" aria-hidden="true">›</span>}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )
+      }
+
       <h1 class="font-display font-semibold leading-[1.05] text-5xl md:text-7xl lg:text-8xl text-ivory">
         {parts[0]}<span class="gold-text-bright">{accent}</span>{parts[1] ?? ''}
+        {hero.titleCity && (
+          <span class="block md:inline md:align-middle md:ml-3 text-2xl md:text-4xl lg:text-5xl text-ivory/80 font-normal">
+            ({hero.titleCity})
+          </span>
+        )}
       </h1>
       <p class="mt-6 max-w-xl text-ivory/85 text-lg md:text-xl">{hero.subtitle}</p>
 
@@ -69,9 +107,25 @@ const weatherMap = Object.fromEntries(
 
       <div class="mt-8 flex flex-wrap items-center gap-5 text-sm text-ivory/80">
         <span class="stars text-lg">★ {hero.rating}</span>
-        <span>{hero.reviewCount} Google</span>
+        <span>{hero.reviewCount}</span>
         <span class="hidden sm:inline text-ivory/40">·</span>
         <span>{coordsLabel}</span>
+      </div>
+
+      <!-- 评分 / 评价来源与同步时间（评价仅页面展示，不进 JSON-LD） -->
+      <div class="mt-2 space-y-1 text-[11px] md:text-xs text-ivory/60">
+        <p>
+          {sync?.reviewsFrom}
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="ml-1 text-goldBright hover:underline">
+            {sync?.viewAll} ↗
+          </a>
+        </p>
+        <p>
+          {sync?.ratingNote} · {sync?.time} ·
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright hover:underline">
+            {sync?.viewAll} ↗
+          </a>
+        </p>
       </div>
 
       <!-- 30-second quick facts -->

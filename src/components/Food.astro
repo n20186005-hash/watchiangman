@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../config';
+import Pic from './Pic.astro';
 
 interface Props {
   messages: Record<string, any>;
@@ -31,7 +32,7 @@ const foodImg = `/gallery/${siteConfig.galleryPrefix}5.jpg`;
         ))}
       </div>
       <div class="photo-frame rounded-2xl min-h-[280px]">
-        <img src={foodImg} alt={food.heading} class="w-full h-full object-cover" />
+        <Pic src={foodImg} alt={food.heading} pictureClass="w-full h-full" imgClass="w-full h-full object-cover" />
       </div>
     </div>
 

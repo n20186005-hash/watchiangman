@@ -1,11 +1,12 @@
 ---
-import { siteConfig } from '../config';
+import { siteConfig, richParts } from '../config';
 
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
 const guide = messages.guide;
+const nearCluster = guide?.nearby?.cluster ? richParts(guide.nearby.cluster) : [];
 const guideImgs = [
   `/gallery/${siteConfig.galleryPrefix}2.jpg`,
   `/gallery/${siteConfig.galleryPrefix}3.jpg`,
@@ -274,7 +275,17 @@ const guideImgs = [
     <!-- Nearby attractions -->
     {guide.nearby && (
       <div class="mt-14 max-w-4xl">
-        <h3 class="font-display text-2xl text-teak mb-5">{guide.nearby.title}</h3>
+        <h2 class="font-display text-2xl md:text-3xl text-teak mb-1">
+          {guide.nearby.headingEntity ?? guide.nearby.title}
+        </h2>
+        <p class="text-sm text-ink/60 mb-3 font-display">{guide.nearby.title}</p>
+        {
+          nearCluster.length > 0 && (
+            <p class="text-sm text-ink/80 mb-5 max-w-3xl">
+              {nearCluster.map((p) => (p.bold ? <strong class="font-semibold text-teak">{p.text}</strong> : <span>{p.text}</span>))}
+            </p>
+          )
+        }
         <div class="grid sm:grid-cols-3 gap-4">
           {guide.nearby.items.map((it) => (
             <a href={it.url} target="_blank" rel="noopener" class="group rounded-2xl border border-gold/25 bg-white/50 p-5 hover:border-gold hover:shadow-md transition">

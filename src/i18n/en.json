@@ -1,18 +1,389 @@
 {
   "meta": {
-    "title": "Wat Chiang Man · Chiang Mai’s Oldest Temple",
-    "description": "Wat Chiang Man (วัดเชียงมั่น), Chiang Mai’s oldest temple, founded by King Mangrai in 1296. Home of the crystal Buddha Phra Sae Tang Khamani and the elephant-backed chedis."
+    "title": "Wat Chiang Man Chiang Mai: Oldest Temple - Free Entry & Hours",
+    "description": "Visit Wat Chiang Man, Chiang Mai's oldest temple (founded 1296). Free entry, open daily 05:00-19:00, plus dress code, top sights and how to get there.",
+    "ogTitle": "Wat Chiang Man - Chiang Mai's Oldest Temple (Est. 1296)",
+    "ogDescription": "Free-entry temple in Chiang Mai's Old City: opening hours, dress code, the elephant-backed chedi, the crystal and stone Buddhas, and walking directions from Tha Phae Gate."
+  },
+  "sync": {
+    "time": "September 2026",
+    "reviewsFrom": "Reviews come from Google Maps user reviews",
+    "viewAll": "See all reviews on Google Maps",
+    "ratingNote": "Rating & review count synced from Google Maps user reviews",
+    "reviewsNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "reviewsCta": "See all reviews on Google Maps"
+  },
+  "imageCopyright": "All images shown on this website remain the property and copyright of their original photographers.",
+  "breadcrumb": {
+    "label": "Breadcrumb",
+    "items": [
+      { "name": "Wat Chiang Man" },
+      { "name": "Chiang Mai" },
+      { "name": "Chiang Mai Province" },
+      { "name": "Thailand" }
+    ]
   },
   "header": {
     "home": "Home",
     "about": "About",
     "arch": "Architecture",
+    "legends": "Legends",
     "history": "History",
+    "weather": "Weather",
+    "seasons": "Seasons",
     "guide": "Visitor Guide",
+    "routes": "Routes",
+    "itinerary": "Itineraries",
     "food": "Nearby Eats",
     "gallery": "Gallery",
+    "facilities": "Facilities",
+    "responsibility": "Responsibility",
     "reviews": "Reviews",
     "map": "Map"
+  },
+  "weather": {
+    "label": "Plan your visit",
+    "heading": "Weather in Chiang Mai right now",
+    "intro": "The old city sits in a tropical savanna belt: hot days, a clear rainy season, and a hazy spell in late winter. Check today's conditions before you set out on foot.",
+    "nowLabel": "Current conditions",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "windUnit": "km/h",
+    "rainChance": "Rain today",
+    "umbrellaTitle": "Do I need an umbrella?",
+    "umbrellaYes": "Yes — rain is likely today. A compact umbrella also works as shade, which matters more than the rain in the hot season.",
+    "umbrellaNo": "Probably not — little or no rain is expected. A hat, water and sun protection are the more useful things to carry.",
+    "observedLabel": "Observed",
+    "placeLabel": "Location",
+    "forecastTitle": "Next 7 days",
+    "forecastDays": "Daily high / low with rain probability",
+    "todayLabel": "Today",
+    "forecastNote": "Values are modelled for the temple's coordinates inside the old city. In the rainy season, showers usually arrive in the late afternoon and pass within an hour.",
+    "unavailable": "Live conditions are temporarily unavailable — the seasonal table below gives a reliable year-round overview.",
+    "codes": {
+      "clear": "Clear sky",
+      "mainlyClear": "Mainly clear",
+      "partly": "Partly cloudy",
+      "overcast": "Overcast",
+      "fog": "Fog",
+      "drizzle": "Drizzle",
+      "rain": "Rain",
+      "showers": "Rain showers",
+      "snow": "Snow",
+      "storm": "Thunderstorm"
+    },
+    "uv": "UV",
+    "humidityPlain": "Mugginess",
+    "windPlain": "Wind",
+    "levels": {
+      "humidity": { "muggy": "Muggy", "humid": "Humid", "comfy": "Comfortable", "dry": "Dry" },
+      "humidityNote": { "muggy": "Sweat will not dry off", "humid": "Feels warmer than it reads", "comfy": "Comfortable on the skin", "dry": "Keep sipping water" },
+      "uv": { "low": "Low", "moderate": "Moderate", "high": "Strong", "veryHigh": "Very strong", "extreme": "Extreme" },
+      "wind": { "calm": "Light breeze", "breeze": "Breezy", "strong": "Windy", "gale": "Strong wind" }
+    },
+    "advice": {
+      "auto": "Generated from the current forecast — only the conditions that apply are shown. Check the latest forecast before you set off.",
+      "none": "No weather risk to plan around right now",
+      "blocks": {
+        "alert": "Heads up",
+        "dress": "What to wear",
+        "plan": "How to plan the day",
+        "gear": "What to carry",
+        "best": "Best window"
+      },
+      "alert": {
+        "storm": "Thunderstorm about — avoid trees, open ground and high viewpoints",
+        "heavyRain": "Heavy rain — keep away from low, flood-prone lanes and drainage canals",
+        "heat": "Dangerously hot and humid around midday — cut outdoor time short",
+        "wind": "Strong wind — stay clear of signboards, scaffolding and dead branches",
+        "fog": "Poor visibility — slow down if you drive or ride a scooter"
+      },
+      "dress": {
+        "storm": "Quick-dry clothes and grippy shoes; skip long skirts and wide trousers",
+        "heavyRain": "Waterproof jacket and non-slip shoes; a long umbrella is useless here",
+        "rainLikely": "Quick-dry fabrics, and a compact umbrella in the bag",
+        "lightRain": "Light rain — watch your footing on wet stone",
+        "hot": "Hot day — loose, breathable cotton or linen works best",
+        "heat": "Light-coloured, loose clothing so your body can shed heat",
+        "uv": "Sun is strong — hat, sunglasses and sunscreen",
+        "uvExtreme": "Extreme UV — a thin long-sleeve layer plus a hat beats sunscreen alone",
+        "swing": "Big day-to-night swing — carry a light layer you can add or drop",
+        "cold": "Cold day — a warm coat and a scarf earn their space",
+        "wind": "Breezy — wear a hat that will not blow off",
+        "wind7": "Strong wind — a windproof layer, and dress warm underneath",
+        "ok": "Settled weather — everyday light clothing is fine; wear socks, shoes come off at the hall"
+      },
+      "plan": {
+        "storm": "Sit out the storm indoors; boat and high-level activities will likely close",
+        "heavyRain": "Outdoor time will be grim — prioritise indoor stops and covered walkways",
+        "rainLikely": "Rain is likely — put outdoor sightseeing in the morning; afternoon showers usually pass within the hour",
+        "lightRain": "Drizzle will not ruin the old city; soft light is good for photos",
+        "hot": "Skip being outside from 11:00 to 15:00 and rest indoors in between",
+        "heat": "Walk early morning or late afternoon, and make midday an indoor stop",
+        "muggy": "Humid and sticky — slow the pace and drink more water",
+        "uv": "Walk on the shady side of the street and avoid standing in open squares",
+        "wind": "Open-air activities may be affected — keep the schedule flexible",
+        "wind7": "Outdoor activities will likely be cancelled — switch to indoor sightseeing",
+        "sunny": "Clear and pleasant — good for slow outdoor wandering, best light early and late",
+        "cloudy": "No harsh sun — comfortable for a long day outdoors",
+        "fog": "Distant views will be flat — focus on close-up architecture and detail",
+        "courtyard": "Shoes come off before entering the hall, and the courtyard stone bakes in the afternoon — do not stand barefoot",
+        "ok": "Settled weather — a normal itinerary works; just keep drinking water"
+      },
+      "best": {
+        "morning": "Go out before 11:00 or after 16:00 to dodge both the midday heat and the afternoon showers",
+        "wait": "Wait for the rain to ease before heading out — start with an indoor stop",
+        "any": "Any time of day works — plan at your own pace"
+      },
+      "gear": {
+        "umbrella": "Compact umbrella",
+        "foldingUmbrella": "Compact umbrella",
+        "raincoat": "Rain jacket",
+        "windBreaker": "Windbreaker",
+        "shoesGrip": "Non-slip shoes",
+        "hat": "Sun hat",
+        "sunglasses": "Sunglasses",
+        "sunscreen": "Sunscreen",
+        "water": "Drinking water",
+        "layer": "Light layer",
+        "thickCoat": "Warm coat",
+        "scarf": "Scarf",
+        "slipOn": "Slip-on shoes",
+        "socks": "Socks",
+        "mask": "Face mask"
+      },
+      "tips": {
+        "storm": "Storms",
+        "heavyRain": "Heavy rain",
+        "umbrella": "Take an umbrella",
+        "heat": "Heat",
+        "sun": "Strong sun",
+        "swing": "Big swing",
+        "fog": "Low visibility",
+        "comfy": "Comfortable"
+      }
+    }
+  },
+  "seasons": {
+    "label": "When to go",
+    "heading": "Seasonal visiting strategy",
+    "intro": "Three seasons shape life in the old city, plus one annual air-quality window that matters more than the thermometer. This table combines temperature, rainfall, haze and visitor density so you can choose your weeks.",
+    "climateNote": "Temperature and rainfall figures follow the WMO 1991–2020 standard normals for the Chiang Mai station; the hazy period reflects the agricultural burning season typical of February–April across the northern provinces.",
+    "columns": ["Season", "Months", "Temperature", "Rainfall", "Air & crowds", "What to plan for"],
+    "rows": [
+      {
+        "season": "Cool & dry",
+        "months": "Nov – Feb",
+        "temp": "14 – 30 °C",
+        "rain": "Very low (under 30 mm/month)",
+        "air": "Clear mornings, peak visitor season",
+        "advice": "The best all-round window: warm days, cool evenings. Reserve accommodation early for December and January, and arrive before 09:00 for quiet photographs."
+      },
+      {
+        "season": "Hazy",
+        "months": "Feb – Apr",
+        "temp": "18 – 38 °C",
+        "rain": "Very low",
+        "air": "PM2.5 often elevated; afternoon haze",
+        "advice": "Visit early in the morning or wait for the first rains in late April. Travellers with respiratory sensitivity should check the daily air-quality index before walking far."
+      },
+      {
+        "season": "Hot",
+        "months": "Mar – May",
+        "temp": "24 – 40 °C",
+        "rain": "Low, with isolated storms",
+        "air": "Strong light, fewer visitors",
+        "advice": "Plan the temple before 10:00 or after 16:00. Carry water, use the shaded courtyards, and expect the stone terraces to be hot underfoot at midday."
+      },
+      {
+        "season": "Rainy",
+        "months": "Jun – Oct",
+        "temp": "23 – 33 °C",
+        "rain": "Frequent afternoon downpours",
+        "air": "Cleanest air of the year, quietest temple",
+        "advice": "Mornings are usually dry and the courtyards are almost empty. Expect heavy but short showers after 15:00 — the wet stone and low clouds make this the most photogenic season."
+      }
+    ],
+    "tip": "Whatever the season, the temple grounds open early. The two hours after sunrise give you soft light, cool air and the fewest visitors."
+  },
+  "routes": {
+    "label": "Plan by traveller",
+    "heading": "Three routes for three kinds of visitors",
+    "intro": "The compound is compact, so the difference between routes is pace and focus rather than distance. Choose the one that matches who you are travelling with.",
+    "audiences": [
+      {
+        "tag": "01",
+        "title": "Families with children",
+        "meta": "45 – 60 min · pushchair friendly",
+        "text": "Enter from Ratchapakhinai Road and make the elephant-backed chedi the first stop — children usually find the stone elephants before they notice the gold. Then rest in the shaded courtyard and finish at the ordination-hall terrace.",
+        "stops": ["Elephant-backed chedi", "Shaded courtyard", "Ordination hall terrace"]
+      },
+      {
+        "tag": "02",
+        "title": "Photography & architecture",
+        "meta": "90 – 120 min · best 07:00 – 09:00",
+        "text": "Work clockwise from the viharn: the naga staircase balustrades, the teak ordination hall, the elephant chedi in raking light, then the scripture library. Late afternoon adds warm light on the goldwork.",
+        "stops": ["Naga staircase", "Teak ordination hall", "Elephant chedi", "Scripture library (ho trai)"]
+      },
+      {
+        "tag": "03",
+        "title": "Low-effort & step-free",
+        "meta": "30 – 45 min · mostly level ground",
+        "text": "The main approach from Ratchapakhinai Road is level. A single loop along the courtyard edge covers the chedi, the ordination hall exterior and the city pillar shrine without climbing steps; low kerbs remain in places.",
+        "stops": ["Level main entrance", "Chedi viewing point", "Ordination hall exterior", "Bench seating"]
+      }
+    ]
+  },
+  "itinerary": {
+    "label": "Suggested routes",
+    "heading": "Half-day and full-day plans",
+    "intro": "Both plans start at Wat Chiang Man and stay inside the old city walls, so everything is reachable on foot or with one short ride.",
+    "halfDay": {
+      "title": "Half day (about 3 hours)",
+      "summary": "The temple plus the two or three neighbouring monuments that give it context.",
+      "steps": [
+        { "time": "08:00", "title": "Arrive at Wat Chiang Man", "text": "Cool air, soft light and the monks' morning routine. Start at the elephant-backed chedi." },
+        { "time": "09:00", "title": "Ordination hall & city pillar", "text": "Step inside the main hall, then see the city pillar shrine that ties the temple to the founding of the city." },
+        { "time": "10:00", "title": "Walk south to Wat Phra Singh", "text": "A 15-minute walk through the old city to Chiang Mai's other great temple complex." },
+        { "time": "11:00", "title": "Three Kings Monument", "text": "The square in front of the former provincial hall, where the founding alliance of the city is commemorated." }
+      ]
+    },
+    "fullDay": {
+      "title": "Full day (about 8 hours)",
+      "summary": "The temple, the old city, a museum stop and an evening market.",
+      "steps": [
+        { "time": "08:00", "title": "Wat Chiang Man", "text": "The oldest temple in the city, at its quietest in the early morning." },
+        { "time": "10:00", "title": "Old city loop on foot", "text": "Wat Chedi Luang and Wat Phra Singh, with a coffee stop on a side street." },
+        { "time": "12:30", "title": "Lunch near the moat", "text": "A wide choice of northern Thai restaurants within a few blocks of the moat." },
+        { "time": "14:00", "title": "Museum & city walls", "text": "Chiang Mai City Arts & Cultural Centre or a walk along the remaining brick ramparts and gates." },
+        { "time": "16:30", "title": "Return for late light", "text": "Come back to the temple when the tour groups have gone and the stone turns golden." },
+        { "time": "18:30", "title": "Evening market", "text": "One of the night markets inside or just outside the walls for dinner and local crafts." }
+      ]
+    }
+  },
+  "facilities": {
+    "label": "Visitor services",
+    "heading": "Facilities in and around the temple",
+    "intro": "A short, practical overview of what exists within a few minutes of the gate — described by type only, so you know what to look for rather than which shop to visit.",
+    "neutralNote": "As an independent non-profit guide we do not recommend individual businesses. Categories, distances and the usual price level are given instead; opening hours and prices change often, so confirm locally.",
+    "items": [
+      {
+        "icon": "🚻",
+        "title": "Restrooms",
+        "type": "Public toilets · inside the compound",
+        "text": "Public toilets are available inside the temple grounds near the entrance and car park. They are basic but maintained; carry your own tissues and hand sanitiser as a precaution."
+      },
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "type": "Small on-site lot · free / donation",
+        "text": "A compact parking area inside the compound serves cars and scooters. It fills up around midday in high season; roadside parking along Ratchapakhinai Road is the usual fallback."
+      },
+      {
+        "icon": "🍜",
+        "title": "Food & drink",
+        "type": "Family restaurants, cafés, market stalls",
+        "text": "Within a five-minute walk you will find small family-run restaurants, coffee stands and a morning market selling northern Thai dishes. Vegetarian options are common in the old city."
+      },
+      {
+        "icon": "🛏️",
+        "title": "Accommodation",
+        "type": "Guesthouses → boutique hotels",
+        "text": "The old city offers a full range, from budget guesthouses to small boutique hotels, mostly low-rise buildings in converted shophouses. Staying inside the moat puts the temple within walking distance."
+      },
+      {
+        "icon": "🏪",
+        "title": "Groceries & convenience",
+        "type": "Convenience stores, minimarkets, pharmacies",
+        "text": "Convenience stores and small minimarkets line the main roads inside the moat, most open long hours. A traditional market near the moat sells fruit, drinking water and daily goods."
+      },
+      {
+        "icon": "⛽",
+        "title": "Fuel & EV charging",
+        "type": "Fuel stations, public charge points",
+        "text": "Fuel stations sit on the moat ring road about five minutes away by car, and public AC/DC charge points for electric vehicles are available at shopping centres and larger hotels on the ring roads."
+      },
+      {
+        "icon": "🏥",
+        "title": "Medical & pharmacy",
+        "type": "Pharmacies · hospitals 10–15 min away",
+        "text": "Pharmacies are frequent in the old city and can handle minor complaints. For anything serious, general and private hospitals are roughly ten to fifteen minutes by car; keep travel insurance details handy."
+      },
+      {
+        "icon": "🏧",
+        "title": "Cash & banking",
+        "type": "ATMs · exchange kiosks",
+        "text": "ATMs and licensed exchange kiosks are found along the main streets inside the moat. Small temples and market stalls are cash-only, so keep some banknotes for donations and snacks."
+      }
+    ],
+    "walkingNote": "Distances from the temple gate: convenience store 2–4 min · restaurant 3–5 min · pharmacy 5–8 min · fuel station 5 min by car."
+  },
+  "responsibility": {
+    "label": "Science & visitor responsibility",
+    "heading": "How to visit respectfully",
+    "intro": "Wat Chiang Man is a working monastery as well as a monument: roughly sixty monks and novices live and study here. Understanding what you are looking at makes the visit better, and a little care keeps it that way.",
+    "groups": [
+      {
+        "title": "Dress & entering",
+        "points": [
+          "Cover shoulders and knees; a light scarf solves most problems in seconds.",
+          "Remove shoes before entering a hall, and never point the soles of your feet towards a Buddha image.",
+          "Take off hats inside buildings and step over — never on — the raised threshold."
+        ]
+      },
+      {
+        "title": "Conduct & quiet",
+        "points": [
+          "Keep voices low; chanting and lessons take place most mornings and late afternoons.",
+          "Do not touch murals, Buddha images or the carved woodwork — skin oils damage them permanently.",
+          "Ask before photographing monks, and never photograph a person at prayer."
+        ]
+      },
+      {
+        "title": "Offerings & the environment",
+        "points": [
+          "Entry is free; donations are voluntary and go to the monastery's upkeep.",
+          "Leave no litter, and prefer a refillable bottle — the old city has several refill points.",
+          "Drones and tripods are not appropriate inside a monastery without written permission."
+        ]
+      }
+    ],
+    "pledge": "Take photographs, leave nothing behind, and let the people who worship here set the pace. That is the whole of temple etiquette.",
+    "scienceNote": "Why it matters: lime plaster murals, teak structures and sandstone reliefs in northern Thailand survive in a hot, humid climate only because they are looked after daily. Humidity, flash photography and touching are the three things that age them fastest."
+  },
+  "legends": {
+    "label": "Stories & chronicles",
+    "heading": "Legends behind the temple",
+    "intro": "Northern Thai history is recorded in palm-leaf chronicles known as tamnan, where fact, faith and royal propaganda sit side by side. These are the stories that attach to Wat Chiang Man.",
+    "stories": [
+      {
+        "tag": "Founding",
+        "title": "The resting place of the white elephant",
+        "text": "King Mangrai is said to have chosen this ground while searching for a new capital: a white elephant — the ultimate symbol of royal authority in the region — stopped here, trumpeted three times and refused to move. The king built his camp, 'Wiang Chiang Man', around it, and the later city of Chiang Mai grew outward from that camp."
+      },
+      {
+        "tag": "Sacred image",
+        "title": "Phra Sae Tang Khamani, the crystal Buddha",
+        "text": "A small image carved from clear crystal, it is said to have been brought from the Mon kingdom of Lavo (today's Lopburi) and carried north by Mangrai himself. Tradition credits it with protecting the city from storm and fire. It is normally kept in the raised scripture library and shown publicly during the Songkran festival in April."
+      },
+      {
+        "tag": "Rain ritual",
+        "title": "Phra Sila and the promise of rain",
+        "text": "A sandstone relief of the Buddha, Phra Sila is the temple's other great image. Because it is associated with rain-making, it is carried through the streets of the old city at Songkran so that townspeople can pour scented water over it and ask for a good growing season."
+      },
+      {
+        "tag": "Alliance",
+        "title": "The pact of the three kings",
+        "text": "Before founding Chiang Mai, Mangrai of Lanna, Ramkhamhaeng of Sukhothai and Ngam Mueang of Phayao are said to have sworn an alliance that secured the northern valleys. The Three Kings Monument, a short walk from the temple, commemorates it — and explains why this corner of the old city is treated as the city's birthplace."
+      },
+      {
+        "tag": "Symbolism",
+        "title": "Nagas, elephants and guardian serpents",
+        "text": "The staircases of the viharns are flanked by balustrades in the form of nagas, the serpent water spirits of Buddhist cosmology, while the great chedi rests on rows of sculpted elephants. Together they state the temple's purpose in stone: the Buddha's teaching upheld by the power of the earth."
+      }
+    ],
+    "note": "Chronicle traditions, not documented fact. Where the chronicles and archaeology disagree, the inscriptions and excavation reports are the better guide — but the stories are what local people have told for seven centuries."
   },
   "hero": {
     "titleMain": "Wat Chiang Man",
@@ -21,10 +392,12 @@
     "subtitle": "The oldest temple in Chiang Mai, where King Mangrai first settled when he founded the city — a serene Lanna sanctuary of whitewashed walls, teak pillars and elephant-backed stupas.",
     "cta1": "Plan your visit",
     "cta2": "View on map",
-    "rating": "4.6",
-    "reviewCount": "6,096 Google reviews",
+    "rating": "4.7",
+    "reviewCount": "6,192 Google reviews",
     "coordsLabel": "Old City, Chiang Mai",
     "viewLocation": "View location on Google Maps",
+    "titleCity": "Chiang Mai",
+    "heroAlt": "Wat Chiang Man - Main view in Chiang Mai, Thailand",
     "boardCategory": "At a glance",
     "boardTitle": "Wat Chiang Man",
     "boardEn": "วัดเชียงมั่น · Chiang Mai, Thailand",
@@ -52,6 +425,8 @@
   "about": {
     "label": "About",
     "heading": "Chiang Mai’s first temple",
+    "headingEntity": "About Wat Chiang Man — Chiang Mai’s First Temple",
+    "entityLead": "Welcome to **Wat Chiang Man** (วัดเชียงมั่น), the temple that **watchiangman.com** is dedicated to. Located in the heart of **Chiang Mai**, **Chiang Mai** Province, **Thailand**, it is the oldest temple inside the old city walls and a primary landmark for travellers visiting the region.",
     "lead": "Tucked into the quiet north of the old walled city, Wat Chiang Man is where Chiang Mai began — both as a sacred site and as a royal residence.",
     "paragraph1": "In 1296 King Mangrai (Mengrai) chose this spot as his base while laying out the new Lanna capital. He built a modest pavilion here and lived in it during the city’s founding — making Wat Chiang Man the oldest temple within Chiang Mai’s moat.",
     "paragraph2": "Centuries later the temple remains a living place of worship. Its whitewashed walls, weathered teak and small scale give it an intimacy the larger city temples lack, even as it guards two of northern Thailand’s most revered Buddha images.",
@@ -95,6 +470,10 @@
   "history": {
     "label": "History",
     "heading": "From royal camp to city shrine",
+    "headingEntity": "History & Significance of Wat Chiang Man",
+    "compareBefore": "Wat Chiang Man main viharn facade",
+    "compareAfter": "Elephant-backed chedi at Wat Chiang Man",
+    "compareHint": "Drag the slider left and right to compare architectural details",
     "intro": "Wat Chiang Man’s story is the story of Chiang Mai’s founding — a temple that began as a king’s temporary dwelling and grew into the city’s spiritual heart.",
     "blocks": [
       { "date": "1296", "title": "Mangrai’s encampment", "text": "King Mangrai of the Lanna kingdom chose the site as his headquarters while founding Chiang Mai, living in a pavilion that became the temple’s nucleus." },
@@ -190,15 +569,23 @@
         { "title": "Watch on-site signs", "desc": "Core areas such as the Ubosot (ordination hall) may restrict entry or require shoe removal — follow posted signs and monk guidance." }
       ]
     },
-    "faqTitle": "Good to know",
+    "faqTitle": "Wat Chiang Man FAQ — entry fee, hours, dress code & history",
     "faqs": [
+      { "q": "Where is Wat Chiang Man located?", "a": "Wat Chiang Man is located at 171 Ratchapakhinai Rd, Old City, Si Phum, Mueang Chiang Mai District, Chiang Mai 50200, Thailand (18.7938, 98.9867), inside the old city moat." },
+      { "q": "Is Wat Chiang Man free to visit?", "a": "Yes. Wat Chiang Man is a public temple and is free to visit year-round; donations are welcome but never required." },
       { "q": "How old is Wat Chiang Man?", "a": "It was founded in 1296 by King Mangrai, making it the oldest temple in Chiang Mai." },
       { "q": "Is entry really free?", "a": "Yes. Donations are welcome but not required." },
+      { "q": "What are the opening hours of Wat Chiang Man?", "a": "The temple grounds are open daily from about 05:00 to 19:00; there is no closing day." },
       { "q": "Can I see the crystal Buddha?", "a": "It is kept in the ho trai and shown publicly during Songkran (April); at other times, ask a monk." },
-      { "q": "How long should I spend?", "a": "30–60 minutes is enough to see the highlights at a relaxed pace." }
+      { "q": "How long should I spend?", "a": "30–60 minutes is enough to see the highlights at a relaxed pace." },
+      { "q": "What is the dress code at Wat Chiang Man?", "a": "Cover shoulders and knees, and remove your shoes before stepping into any hall. A light scarf or sarong solves most outfit problems on the spot." },
+      { "q": "Is Wat Chiang Man the oldest temple in Chiang Mai?", "a": "Yes. It was founded in 1296 by King Mangrai while he was laying out the new Lanna capital, which makes it the oldest temple inside the old city moat." },
+      { "q": "How do I get to Wat Chiang Man from Tha Phae Gate?", "a": "It is a 15-20 minute walk north through the old city, or a short red songthaew ride — ask for Ratchapakhinai Road. The temple is on the corner near the city pillar shrine." }
     ],
     "nearby": {
       "title": "Nearby in the old city",
+      "headingEntity": "Landmarks & Attractions Around Wat Chiang Man",
+      "cluster": "When visiting **Wat Chiang Man**, visitors can easily explore surrounding historical landmarks and points of interest, including **Wat Phra Singh** and **Three Kings Monument**.",
       "items": [
         { "name": "Three Kings Monument", "desc": "The city’s symbolic founding square, 10 min walk south.", "url": "https://maps.google.com/?q=Three+Kings+Monument+Chiang+Mai" },
         { "name": "Wat Phra Singh", "desc": "A grand Lanna temple 15 min west.", "url": "https://maps.google.com/?q=Wat+Phra+Singh+Chiang+Mai" },
@@ -257,6 +644,9 @@
     "intro": "Wat Chiang Man earns consistently high marks for its calm atmosphere and historic beauty.",
     "disclaimer": "Ratings summarise public visitor feedback and are provided for guidance only.",
     "declaration": "This site is an independent visitor guide and is not affiliated with the temple or Google.",
+    "sourceNote": "Reviews synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "sourceNotesLabel": "Reviews · synced September 2026",
+    "viewAllCta": "See all reviews on Google Maps",
     "featured": [
       { "text": "“The oldest and one of the most peaceful temples in the old city — the elephant chedis are unforgettable.”", "source": "Google review" },
       { "text": "“Come early. We had the courtyard to ourselves and the light on the white walls was perfect.”", "source": "Google review" }
@@ -273,6 +663,14 @@
     "heading": "Where this info comes from",
     "intro": "Key facts are drawn from public references; photos are illustrative of the temple.",
     "photoTitle": "Image credits",
+    "reviewTitle": "Reviews",
+    "reviewNote": "Reviews · synced September 2026 — synced from Google Maps user reviews; copyright belongs to the original authors and Google Maps. Reviews are shown on this page only and are not included in our structured data.",
+    "reviewLinkLabel": "See all reviews on Google Maps",
+    "weatherTitle": "Weather & climate data",
+    "weatherText": "Live conditions and the 7-day forecast are produced for the temple's coordinates by the Open-Meteo forecast service; seasonal normals use the WMO 1991–2020 reference period for the Chiang Mai station. Figures are travel guidance, not an official warning service — follow local advisories in severe weather.",
+    "govTitle": "Official tourism portal",
+    "govText": "For official updates and regional tourism information, visit the Thailand / Chiang Mai Official Tourism Portal.",
+    "govLinkLabel": "Official Tourism Portal",
     "photoItems": [
       { "text": "Gallery images are illustrative of Wat Chiang Man’s architecture and setting.", "linkLabel": "Reference", "url": "https://en.wikipedia.org/wiki/Wat_Chiang_Man" }
     ],
@@ -287,9 +685,10 @@
   "mapSection": {
     "label": "Map & Location",
     "heading": "Find Wat Chiang Man",
+    "headingEntity": "Location & How to Visit Wat Chiang Man in Chiang Mai",
     "lead": "In the quiet north of the old city, on Ratchapakhinai Road, a short walk from the moat.",
     "stats": [
-      { "tag": "Rating", "value": "4.6", "sub": "6,096 reviews" },
+      { "tag": "Rating", "value": "4.7", "sub": "6,192 reviews" },
       { "tag": "Open", "value": "05:00–19:00", "sub": "Daily" },
       { "tag": "Founded", "value": "1296", "sub": "King Mangrai" }
     ],
@@ -323,6 +722,34 @@
     "unofficial": "This site is not affiliated with or endorsed by Wat Chiang Man or Google.",
     "dataSource": "Maps & place data: Google Maps.",
     "copyright": "© 2026 Wat Chiang Man Guide. All rights reserved."
+  },
+  "etiquette": {
+    "label": "Temple etiquette",
+    "heading": "How to visit respectfully",
+    "lead": "Wat Chiang Man is a working monastery — around a hundred monks and novices live and study here. These few habits keep the visit comfortable for everyone.",
+    "columns": [
+      { "title": "Dress code", "items": ["Cover shoulders and knees — no singlets or shorts inside the halls", "Shoes off before stepping onto any raised hall platform", "Sarongs are rented near the gate for about 100 THB"] },
+      { "title": "Conduct", "items": ["Greet with a wai, palms together at the chest", "Never point the soles of your feet at a Buddha image", "Ask before photographing monks"] },
+      { "title": "Worship sequence", "items": ["Light the candle and incense, then kneel or stand with palms together", "Offer the lotus, then press a leaf of gold onto the image", "Sprinkle a little lustral water and bow three times"] }
+    ],
+    "chant": {
+      "title": "What the chant means",
+      "verseLabel": "Pali",
+      "verse": "Namo tassa bhagavato arahato sammā-sambuddhassa",
+      "meaning": "“Homage to the Blessed One, the Worthy One, the Fully Enlightened One” — recited three times to open a ceremony. It honours the Buddha rather than asking for anything.",
+      "note": "You will hear Sadhu (สาธุ) at the end of a blessing: “so be it”. Repeating it back is the simplest way to join in."
+    },
+    "cta": "Full dress code & etiquette guide"
+  },
+  "subpages": {
+    "label": "In depth",
+    "heading": "Go deeper on Wat Chiang Man",
+    "lead": "Four focused guides: dress code and temple etiquette, the 1296 history and the three highlights, transport and prices, and the Old City walks around the temple.",
+    "cta": "Read the guide",
+    "back": "Back to the main guide",
+    "readNext": "Keep reading",
+    "backToGuide": "Back to the full Wat Chiang Man guide",
+    "faqTitle": "Frequently asked questions"
   },
   "legal": {
     "privacy": {

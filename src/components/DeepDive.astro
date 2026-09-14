@@ -1,0 +1,39 @@
+---
+import type { Lang } from '../i18n/ui';
+import { subSlugs, subPageFor } from '../data/subpages';
+
+interface Props {
+  lang: Lang;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const ui = messages.subpages;
+const pages = subSlugs.map((s) => subPageFor(lang, s)!).filter(Boolean);
+---
+
+{
+  ui && (
+    <section id="deep-dive" class="py-20 bg-ivory text-ink">
+      <div class="max-w-7xl mx-auto px-5">
+        <p class="font-hand text-gold text-xl md:text-2xl">{ui.label}</p>
+        <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{ui.heading}</h2>
+        <p class="mt-4 max-w-2xl text-ink/80">{ui.lead}</p>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {pages.map((p) => (
+            <a
+              href={`/${lang}/${p.slug}/`}
+              class="group flex flex-col rounded-2xl border border-gold/25 bg-white/50 p-6 hover:border-gold hover:shadow-md transition"
+            >
+              <h3 class="font-display text-teak font-semibold text-xl">{p.nav}</h3>
+              <p class="mt-2 text-sm text-ink/70 flex-1">{p.heading}</p>
+              <span class="mt-4 text-sm text-gold group-hover:text-goldBright">
+                → {ui.cta}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,41 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const r = messages.responsibility;
+const groups: any[] = r.groups ?? [];
+---
+
+<section id="responsibility" class="py-20 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{r.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{r.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{r.intro}</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      {
+        groups.map((g: any) => (
+          <article class="rounded-2xl border border-gold/25 bg-white/70 p-6">
+            <h3 class="font-display text-xl text-teak">{g.title}</h3>
+            <ul class="mt-4 space-y-3">
+              {(g.points ?? []).map((p: string) => (
+                <li class="flex items-start gap-2 text-sm text-ink/85">
+                  <span class="text-gold">✓</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-8 grid lg:grid-cols-2 gap-6">
+      <p class="rounded-2xl bg-teak px-6 py-5 font-display text-lg text-ivory">{r.pledge}</p>
+      <p class="rounded-2xl border border-gold/25 bg-gold/5 px-6 py-5 text-sm leading-relaxed text-ink/80">
+        {r.scienceNote}
+      </p>
+    </div>
+  </div>
+</section>

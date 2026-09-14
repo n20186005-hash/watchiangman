@@ -1,4 +1,6 @@
 ---
+import Pic from './Pic.astro';
+
 interface Props {
   beforeImg: string;
   afterImg: string;
@@ -10,12 +12,17 @@ const { beforeImg, afterImg, beforeAlt = "2017 年（整治前）", afterAlt = "
 
 <div class="relative w-full rounded-2xl overflow-hidden border border-gold/20 shadow-xl group aspect-video" style="container-type: inline-size;">
   <!-- After Image (Background) -->
-  <img src={afterImg} alt={afterAlt} class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+  <Pic src={afterImg} alt={afterAlt} imgClass="absolute inset-0 w-full h-full object-cover pointer-events-none" />
   
   <!-- Before Image (Foreground with CSS resize) -->
   <div class="absolute top-0 left-0 h-full w-[50%] overflow-hidden bg-teakDeep/20 z-10 before-container border-r-2 border-goldBright shadow-[2px_0_10px_rgba(0,0,0,0.5)]">
     <!-- Using 100cqw ensures the image matches the outer container's width exactly, preventing squishing during resize -->
-    <img src={beforeImg} alt={beforeAlt} class="absolute top-0 left-0 h-full object-cover object-left max-w-none pointer-events-none" style="width: 100cqw;" />
+    <Pic
+      src={beforeImg}
+      alt={beforeAlt}
+      imgClass="absolute top-0 left-0 h-full object-cover object-left max-w-none pointer-events-none"
+      style="width: 100cqw;"
+    />
     
     <!-- Drag Handle UI (Visual only) -->
     <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 bg-goldBright rounded-full flex items-center justify-center shadow-lg pointer-events-none z-20">

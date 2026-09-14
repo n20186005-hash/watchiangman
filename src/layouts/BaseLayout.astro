@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
-import { siteConfig } from '../config';
+import { siteConfig, entity, ga4Id } from '../config';
 import { languages, htmlLang, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -9,67 +9,236 @@ interface Props {
   title?: string;
   description?: string;
   messages: any;
+  /** Sub-pages pass their own Q&A so the FAQPage block matches the page topic. */
+  faqs?: { q: string; a: string }[];
+  /** Overrides the default breadcrumb trail (entity → city → province → country). */
+  crumbs?: string[];
+  /** Emits schema.org Article — deep-dive sub-pages only. */
+  article?: {
+    headline: string;
+    description?: string;
+    section?: string;
+    datePublished: string;
+    dateModified?: string;
+  };
+  /** Emits schema.org HowTo — currently the transport page only. */
+  howTo?: {
+    name: string;
+    description: string;
+    totalTime?: string;
+    estimatedCost?: { currency: string; value: string };
+    steps: { name: string; text: string }[];
+  };
 }
-const { lang, title, description, messages } = Astro.props;
+const { lang, title, description, messages, faqs: pageFaqs, crumbs, article, howTo } = Astro.props;
 
-const defaultTitle = 'Wat Chiang Man · Chiang Mai Old City Temple';
+const base = `https://${entity.domain}`;
+const canonical = new URL(Astro.url.pathname, `${base}/`);
+const homeUrl = new URL(`/${lang}/`, `${base}/`).toString();
+const heroImage = `${base}${entity.heroImage}`;
+const ogImage = heroImage;
+const ogImageAlt = `${entity.fullName} in ${entity.city}`;
+
+// ---------- Language alternates (same path, swapped locale) ----------
+// Keeps hreflang reciprocal on every page, including /privacy-policy etc.
+const pathNoLang = Astro.url.pathname.replace(new RegExp(`^/${lang}(?=/|$)`), '') || '/';
+const urlFor = (l: typeof lang) =>
+  new URL(`/${l}${pathNoLang === '/' ? '/' : pathNoLang}`, `${base}/`).toString();
+// English carries ~88% of impressions → it is the fallback for unmatched locales.
+const xDefaultLang = 'en' as typeof lang;
+const allLangs = Object.keys(languages) as (typeof lang)[];
+
+// ---------- TDK (single-attraction entity binding) ----------
+const defaultTitle = `${entity.fullName} (${entity.city}) - Visitor Guide & Location`;
+const defaultDescription =
+  `Discover ${entity.fullName}, the iconic ${entity.category.toLowerCase()} in ${entity.city}, ` +
+  `${entity.stateProvince}, ${entity.country}. View location map, opening details, nearby ` +
+  `${entity.nearbyLandmark1}, and travel tips.`;
 const pageTitle = title ?? messages?.meta?.title ?? defaultTitle;
-const pageDesc =
-  description ?? messages?.meta?.description ?? fallbackDesc();
-function fallbackDesc() {
-  return 'Wat Chiang Man (วัดเชียงมั่น), the oldest temple in Chiang Mai, founded by King Mangrai in 1296 — home of the crystal Buddha and the elephant-backed chedis.';
-}
+const pageDesc = description ?? messages?.meta?.description ?? defaultDescription;
+const ogTitle = messages?.meta?.ogTitle ?? `${entity.fullName} - ${entity.city} Travel Guide`;
+const ogDesc =
+  messages?.meta?.ogDescription ??
+  `Visitor guide to ${entity.fullName} in ${entity.city}, ${entity.stateProvince}, ${entity.country}.`;
 
-const canonical = new URL(Astro.url.pathname, `https://${siteConfig.domain}/`);
-const ogImage = `https://${siteConfig.domain}/gallery/wat-chiang-man-1.jpg`;
-const faqs = (messages?.guide?.faqs ?? []).map((f) => ({
+// ---------- FAQ (featured snippet / AI overview) ----------
+const faqs = ((pageFaqs ?? messages?.guide?.faqs ?? []) as { q: string; a: string }[]).map((f) => ({
   '@type': 'Question',
   name: f.q,
   acceptedAnswer: { '@type': 'Answer', text: f.a },
 }));
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'TouristAttraction',
-    name: siteConfig.name,
-    alternateName: ['清曼寺', 'วัดเชียงมั่น', 'Wat Chiang Man Temple'],
-    description: pageDesc,
-    image: ogImage,
-    url: canonical.toString(),
-    isAccessibleForFree: true,
-    touristType: ['Buddhist', 'Heritage', 'Architecture'],
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '171 Ratchapakhinai Rd, Old City, Si Phum',
-      addressLocality: 'Mueang Chiang Mai District',
-      addressRegion: 'Chiang Mai',
-      postalCode: '50200',
-      addressCountry: 'TH',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: siteConfig.coords.lat,
-      longitude: siteConfig.coords.lng,
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: siteConfig.rating,
-      reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '05:00',
-      closes: '19:00',
-    },
-    sameAs: siteConfig.sameAs,
+
+// ---------- Breadcrumb (entity → city → province → country) ----------
+const crumbNames: string[] = (messages?.breadcrumb?.items ?? []).map((i: any) => i.name);
+const crumbList: string[] = crumbs?.length
+  ? crumbs
+  : crumbNames.length
+    ? crumbNames
+    : [entity.fullName, entity.city, entity.stateProvince, entity.country];
+
+const attractionId = `${base}/#attraction`;
+const webPageId = `${canonical}#webpage`;
+const breadcrumbId = `${canonical}#breadcrumb`;
+const galleryImages = [1, 2, 3].map((n) => `${base}/gallery/${siteConfig.galleryPrefix}${n}.jpg`);
+
+const attraction = {
+  // A temple is a tourist attraction *and* a civic/landmark structure — declaring
+  // both types helps Google pick the right rich-result treatment.
+  '@type': ['TouristAttraction', 'CivicStructure', 'LandmarksOrHistoricalBuildings'],
+  '@id': attractionId,
+  name: entity.fullName,
+  alternateName: [
+    entity.shortName,
+    entity.localName,
+    `${entity.city} ${entity.fullName}`,
+    `${entity.fullName} ${entity.city}`,
+    '清曼寺',
+  ],
+  description: pageDesc,
+  url: homeUrl,
+  image: galleryImages.map((url, i) => ({
+    '@type': 'ImageObject',
+    url,
+    contentUrl: url,
+    caption: `${entity.fullName} — ${entity.city}, ${entity.country}`,
+    ...(i === 0 ? { license: `${base}/terms-of-service`, creditText: entity.fullName } : {}),
+  })),
+  isAccessibleForFree: true,
+  publicAccess: true,
+  touristType: ['Buddhist', 'Heritage', 'Architecture'],
+  foundingDate: '1296',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: entity.streetAddress,
+    addressLocality: entity.city,
+    addressRegion: entity.stateProvince,
+    postalCode: entity.postalCode,
+    addressCountry: entity.countryCode2Letter,
   },
-  ...(faqs.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs }] : []),
-];
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: entity.latitude,
+    longitude: entity.longitude,
+  },
+  hasMap: entity.mapsShareUrl,
+  // Short form (crawler-friendly) plus the structured specification.
+  openingHours: 'Mo-Su 05:00-19:00',
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '05:00',
+    closes: '19:00',
+  },
+  sameAs: [
+    entity.mapsShareUrl,
+    entity.govtTourismUrl,
+    'https://en.wikipedia.org/wiki/Wat_Chiang_Man',
+  ],
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': breadcrumbId,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: base + '/' },
+    { '@type': 'ListItem', position: 2, name: crumbList[0], item: homeUrl },
+    ...crumbList.slice(1).map((n: string, i: number) => ({
+      '@type': 'ListItem',
+      position: 3 + i,
+      name: n,
+    })),
+  ],
+};
+
+// ---------- Publisher + Article (sub-pages) ----------
+const publisher = {
+  '@type': 'Organization',
+  '@id': `${base}/#organization`,
+  name: siteConfig.name,
+  url: base + '/',
+  logo: { '@type': 'ImageObject', url: heroImage, contentUrl: heroImage },
+};
+
+const articleId = `${canonical}#article`;
+// Google caps headlines near 110 characters — trim so the node stays eligible.
+const rawHeadline = article?.headline ?? pageTitle;
+const headline =
+  rawHeadline.length > 110 ? `${rawHeadline.slice(0, 107).trimEnd()}…` : rawHeadline;
+
+const articleLd = article
+  ? {
+      '@type': 'Article',
+      '@id': articleId,
+      isPartOf: { '@id': webPageId },
+      mainEntityOfPage: { '@id': webPageId },
+      headline,
+      description: article.description ?? pageDesc,
+      ...(article.section ? { articleSection: article.section } : {}),
+      inLanguage: htmlLang[lang],
+      datePublished: article.datePublished,
+      dateModified: article.dateModified ?? article.datePublished,
+      author: { '@id': publisher['@id'] },
+      publisher: { '@id': publisher['@id'] },
+      image: { '@type': 'ImageObject', url: heroImage, contentUrl: heroImage },
+      about: { '@id': attractionId },
+    }
+  : null;
+
+// ---------- HowTo (transport page) ----------
+const howToLd = howTo
+  ? {
+      '@type': 'HowTo',
+      '@id': `${canonical}#howto`,
+      name: howTo.name,
+      description: howTo.description,
+      inLanguage: htmlLang[lang],
+      isPartOf: { '@id': webPageId },
+      ...(howTo.totalTime ? { totalTime: howTo.totalTime } : {}),
+      ...(howTo.estimatedCost
+        ? {
+            estimatedCost: {
+              '@type': 'MonetaryAmount',
+              currency: howTo.estimatedCost.currency,
+              value: howTo.estimatedCost.value,
+            },
+          }
+        : {}),
+      step: howTo.steps.map((s: { name: string; text: string }, i: number) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: s.name,
+        text: s.text,
+      })),
+    }
+  : null;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    attraction,
+    {
+      '@type': 'WebPage',
+      '@id': webPageId,
+      url: canonical.toString(),
+      name: pageTitle,
+      description: pageDesc,
+      inLanguage: htmlLang[lang],
+      isPartOf: { '@type': 'WebSite', '@id': `${base}/#website`, url: base + '/', name: entity.fullName },
+      about: { '@id': attractionId },
+      breadcrumb: { '@id': breadcrumbId },
+      primaryImageOfPage: { '@type': 'ImageObject', url: heroImage, contentUrl: heroImage },
+      ...(articleLd ? { mainEntity: { '@id': articleId } } : {}),
+    },
+    breadcrumb,
+    ...(articleLd ? [publisher, articleLd] : []),
+    ...(howToLd ? [howToLd] : []),
+    ...(faqs.length ? [{ '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs }] : []),
+  ],
+};
 
 const mUi = htmlLang[lang] ?? 'en';
-const mRegion = lang === 'zh' ? 'us' : lang === 'th' ? 'th' : lang === 'en' ? 'gb' : 'us';
-const altLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
+const altLangs = allLangs.filter((l) => l !== lang);
 ---
 
 <!doctype html>
@@ -77,39 +246,53 @@ const altLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/jpeg" href={`/gallery/wat-chiang-man-1.jpg`} />
+    <link rel="icon" type="image/jpeg" href={`/gallery/${siteConfig.galleryPrefix}1.jpg`} />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
+
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Canonical + full reciprocal hreflang set (self-referencing + x-default) -->
     <link rel="canonical" href={canonical} />
+    {allLangs.map((l) => <link rel="alternate" hreflang={htmlLang[l]} href={urlFor(l)} />)}
+    <link rel="alternate" hreflang="x-default" href={urlFor(xDefaultLang)} />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDesc} />
+    <meta property="og:site_name" content={entity.fullName} />
+    <meta property="og:locale" content={mUi.replace('-', '_')} />
+    {altLangs.map((l) => <meta property="og:locale:alternate" content={htmlLang[l].replace('-', '_')} />)}
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDesc} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDesc} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDesc} />
     <meta name="twitter:image" content={ogImage} />
-    <link rel="alternate" hreflang={mUi} href={canonical} />
-    {
-      altLangs.map((l) => (
-        <link
-          rel="alternate"
-          hreflang={htmlLang[l]}
-          href={new URL(`/${l}/`, `https://${siteConfig.domain}/`).toString()}
-        />
-      ))
-    }
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
-    <script>
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0d2a2e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content={entity.fullName} />
+    <meta name="application-name" content={entity.fullName} />
+    <link rel="apple-touch-icon" href={entity.heroImage} />
+
+    <!-- Google tag (gtag.js) · GA4 -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-HXM22WWPKP');
+      gtag('config', ga4Id);
     </script>
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -117,5 +300,16 @@ const altLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
   </head>
   <body class="bg-stone-50 text-stone-800 antialiased">
     <slot />
+    {
+      import.meta.env.PROD && (
+        <script is:inline>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+              navigator.serviceWorker.register('/sw.js').catch(function () {});
+            });
+          }
+        </script>
+      )
+    }
   </body>
 </html>

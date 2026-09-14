@@ -1,9 +1,16 @@
 import { defineConfig } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://watchiangman.com',
+  // Cloudflare Workers (Workers + Assets, directory mode)
+  // Static pages are prerendered; the weather block is a server island (server:defer)
+  // rendered on demand inside the Worker.
+  adapter: cloudflare({
+    platformProxy: { enabled: true },
+  }),
   i18n: {
     defaultLocale: 'th',
     locales: ['th', 'en', 'zh'],
