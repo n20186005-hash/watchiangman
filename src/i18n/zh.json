@@ -6,11 +6,11 @@
     "ogDescription": "清曼寺游览指南：免费入寺、每日 05:00-19:00 开放、着装要求、大象承托佛塔、水晶佛与石佛，以及从塔佩门步行前往的路线。"
   },
   "sync": {
-    "time": "2026 年 9 月",
+    "time": "2026 年 10 月",
     "reviewsFrom": "评价来自谷歌地图用户评价",
     "viewAll": "点击查看谷歌地图全部评价",
-    "ratingNote": "评分与评价数同步自谷歌地图（Google Maps）用户评价",
-    "reviewsNote": "同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有",
+    "ratingNote": "评分与评价数来自谷歌地图用户评价，最近核对",
+    "reviewsNote": "同步自 Google 地图用户评价，最近核对时间 2026 年 10 月；版权归原作者与 Google 地图所有",
     "reviewsCta": "在谷歌地图查看全部评价"
   },
   "imageCopyright": "本网站所展示的所有图片产权及版权均归原摄影者所有。",
@@ -373,7 +373,7 @@
     "eyebrow": "清迈古城 · 建于 1296 年",
     "subtitle": "清迈最古老的寺庙，孟莱王建城时最初驻跸之地 —— 粉墙、柚木立柱与象托佛塔构成的兰纳静谧圣境。",
     "cta1": "规划行程", "cta2": "查看地图",
-    "rating": "4.7", "reviewCount": "6,192 条 Google 评价",
+    "rating": "4.7", "reviewCount": "6,229 条 Google 评价",
     "coordsLabel": "清迈古城", "viewLocation": "在 Google Maps 查看位置",
     "titleCity": "清迈", "heroAlt": "清曼寺 - 泰国清迈主景",
     "boardCategory": "一览", "boardTitle": "清曼寺", "boardEn": "วัดเชียงมั่น · Chiang Mai, Thailand",
@@ -448,11 +448,9 @@
     "label": "评价", "heading": "游客怎么说",
     "intro": "清曼寺以宁静氛围与历史之美，长期获得高分评价。",
     "disclaimer": "评分为公开访客反馈的汇总，仅供参考。", "declaration": "本网站为独立游览指南，与寺院或 Google 无隶属关系。",
-    "sourceNote": "同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有",
-    "sourceNotesLabel": "评价 · 同步时间 2026 年 9 月",
+    "sourceNote": "同步自 Google 地图用户评价，最近核对时间 2026 年 10 月；版权归原作者与 Google 地图所有",
+    "sourceNotesLabel": "评价 · 最近核对 2026 年 10 月",
     "viewAllCta": "在谷歌地图查看全部评价",
-    "featured": [ { "text": "“古城中最古老也最宁静的寺庙 —— 象托佛塔令人难忘。”", "source": "Google 评价" }, { "text": "“早点来。庭院只有我们，白墙上的光格外美。”", "source": "Google 评价" } ],
-    "items": [ { "text": "小巧却充满历史，水晶佛令人着迷。", "rating": "5", "name": "Anya R.", "date": "2026 年 3 月" }, { "text": "爱上象托佛塔 —— 清迈别处没有。", "rating": "5", "name": "Tom B.", "date": "2026 年 2 月" }, { "text": "安静且整洁，清晨的好开端。", "rating": "4", "name": "Lin W.", "date": "2026 年 1 月" } ],
     "viewLocation": "在 Google Maps 查看位置"
   },
   "sources": {
@@ -460,7 +458,7 @@
     "intro": "关键事实取自公开参考资料；图片为寺院示意。",
     "photoTitle": "图片署名",
     "reviewTitle": "评价",
-    "reviewNote": "评价 · 同步时间 2026 年 9 月 —— 同步自 Google 地图用户评价；版权归原作者与 Google 地图所有。评价仅在页面展示，不写入本站结构化数据。",
+    "reviewNote": "评价 · 最近核对 2026 年 10 月 —— 同步自 Google 地图用户评价；版权归原作者与 Google 地图所有。评价仅在页面展示，不写入本站结构化数据。",
     "reviewLinkLabel": "在谷歌地图查看全部评价",
     "weatherTitle": "天气与气候数据",
     "weatherText": "实时天气与 7 日预报由 Open-Meteo 预报服务按清曼寺坐标点生成；季节常年值采用世界气象组织（WMO）1991–2020 参考期的清迈站数据。以上信息为出行参考，不构成官方预警，恶劣天气请遵从当地通告。",
@@ -475,7 +473,7 @@
     "label": "地图与位置",     "heading": "找到清曼寺",
     "headingEntity": "清曼寺的位置与到访方式（清迈）",
     "lead": "位于古城北隅的安静地带，Ratchapakhinai 路上，距护城河几步之遥。",
-    "stats": [ { "tag": "评分", "value": "4.7", "sub": "6,192 条评价" }, { "tag": "开放", "value": "05:00–19:00", "sub": "每日" }, { "tag": "创立", "value": "1296", "sub": "孟莱王" } ],
+    "stats": [ { "tag": "评分", "value": "4.7", "sub": "6,229 条评价" }, { "tag": "开放", "value": "05:00–19:00", "sub": "每日" }, { "tag": "创立", "value": "1296", "sub": "孟莱王" } ],
     "address": "171 Ratchapakhinai Rd, Old City, Si Phum, Mueang Chiang Mai District, Chiang Mai 50200, Thailand", "plusCode": "QXVQ+GP", "coords": "18.7938, 98.9867"
   },
   "footer": {

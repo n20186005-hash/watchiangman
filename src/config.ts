@@ -19,11 +19,12 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'Wat Chiang Man',
-  domain: 'watchiangman.com',
+  // Canonical host is the www subdomain (see wrangler.jsonc: bare → www 301).
+  domain: 'www.watchiangman.com',
   phone: '',
   // Synced from Google Maps user reviews — see `sync.time` in i18n/*.json
   rating: '4.7',
-  reviewCount: '6,192',
+  reviewCount: '6,229',
   coords: { lat: 18.7938, lng: 98.9867 },
   // Google Maps — shared by Hero / Gallery / Reviews / Footer (4 visible links) + JSON-LD sameAs
   mapsUrl: 'https://maps.app.goo.gl/DdaTVFZ9VYRFPztZ7',
@@ -76,7 +77,7 @@ export interface AttractionEntity {
 }
 
 export const entity: AttractionEntity = {
-  domain: 'watchiangman.com',
+  domain: 'www.watchiangman.com',
   fullName: 'Wat Chiang Man',
   // Domain meaning: watchiangman.com → “Wat Chiang Man”
   shortName: 'Wat Chiang Man',

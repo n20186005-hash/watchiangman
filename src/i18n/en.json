@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "Wat Chiang Man Chiang Mai: Oldest Temple - Free Entry & Hours",
-    "description": "Visit Wat Chiang Man, Chiang Mai's oldest temple (founded 1296). Free entry, open daily 05:00-19:00, plus dress code, top sights and how to get there.",
+    "description": "Explore Wat Chiang Man, Chiang Mai's oldest temple. Find visiting hours, entrance fees, dress code, elephant chedi highlights and directions in the Old City.",
     "ogTitle": "Wat Chiang Man - Chiang Mai's Oldest Temple (Est. 1296)",
     "ogDescription": "Free-entry temple in Chiang Mai's Old City: opening hours, dress code, the elephant-backed chedi, the crystal and stone Buddhas, and walking directions from Tha Phae Gate."
   },
   "sync": {
-    "time": "September 2026",
+    "time": "October 2026",
     "reviewsFrom": "Reviews come from Google Maps user reviews",
     "viewAll": "See all reviews on Google Maps",
-    "ratingNote": "Rating & review count synced from Google Maps user reviews",
-    "reviewsNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "ratingNote": "Rating & review count from Google Maps user reviews, last checked",
+    "reviewsNote": "Synced from Google Maps user reviews, last checked October 2026; copyright belongs to the original authors and Google Maps.",
     "reviewsCta": "See all reviews on Google Maps"
   },
   "imageCopyright": "All images shown on this website remain the property and copyright of their original photographers.",
@@ -393,7 +393,7 @@
     "cta1": "Plan your visit",
     "cta2": "View on map",
     "rating": "4.7",
-    "reviewCount": "6,192 Google reviews",
+    "reviewCount": "6,229 Google reviews",
     "coordsLabel": "Old City, Chiang Mai",
     "viewLocation": "View location on Google Maps",
     "titleCity": "Chiang Mai",
@@ -644,18 +644,9 @@
     "intro": "Wat Chiang Man earns consistently high marks for its calm atmosphere and historic beauty.",
     "disclaimer": "Ratings summarise public visitor feedback and are provided for guidance only.",
     "declaration": "This site is an independent visitor guide and is not affiliated with the temple or Google.",
-    "sourceNote": "Reviews synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
-    "sourceNotesLabel": "Reviews · synced September 2026",
+    "sourceNote": "Reviews synced from Google Maps user reviews, last checked October 2026; copyright belongs to the original authors and Google Maps.",
+    "sourceNotesLabel": "Reviews · last checked October 2026",
     "viewAllCta": "See all reviews on Google Maps",
-    "featured": [
-      { "text": "“The oldest and one of the most peaceful temples in the old city — the elephant chedis are unforgettable.”", "source": "Google review" },
-      { "text": "“Come early. We had the courtyard to ourselves and the light on the white walls was perfect.”", "source": "Google review" }
-    ],
-    "items": [
-      { "text": "Small but full of history. The crystal Buddha is mesmerising.", "rating": "5", "name": "Anya R.", "date": "March 2026" },
-      { "text": "Loved the elephant stupas — unlike anything else in Chiang Mai.", "rating": "5", "name": "Tom B.", "date": "February 2026" },
-      { "text": "Quiet and well kept. A lovely start to the morning.", "rating": "4", "name": "Lin W.", "date": "January 2026" }
-    ],
     "viewLocation": "View location on Google Maps"
   },
   "sources": {
@@ -664,7 +655,7 @@
     "intro": "Key facts are drawn from public references; photos are illustrative of the temple.",
     "photoTitle": "Image credits",
     "reviewTitle": "Reviews",
-    "reviewNote": "Reviews · synced September 2026 — synced from Google Maps user reviews; copyright belongs to the original authors and Google Maps. Reviews are shown on this page only and are not included in our structured data.",
+    "reviewNote": "Reviews · last checked October 2026 — synced from Google Maps user reviews; copyright belongs to the original authors and Google Maps. Reviews are shown on this page only and are not included in our structured data.",
     "reviewLinkLabel": "See all reviews on Google Maps",
     "weatherTitle": "Weather & climate data",
     "weatherText": "Live conditions and the 7-day forecast are produced for the temple's coordinates by the Open-Meteo forecast service; seasonal normals use the WMO 1991–2020 reference period for the Chiang Mai station. Figures are travel guidance, not an official warning service — follow local advisories in severe weather.",
@@ -688,7 +679,7 @@
     "headingEntity": "Location & How to Visit Wat Chiang Man in Chiang Mai",
     "lead": "In the quiet north of the old city, on Ratchapakhinai Road, a short walk from the moat.",
     "stats": [
-      { "tag": "Rating", "value": "4.7", "sub": "6,192 reviews" },
+      { "tag": "Rating", "value": "4.7", "sub": "6,229 reviews" },
       { "tag": "Open", "value": "05:00–19:00", "sub": "Daily" },
       { "tag": "Founded", "value": "1296", "sub": "King Mangrai" }
     ],

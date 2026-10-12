@@ -45,6 +45,8 @@ export interface SubPage {
   heading: string;
   /** Intro paragraph under the H1 */
   lead: string;
+  /** Optional quick-facts row (entry fee / hours / dress code) under the intro. */
+  quickFacts?: { label: string; value: string }[];
   sections: SubSection[];
   faqs: SubFaq[];
   /** Emits schema.org HowTo when present (transport page). */

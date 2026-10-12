@@ -11,6 +11,11 @@ export const en: SubPageSet = {
     heading: 'Wat Chiang Man visitor guide: dress code, etiquette and worship',
     lead:
       'Wat Chiang Man is first of all a working monastery — around a hundred monks and novices live and study here. The temple is free to enter and welcomes visitors all day, but a few customs keep the visit comfortable for everyone. This guide covers what to wear, how to behave, and what the offerings at the ordination hall actually mean.',
+    quickFacts: [
+      { label: 'Entry fee', value: 'Free — donations welcome' },
+      { label: 'Opening hours', value: 'Daily 05:00–19:00' },
+      { label: 'Dress code', value: 'Shoulders & knees covered · shoes off in halls' },
+    ],
     sections: [
       {
         h: 'Dress code: cover shoulders and knees',

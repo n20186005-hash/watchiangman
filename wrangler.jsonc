@@ -16,13 +16,13 @@
   // Deploy:  npm run deploy   (wrangler deploy)
   // Preview: npm run preview  (astro preview, runs on workerd)
   //
-  // Domain canonicalisation — the site is served on the BARE domain
-  // (canonical tags, hreflang and the sitemap all use https://watchiangman.com).
+  // Domain canonicalisation — the site is served on the WWW host
+  // (canonical tags, hreflang and the sitemap all use https://www.watchiangman.com).
   //   · src/middleware.ts issues the 301 for requests handled by the Worker
   //     (server islands, any future SSR route).
   //   · Prerendered pages are served directly by the static-asset binding, so
   //     also add this Cloudflare rule for full coverage:
-  //       Bulk Redirect / Page Rule
-  //       https://www.watchiangman.com/*  →  https://watchiangman.com/:splat  (301)
+  //       Bulk Redirect / Redirect Rule
+  //       https://watchiangman.com/*  →  https://www.watchiangman.com/:splat  (301)
   //     (`assets.run_worker_first` was tried and breaks the ASSETS binding → 500.)
 }

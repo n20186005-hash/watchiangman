@@ -2,205 +2,205 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://watchiangman.com/th/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/" />
+    <loc>https://www.watchiangman.com/th/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/" />
+    <loc>https://www.watchiangman.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/" />
+    <loc>https://www.watchiangman.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/privacy-policy</loc>
+    <loc>https://www.watchiangman.com/th/privacy-policy</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/terms-of-service</loc>
+    <loc>https://www.watchiangman.com/th/terms-of-service</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/cookie-settings</loc>
+    <loc>https://www.watchiangman.com/th/cookie-settings</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/privacy-policy</loc>
+    <loc>https://www.watchiangman.com/en/privacy-policy</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/terms-of-service</loc>
+    <loc>https://www.watchiangman.com/en/terms-of-service</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/cookie-settings</loc>
+    <loc>https://www.watchiangman.com/en/cookie-settings</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/privacy-policy</loc>
+    <loc>https://www.watchiangman.com/zh/privacy-policy</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/terms-of-service</loc>
+    <loc>https://www.watchiangman.com/zh/terms-of-service</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/cookie-settings</loc>
+    <loc>https://www.watchiangman.com/zh/cookie-settings</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/visitor-guide/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/visitor-guide/" />
+    <loc>https://www.watchiangman.com/th/visitor-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/visitor-guide/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/visitor-guide/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/visitor-guide/" />
+    <loc>https://www.watchiangman.com/en/visitor-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/visitor-guide/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/visitor-guide/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/visitor-guide/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/visitor-guide/" />
+    <loc>https://www.watchiangman.com/zh/visitor-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/visitor-guide/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/visitor-guide/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/history-and-highlights/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/history-and-highlights/" />
+    <loc>https://www.watchiangman.com/th/history-and-highlights/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/history-and-highlights/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/history-and-highlights/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/history-and-highlights/" />
+    <loc>https://www.watchiangman.com/en/history-and-highlights/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/history-and-highlights/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/history-and-highlights/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/history-and-highlights/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/history-and-highlights/" />
+    <loc>https://www.watchiangman.com/zh/history-and-highlights/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/history-and-highlights/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/history-and-highlights/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/how-to-get-there/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/how-to-get-there/" />
+    <loc>https://www.watchiangman.com/th/how-to-get-there/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/how-to-get-there/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/how-to-get-there/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/how-to-get-there/" />
+    <loc>https://www.watchiangman.com/en/how-to-get-there/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/how-to-get-there/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/how-to-get-there/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/how-to-get-there/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/how-to-get-there/" />
+    <loc>https://www.watchiangman.com/zh/how-to-get-there/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/how-to-get-there/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/how-to-get-there/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/th/nearby-attractions/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/nearby-attractions/" />
+    <loc>https://www.watchiangman.com/th/nearby-attractions/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/nearby-attractions/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/en/nearby-attractions/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/nearby-attractions/" />
+    <loc>https://www.watchiangman.com/en/nearby-attractions/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/nearby-attractions/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://watchiangman.com/zh/nearby-attractions/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://watchiangman.com/th/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://watchiangman.com/en/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://watchiangman.com/zh/nearby-attractions/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchiangman.com/en/nearby-attractions/" />
+    <loc>https://www.watchiangman.com/zh/nearby-attractions/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.watchiangman.com/th/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.watchiangman.com/en/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.watchiangman.com/zh/nearby-attractions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.watchiangman.com/en/nearby-attractions/" />
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
