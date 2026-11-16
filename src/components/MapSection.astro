@@ -1,12 +1,13 @@
 ---
 import { siteConfig, entity } from '../config';
+import en from '../i18n/en.json';
 
 interface Props {
   lang: any;
   messages: Record<string, any>;
 }
 const { lang, messages } = Astro.props;
-const map = messages.mapSection;
+const map = messages.mapSection as typeof en.mapSection;
 const sync = messages.sync;
 const sources = messages.sources;
 const { lat, lng } = siteConfig.coords;

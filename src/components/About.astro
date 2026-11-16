@@ -1,11 +1,12 @@
 ---
 import { richParts } from '../config';
+import en from '../i18n/en.json';
 
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
-const about = messages.about;
+const about = messages.about as typeof en.about;
 const entityLead = about.entityLead ? richParts(about.entityLead) : [];
 ---
 

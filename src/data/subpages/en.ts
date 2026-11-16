@@ -1,6 +1,12 @@
 import type { SubPageSet } from './types';
+import { extraEn } from './seo-expansion';
+import { nearbyEn } from './nearby-places';
+import { moreEn } from './nearby-more';
 
 export const en: SubPageSet = {
+  ...extraEn,
+  ...nearbyEn,
+  ...moreEn,
   'visitor-guide': {
     slug: 'visitor-guide',
     nav: 'Dress code & etiquette',

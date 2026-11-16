@@ -1,11 +1,12 @@
 ---
 import { siteConfig, entity } from '../config';
+import en from '../i18n/en.json';
 
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
-const s = messages.sources;
+const s = messages.sources as typeof en.sources;
 const imageCopyright = messages.imageCopyright;
 ---
 

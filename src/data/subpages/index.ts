@@ -10,6 +10,15 @@ export const subSlugs: SubSlug[] = [
   'history-and-highlights',
   'how-to-get-there',
   'nearby-attractions',
+  'entrance-fee-and-hours',
+  'lanna-architecture',
+  'old-city-walking-route',
+  'three-kings-monument',
+  'wat-chedi-luang',
+  'wat-phra-singh',
+  'wat-lam-chang',
+  'chiang-mai-city-arts-centre',
+  'wat-inthakhin-sadue-muang',
 ];
 
 export const subPages: Record<Lang, Record<SubSlug, SubPage>> = { en, th, zh };

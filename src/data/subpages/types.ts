@@ -47,6 +47,21 @@ export interface SubPage {
   lead: string;
   /** Optional quick-facts row (entry fee / hours / dress code) under the intro. */
   quickFacts?: { label: string; value: string }[];
+  /** Destination-specific data, used for nearby attraction pages. */
+  destination?: { name: string; address: string; mapsUrl: string; image: string; alt: string };
+  /** Second-screen management and historical context. */
+  management?: { heading: string; body: string };
+  /** Existing or newly sourced location-specific images (1–5). */
+  photos?: { src: string; alt: string }[];
+  visitPlan?: {
+    highlights: string[];
+    tips: string[];
+    steps: string[];
+    photoSpots: string[];
+    transport: string[];
+    hours: string;
+    ticket: string;
+  };
   sections: SubSection[];
   faqs: SubFaq[];
   /** Emits schema.org HowTo when present (transport page). */
@@ -57,6 +72,15 @@ export type SubSlug =
   | 'visitor-guide'
   | 'history-and-highlights'
   | 'how-to-get-there'
-  | 'nearby-attractions';
+  | 'nearby-attractions'
+  | 'entrance-fee-and-hours'
+  | 'lanna-architecture'
+  | 'old-city-walking-route'
+  | 'three-kings-monument'
+  | 'wat-chedi-luang'
+  | 'wat-phra-singh'
+  | 'wat-lam-chang'
+  | 'chiang-mai-city-arts-centre'
+  | 'wat-inthakhin-sadue-muang';
 
 export type SubPageSet = Record<SubSlug, SubPage>;

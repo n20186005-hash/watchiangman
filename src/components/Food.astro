@@ -1,12 +1,13 @@
 ---
 import { siteConfig } from '../config';
 import Pic from './Pic.astro';
+import en from '../i18n/en.json';
 
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
-const food = messages.food;
+const food = messages.food as typeof en.food;
 const foodImg = `/gallery/${siteConfig.galleryPrefix}5.jpg`;
 ---
 

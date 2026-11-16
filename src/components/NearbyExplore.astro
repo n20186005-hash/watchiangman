@@ -1,0 +1,32 @@
+---
+import type { Lang } from '../i18n/ui';
+import { subPageFor } from '../data/subpages';
+const { lang } = Astro.props as { lang: Lang };
+const slugs = ['three-kings-monument', 'wat-chedi-luang', 'wat-phra-singh', 'wat-lam-chang', 'chiang-mai-city-arts-centre', 'wat-inthakhin-sadue-muang'] as const;
+const places = slugs.map((slug) => subPageFor(lang, slug)!).filter(Boolean);
+const heading = { th: 'เที่ยวต่อรอบวัดเชียงมั่น', en: 'Explore more of Chiang Mai Old City', zh: '探索清曼寺周边景点' }[lang];
+const lead = { th: 'เดินเที่ยวอนุสาวรีย์และวัดสำคัญใกล้เคียง มีคู่มือภาษาไทยและแผนที่เฉพาะสถานที่', en: 'Turn a temple visit into an Old City walk. Explore three independently mapped nearby landmarks.', zh: '从清曼寺延伸一段古城步行路线，逐站了解历史、建筑、实景照片及独立导航。' }[lang];
+const cta = { th: 'อ่านคู่มือสถานที่', en: 'Explore this place', zh: '查看景点攻略' }[lang];
+---
+
+<section id="nearby-explore" class="py-20 bg-ivory text-ink scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{lang === 'th' ? 'สถานที่ใกล้เคียง' : lang === 'zh' ? '周边游览' : 'Nearby attractions'}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{heading}</h2>
+    <p class="mt-4 max-w-2xl text-ink/80">{lead}</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      {places.map((place) => (
+        <article class="rounded-2xl border border-gold/25 bg-white/70 overflow-hidden flex flex-col">
+          <a href={`/${lang}/${place.slug}/`} aria-label={place.nav}>
+            <img src={place.destination!.image} alt={lang === 'en' ? place.destination!.alt : `${place.nav} — ${lang === 'zh' ? '实景照片' : 'ภาพสถานที่จริง'}`} loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover" />
+          </a>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl text-teak font-semibold">{place.nav}</h3>
+            <p class="mt-2 text-sm text-ink/75 flex-1">{place.lead}</p>
+            <a href={`/${lang}/${place.slug}/`} class="mt-5 text-sm text-gold font-semibold hover:text-teak">{cta} →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

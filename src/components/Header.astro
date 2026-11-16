@@ -8,6 +8,7 @@ interface Props {
 }
 const { lang, messages } = Astro.props;
 const h = messages.header;
+const onHome = Astro.url.pathname === `/${lang}/`;
 
 const navItems = [
   { label: h.home, href: '#home' },
@@ -25,10 +26,14 @@ const navItems = [
   { label: h.facilities, href: '#facilities' },
   { label: h.responsibility, href: '#responsibility' },
   { label: h.reviews, href: '#reviews' },
+  { label: { th: 'เที่ยวใกล้เคียง', en: 'Explore', zh: '周边景点' }[lang], href: '#nearby-explore' },
   { label: h.map, href: '#map' },
-].filter((i) => Boolean(i.label));
+].filter((i) => Boolean(i.label)).map((i) => ({ ...i, href: onHome ? i.href : `/${lang}/${i.href}` }));
 
-const switchTo = (target: Lang) => `/${target}/`;
+const switchTo = (target: Lang) => {
+  const relative = Astro.url.pathname.replace(/^\/(th|en|zh)(?=\/|$)/, '');
+  return `/${target}${relative || '/'}`;
+};
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-teak/90 backdrop-blur-md border-b border-gold/20">

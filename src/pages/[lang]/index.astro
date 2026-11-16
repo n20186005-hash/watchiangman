@@ -9,6 +9,7 @@ import History from '../../components/History.astro';
   import Guide from '../../components/Guide.astro';
 import Etiquette from '../../components/Etiquette.astro';
 import DeepDive from '../../components/DeepDive.astro';
+import NearbyExplore from '../../components/NearbyExplore.astro';
   import Sources from '../../components/Sources.astro';
   import Food from '../../components/Food.astro';
 import Gallery from '../../components/Gallery.astro';
@@ -61,6 +62,7 @@ const { lang, messages } = await getI18n(Astro.url);
     <Reviews messages={messages} />
     <Sources messages={messages} />
     <DeepDive lang={lang} messages={messages} />
+    <NearbyExplore lang={lang} />
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />

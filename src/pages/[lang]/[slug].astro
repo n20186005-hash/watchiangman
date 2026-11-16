@@ -21,9 +21,36 @@ const m = { th, en, zh }[lang];
 const page = subPageFor(lang, slug)!;
 const ui = m.subpages;
 // Publication date for the Article schema — bump it when a page is materially rewritten.
-const articleDate = '2026-09-14';
+const articleDate = page.destination || ['entrance-fee-and-hours', 'lanna-architecture', 'old-city-walking-route'].includes(slug)
+  ? '2026-11-16' : '2026-09-14';
+const destination = page.destination;
+const targetMap = destination?.mapsUrl ?? siteConfig.mapsUrl;
+const pagePhotos = page.photos ?? [
+  { src: '/gallery/wat-chiang-man-chiang-mai-13.jpg', alt: 'Wat Chiang Man temple buildings in Chiang Mai Old City' },
+  { src: '/gallery/wat-chiang-man-chiang-mai-5.jpg', alt: 'Historic architecture at Wat Chiang Man' },
+];
+const defaultManagement = {
+  heading: lang === 'th' ? 'เกี่ยวกับวัดเชียงมั่นและผู้ดูแล' : lang === 'zh' ? '关于清曼寺及管理主体' : 'About Wat Chiang Man and its custodians',
+  body: lang === 'th'
+    ? 'วัดเชียงมั่นเป็นพระอารามพุทธที่ยังประกอบศาสนกิจ คณะสงฆ์และผู้เกี่ยวข้องดูแลกิจกรรมประจำวัน การเข้าวิหาร และการบำรุงรักษา วัดมีความสำคัญต่อประวัติศาสตร์เมืองเชียงใหม่ตั้งแต่สมัยพญามังราย และยังเป็นพื้นที่ศรัทธาของชุมชนในปัจจุบัน'
+    : lang === 'zh'
+    ? '清曼寺是一座持续进行佛教宗教活动的寺院，寺方僧团及相关维护人员负责日常寺务、殿堂进入安排与建筑维护。寺院与孟莱王时期清迈建城历史密切相关，至今仍是本地社区的礼佛空间，而不只是供游客观赏的历史建筑。'
+    : 'Wat Chiang Man is an active Buddhist monastery. Its monastic community and supporting caretakers oversee daily religious activities, access to worship halls and maintenance. Closely connected with Chiang Mai’s early history under King Mangrai, it remains a place of devotion for local people as well as a historic attraction.'
+};
+const management = page.management ?? defaultManagement;
+const detailLabels = {
+  en: { highlights: 'Why visit', tip: 'Visit tips', hours: 'Opening hours', ticket: 'Ticket prices', route: 'Suggested visit route', photos: 'Photography viewpoints', reviews: 'Visitor reviews', transport: 'Transport and location', check: 'Confirm current access at the venue; religious ceremonies, events and individual halls may affect the schedule.', ticketNote: 'Check the admission notice at this attraction. Do not assume nearby temples or museums have the same policy.', reviewsNote: 'For recent visitor experiences, ratings and review counts, open this attraction’s own Google Maps listing. This guide does not copy a rating from another landmark.', step: 'Stop' },
+  th: { highlights: 'จุดเด่นที่ควรชม', tip: 'คำแนะนำก่อนเที่ยว', hours: 'เวลาเปิดทำการ', ticket: 'ค่าเข้าชม', route: 'เส้นทางเที่ยวแนะนำ', photos: 'มุมถ่ายภาพ', reviews: 'ความคิดเห็นผู้เยี่ยมชม', transport: 'การเดินทางและที่ตั้ง', check: 'ตรวจสอบเวลาเข้าชมหน้างาน กิจกรรมทางศาสนา งานพิเศษ หรือการปิดวิหารอาจเปลี่ยนเวลาได้', ticketNote: 'ตรวจสอบป้ายค่าเข้าชมของสถานที่นี้ อย่าใช้ข้อมูลของวัดหรือพิพิธภัณฑ์ข้างเคียงแทน', reviewsNote: 'ดูคะแนน จำนวนรีวิว และประสบการณ์ล่าสุดจาก Google Maps ของสถานที่นี้โดยตรง โดยไม่ยืมคะแนนจากจุดอื่น', step: 'จุดที่' },
+  zh: { highlights: '景区特色与必看重点', tip: '游览建议', hours: '开放时间', ticket: '门票价格', route: '推荐游览路线', photos: '摄影机位', reviews: '游客评价', transport: '交通指南与位置', check: '开放时间请现场核实；法会、特别活动或殿堂临时关闭可能影响入内。', ticketNote: '请查看该景点自己的票务公告，不把其他寺院或博物馆的门票政策套用到这里。', reviewsNote: '近期评分、评论数量与游客反馈，请查看此景点自己的 Google 地图列表；本站不借用其他地点的评分。', step: '第' },
+}[lang];
+const highlights = page.visitPlan?.highlights ?? page.sections.slice(0, 3).map((s) => s.h);
+const tips = page.visitPlan?.tips ?? page.sections.slice(0, 3).flatMap((s) => s.bullets ?? []).slice(0, 4);
+const routeSteps = page.visitPlan?.steps ?? page.sections.slice(3, 5).flatMap((s) => s.bullets ?? []).slice(0, 4);
+const photoSpots = page.visitPlan?.photoSpots ?? page.sections.filter((s) => /photo|ถ่ายภาพ|摄影|拍照/i.test(s.h)).flatMap((s) => s.bullets?.length ? s.bullets : [s.p]).slice(0, 3);
+const hoursNote = page.visitPlan?.hours ?? detailLabels.check;
+const ticketNote = page.visitPlan?.ticket ?? detailLabels.ticketNote;
 
-// Internal linking: every sub-page links to the other three + back to the main guide.
+// Internal linking: every sub-page links to its related guides + the home page.
 const siblings = subSlugs
   .filter((s) => s !== slug)
   .map((s) => subPageFor(lang, s)!)
@@ -35,6 +62,7 @@ const siblings = subSlugs
   title={page.title}
   description={page.description}
   messages={m}
+  place={page.destination}
   faqs={page.faqs}
   crumbs={[entity.fullName, entity.city, page.nav]}
   article={{
@@ -61,13 +89,21 @@ const siblings = subSlugs
           {page.heading}
         </h1>
         <p class="mt-5 text-lg text-ink/80 leading-relaxed">{page.lead}</p>
+        <div class="mt-5 flex items-center gap-3 text-sm text-ink/75">
+          {destination ? (
+            <span>{lang === 'zh' ? '游客评分：查看独立 Google 地图列表' : lang === 'th' ? 'คะแนนรีวิว: ดูจาก Google Maps ของสถานที่' : 'Visitor rating: see the destination’s Google Maps listing'}</span>
+          ) : (
+            <span>★ {siteConfig.rating} / 5 · {siteConfig.reviewCount} {lang === 'zh' ? '条 Google 地图评论' : lang === 'th' ? 'รีวิว Google Maps' : 'Google Maps reviews'}</span>
+          )}
+        </div>
+        <a href={targetMap} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-sm font-semibold text-teak underline underline-offset-4">{lang === 'th' ? 'เปิดตำแหน่งสถานที่บน Google Maps ↗' : lang === 'zh' ? '在 Google 地图查看该景点 ↗' : 'Open this attraction on Google Maps ↗'}</a>
 
         <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink/60">
-          <span>{entity.streetAddress}</span>
+          <span>{destination?.address ?? siteConfig.address}</span>
           <span aria-hidden="true">·</span>
-          <span>{siteConfig.plusCode} {entity.city}</span>
+          <span>{destination ? entity.city : `${siteConfig.plusCode} ${entity.city}`}</span>
           <span aria-hidden="true">·</span>
-          <span>{m.guide.hours.time}</span>
+          <span>{destination ? (lang === 'zh' ? '开放安排：现场核实' : lang === 'th' ? 'เวลาเปิด: ตรวจสอบหน้างาน' : 'Hours: check on-site') : m.guide.hours.time}</span>
         </div>
 
         {page.quickFacts && (
@@ -82,6 +118,52 @@ const siblings = subSlugs
         )}
       </div>
 
+      <!-- Second screen: on-site custodianship and context, modelled after the reference guide. -->
+      <section class="max-w-3xl mx-auto px-5 pb-12">
+        <div class="rounded-2xl bg-white/70 border border-gold/25 p-6 md:p-8">
+          <p class="font-hand text-gold text-lg">{lang === 'th' ? 'รู้จักสถานที่' : lang === 'zh' ? '认识景点' : 'The place today'}</p>
+          <h2 class="font-display text-2xl md:text-3xl font-semibold text-teak mt-2">{management.heading}</h2>
+          <p class="mt-4 leading-relaxed text-ink/80">{management.body}</p>
+        </div>
+      </section>
+
+      <section class="max-w-3xl mx-auto px-5 pb-12" aria-label={lang === 'th' ? 'ภาพสถานที่จริง' : lang === 'zh' ? '景点实景照片' : 'Location photographs'}>
+        <div class="grid gap-4" class:list={[pagePhotos.length > 1 && 'sm:grid-cols-2']}>
+          {pagePhotos.slice(0, 5).map((photo) => (
+            <figure class="overflow-hidden rounded-2xl bg-white border border-gold/20">
+              <img src={photo.src} alt={lang === 'en' ? photo.alt : `${page.nav} — ${lang === 'zh' ? '景点实景' : 'ภาพสถานที่จริง'}`} loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover" />
+              <figcaption class="px-4 py-3 text-xs text-ink/60">{lang === 'en' ? photo.alt : `${page.nav} — ${lang === 'zh' ? '景点实景' : 'ภาพสถานที่จริง'}`}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section class="max-w-3xl mx-auto px-5 pb-12">
+        <h2 class="font-display text-2xl text-teak font-semibold">{lang === 'th' ? 'ข้อมูลพื้นฐานและการเดินทาง' : lang === 'zh' ? '基本资料与交通导航' : 'Essential details and directions'}</h2>
+        <dl class="mt-4 grid sm:grid-cols-2 gap-3">
+          <div class="rounded-xl bg-white/60 border border-gold/20 p-4"><dt class="text-xs text-gold">{lang === 'th' ? 'ชื่อสถานที่' : lang === 'zh' ? '景点名称' : 'Attraction'}</dt><dd class="mt-1 text-sm font-medium">{destination?.name ?? entity.fullName}</dd></div>
+          <div class="rounded-xl bg-white/60 border border-gold/20 p-4"><dt class="text-xs text-gold">{lang === 'th' ? 'ที่อยู่' : lang === 'zh' ? '具体地址' : 'Street address'}</dt><dd class="mt-1 text-sm font-medium">{destination?.address ?? siteConfig.address}</dd></div>
+        </dl>
+        <a href={targetMap} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex rounded-full bg-teak text-ivory px-6 py-3 text-sm hover:bg-teakDeep">Google Maps ↗</a>
+      </section>
+
+      {destination && (
+        <div class="max-w-3xl mx-auto px-5 pb-12 space-y-10">
+          <section>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold text-teak">{detailLabels.tip}</h2>
+            <ul class="mt-4 space-y-2 text-ink/80 text-sm">{tips.map((t) => <li class="rounded-xl border border-gold/20 bg-white/60 px-4 py-3">• {t}</li>)}</ul>
+          </section>
+          <section>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold text-teak">{detailLabels.highlights}</h2>
+            <div class="mt-4 grid sm:grid-cols-3 gap-3">{highlights.map((h, i) => <div class="rounded-xl border border-gold/20 bg-white/60 p-4"><span class="text-gold text-sm">0{i + 1}</span><p class="mt-2 text-sm text-teak font-medium">{h}</p></div>)}</div>
+          </section>
+          <section class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl bg-white/70 border border-gold/25 p-5"><h2 class="font-display text-xl text-teak">{detailLabels.hours}</h2><p class="mt-3 text-sm leading-relaxed text-ink/80">{hoursNote}</p></div>
+            <div class="rounded-xl bg-white/70 border border-gold/25 p-5"><h2 class="font-display text-xl text-teak">{detailLabels.ticket}</h2><p class="mt-3 text-sm leading-relaxed text-ink/80">{ticketNote}</p></div>
+          </section>
+        </div>
+      )}
+
       <div class="max-w-3xl mx-auto px-5 pb-8 space-y-12">
         {
           page.sections.map((s, i) => (
@@ -95,7 +177,14 @@ const siblings = subSlugs
                       <span class="text-gold mt-0.5" aria-hidden="true">
                         •
                       </span>
-                      <span>{b}</span>
+                      <span>
+                        {b.includes('https://maps.google.com/?q=') ? (
+                          <>
+                            {b.slice(0, b.indexOf('https://maps.google.com/?q='))}
+                            <a class="underline underline-offset-2 text-teak hover:text-gold" href={b.slice(b.indexOf('https://maps.google.com/?q='))} target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+                          </>
+                        ) : b}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -104,6 +193,29 @@ const siblings = subSlugs
           ))
         }
       </div>
+
+      {destination && (
+        <div class="max-w-3xl mx-auto px-5 pb-12 space-y-12">
+          <section>
+            <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{detailLabels.route}</h2>
+            <ol class="mt-5 space-y-3">{routeSteps.map((step, i) => <li class="flex gap-4 rounded-xl bg-white/60 border border-gold/25 p-4"><span class="shrink-0 rounded-full bg-teak text-ivory w-9 h-9 flex items-center justify-center font-semibold">{i + 1}</span><p class="text-sm text-ink/80 leading-relaxed pt-1.5">{step}</p></li>)}</ol>
+          </section>
+          <section>
+            <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{detailLabels.photos}</h2>
+            <ul class="mt-4 space-y-2 text-sm text-ink/80">{photoSpots.map((spot) => <li class="border-l-2 border-gold pl-4 py-2">{spot}</li>)}</ul>
+          </section>
+          <section class="rounded-xl bg-white/70 border border-gold/25 p-6">
+            <h2 class="font-display text-2xl text-teak">{detailLabels.reviews}</h2>
+            <p class="mt-3 text-sm text-ink/80">{detailLabels.reviewsNote}</p>
+            <a href={targetMap} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block text-teak underline underline-offset-4">Google Maps ↗</a>
+          </section>
+          <section>
+            <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{detailLabels.transport}</h2>
+            <p class="mt-3 text-sm text-ink/80">{destination.address}</p>
+            <a href={targetMap} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-full bg-teak px-6 py-3 text-sm text-ivory">Google Maps ↗</a>
+          </section>
+        </div>
+      )}
 
       <!-- FAQ: mirrors the FAQPage JSON-LD emitted by BaseLayout -->
       <div class="max-w-3xl mx-auto px-5 pb-16">
@@ -126,7 +238,7 @@ const siblings = subSlugs
       <!-- Cross-links: keeps the four deep-dive pages in one cluster -->
       <div class="max-w-3xl mx-auto px-5 pb-24">
         <h2 class="font-display text-2xl text-teak mb-5">{ui.readNext}</h2>
-        <div class="grid sm:grid-cols-3 gap-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {
             siblings.map((s) => (
               <a

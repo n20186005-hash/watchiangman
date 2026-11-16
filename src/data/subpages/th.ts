@@ -1,6 +1,12 @@
 import type { SubPageSet } from './types';
+import { extraTh } from './seo-expansion';
+import { nearbyTh } from './nearby-places';
+import { moreTh } from './nearby-more';
 
 export const th: SubPageSet = {
+  ...extraTh,
+  ...nearbyTh,
+  ...moreTh,
   'visitor-guide': {
     slug: 'visitor-guide',
     nav: 'การแต่งกายและข้อปฏิบัติ',

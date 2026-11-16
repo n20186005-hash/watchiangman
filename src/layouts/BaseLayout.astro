@@ -9,6 +9,7 @@ interface Props {
   title?: string;
   description?: string;
   messages: any;
+  place?: { name: string; address: string; mapsUrl: string; image: string };
   /** Sub-pages pass their own Q&A so the FAQPage block matches the page topic. */
   faqs?: { q: string; a: string }[];
   /** Overrides the default breadcrumb trail (entity → city → province → country). */
@@ -30,7 +31,7 @@ interface Props {
     steps: { name: string; text: string }[];
   };
 }
-const { lang, title, description, messages, faqs: pageFaqs, crumbs, article, howTo } = Astro.props;
+const { lang, title, description, messages, place, faqs: pageFaqs, crumbs, article, howTo } = Astro.props;
 
 const base = `https://${entity.domain}`;
 const canonical = new URL(Astro.url.pathname, `${base}/`);
@@ -76,7 +77,7 @@ const crumbList: string[] = crumbs?.length
     ? crumbNames
     : [entity.fullName, entity.city, entity.stateProvince, entity.country];
 
-const attractionId = `${base}/#attraction`;
+const attractionId = place ? `${canonical}#attraction` : `${base}/#attraction`;
 const webPageId = `${canonical}#webpage`;
 const breadcrumbId = `${canonical}#breadcrumb`;
 const galleryImages = [1, 2, 3].map((n) => `${base}/gallery/${siteConfig.galleryPrefix}${n}.jpg`);
@@ -135,6 +136,16 @@ const attraction = {
     'https://en.wikipedia.org/wiki/Wat_Chiang_Man',
   ],
 };
+const pageAttraction = place ? {
+  '@type': 'TouristAttraction',
+  '@id': attractionId,
+  name: place.name,
+  description: pageDesc,
+  url: canonical.toString(),
+  image: `${base}${place.image}`,
+  address: { '@type': 'PostalAddress', streetAddress: place.address, addressLocality: 'Chiang Mai', addressRegion: 'Chiang Mai', addressCountry: 'TH' },
+  hasMap: place.mapsUrl,
+} : attraction;
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -180,7 +191,7 @@ const articleLd = article
       dateModified: article.dateModified ?? article.datePublished,
       author: { '@id': publisher['@id'] },
       publisher: { '@id': publisher['@id'] },
-      image: { '@type': 'ImageObject', url: heroImage, contentUrl: heroImage },
+      image: { '@type': 'ImageObject', url: place ? `${base}${place.image}` : heroImage, contentUrl: place ? `${base}${place.image}` : heroImage },
       about: { '@id': attractionId },
     }
   : null;
@@ -216,7 +227,7 @@ const howToLd = howTo
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    attraction,
+    pageAttraction,
     {
       '@type': 'WebPage',
       '@id': webPageId,
@@ -227,7 +238,7 @@ const jsonLd = {
       isPartOf: { '@type': 'WebSite', '@id': `${base}/#website`, url: base + '/', name: entity.fullName },
       about: { '@id': attractionId },
       breadcrumb: { '@id': breadcrumbId },
-      primaryImageOfPage: { '@type': 'ImageObject', url: heroImage, contentUrl: heroImage },
+      primaryImageOfPage: { '@type': 'ImageObject', url: place ? `${base}${place.image}` : heroImage, contentUrl: place ? `${base}${place.image}` : heroImage },
       ...(articleLd ? { mainEntity: { '@id': articleId } } : {}),
     },
     breadcrumb,

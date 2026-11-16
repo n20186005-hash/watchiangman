@@ -1,6 +1,12 @@
 import type { SubPageSet } from './types';
+import { extraZh } from './seo-expansion';
+import { nearbyZh } from './nearby-places';
+import { moreZh } from './nearby-more';
 
 export const zh: SubPageSet = {
+  ...extraZh,
+  ...nearbyZh,
+  ...moreZh,
   'visitor-guide': {
     slug: 'visitor-guide',
     nav: '着装与参拜礼仪',
