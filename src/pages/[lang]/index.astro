@@ -59,16 +59,6 @@ const { lang, messages } = await getI18n(Astro.url);
     <Responsibility messages={messages} />
     <DeepDive lang={lang} messages={messages} />
     <NearbyExplore lang={lang} />
-    <nav aria-label="Visitor information" class="bg-ivory px-5 py-8 text-center text-sm text-teak">
-      <div class="mx-auto flex max-w-5xl flex-wrap justify-center gap-x-7 gap-y-3">
-        <a class="underline underline-offset-4 hover:text-gold" href={`/${lang}/reviews/`}>{lang === 'zh' ? '游客评分与评论' : lang === 'th' ? 'คะแนนและรีวิว' : 'Visitor reviews'}</a>
-        <a class="underline underline-offset-4 hover:text-gold" href={`/${lang}/sources/`}>{lang === 'zh' ? '资料来源' : lang === 'th' ? 'แหล่งข้อมูล' : 'Sources'}</a>
-        <a class="underline underline-offset-4 hover:text-gold" href={`/${lang}/image-credits/`}>{lang === 'zh' ? '图片来源与版权' : lang === 'th' ? 'ที่มาและลิขสิทธิ์ภาพ' : 'Image credits'}</a>
-        <a class="underline underline-offset-4 hover:text-gold" href={`/${lang}/privacy-policy/`}>{lang === 'zh' ? '隐私政策' : lang === 'th' ? 'นโยบายความเป็นส่วนตัว' : 'Privacy policy'}</a>
-        <a class="underline underline-offset-4 hover:text-gold" href={`/${lang}/terms-of-service/`}>{lang === 'zh' ? '服务条款' : lang === 'th' ? 'ข้อกำหนดการใช้บริการ' : 'Terms'}</a>
-        <a class="underline underline-offset-4 hover:text-gold" href={`/${lang}/cookie-settings/`}>{lang === 'zh' ? 'Cookie 设置' : lang === 'th' ? 'การตั้งค่าคุกกี้' : 'Cookie settings'}</a>
-      </div>
-    </nav>
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />

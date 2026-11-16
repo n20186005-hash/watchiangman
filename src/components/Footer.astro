@@ -8,10 +8,23 @@ const notices = {
   en: 'This website is an independent travel information project. We are not affiliated with any government agency or official organization.',
   zh: '本网站是一个独立的旅游信息项目。我们与任何政府机构或官方组织均无关联。',
 };
+const links = {
+  zh: ['评分和评论', '信息来源', '图片来源及版权信息', '隐私政策', '服务条款', 'Cookie 设置'],
+  th: ['คะแนนและรีวิว', 'แหล่งข้อมูล', 'ที่มาและลิขสิทธิ์ภาพ', 'นโยบายความเป็นส่วนตัว', 'ข้อกำหนดการใช้บริการ', 'การตั้งค่าคุกกี้'],
+  en: ['Ratings & reviews', 'Sources', 'Image credits & copyright', 'Privacy policy', 'Terms of service', 'Cookie settings'],
+};
+const slugs = ['reviews', 'sources', 'image-credits', 'privacy-policy', 'terms-of-service', 'cookie-settings'];
 ---
 <footer class="bg-teakDeep text-ivory py-8">
-  <div class="max-w-7xl mx-auto px-5 text-center text-sm leading-relaxed">
-    <p>© 2026 {names[lang]} · {lang === 'th' ? 'สงวนลิขสิทธิ์' : lang === 'en' ? 'All rights reserved' : '版权所有'}</p>
-    <p class="mt-2 text-ivory/65">{notices[lang]}</p>
+  <div class="max-w-7xl mx-auto px-5 grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start text-sm leading-relaxed">
+    <div>
+      <p>© 2026 {names[lang]} · {lang === 'th' ? 'สงวนลิขสิทธิ์' : lang === 'en' ? 'All rights reserved' : '版权所有'}</p>
+      <p class="mt-2 text-ivory/65">{notices[lang]}</p>
+    </div>
+    <nav aria-label={lang === 'zh' ? '站点信息' : lang === 'th' ? 'ข้อมูลเว็บไซต์' : 'Site information'} class="flex flex-wrap gap-x-5 gap-y-2 md:justify-end md:text-right">
+      {slugs.map((slug, i) => (
+        <a href={`/${lang}/${slug}/`} class="text-ivory/75 hover:text-goldBright transition-colors underline-offset-4 hover:underline">{links[lang][i]}</a>
+      ))}
+    </nav>
   </div>
 </footer>
