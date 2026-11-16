@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { languagesList, type Lang } from '../../i18n/ui';
+import en from '../../i18n/en.json';
+import th from '../../i18n/th.json';
+import zh from '../../i18n/zh.json';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const messages = { en, th, zh }[lang];
+const copy = {
+  en: {
+    title: 'Image sources and copyright',
+    intro: 'Photographs on this travel guide illustrate Wat Chiang Man and the attractions described in our nearby guides.',
+    heading: 'Photographer rights',
+    detail: 'All images shown on this website remain the property and copyright of their original photographers.',
+    note: 'For a correction to a location, image description or credit, contact the editorial team. Published images are preserved while we review corrections.',
+    back: 'Back to Wat Chiang Man',
+  },
+  th: {
+    title: 'ที่มาของภาพและลิขสิทธิ์',
+    intro: 'ภาพในคู่มือท่องเที่ยวนี้ใช้ประกอบข้อมูลวัดเชียงมั่นและสถานที่ใกล้เคียงที่กล่าวถึงในบทความ',
+    heading: 'สิทธิ์ของช่างภาพ',
+    detail: 'ภาพทั้งหมดที่แสดงบนเว็บไซต์นี้ เป็นกรรมสิทธิ์และลิขสิทธิ์ของช่างภาพต้นฉบับ',
+    note: 'หากต้องการแจ้งแก้ไขชื่อสถานที่ คำบรรยายภาพ หรือข้อมูลเครดิต โปรดติดต่อทีมบรรณาธิการ โดยภาพที่เผยแพร่แล้วจะยังคงอยู่ระหว่างตรวจสอบ',
+    back: 'กลับไปยังวัดเชียงมั่น',
+  },
+  zh: {
+    title: '图片来源与版权说明',
+    intro: '本站照片用于介绍清曼寺及周边景点，并配合相应的游客指南说明地点与建筑特色。',
+    heading: '摄影师版权',
+    detail: '本网站展示的所有图片均为原摄影师所有，并受版权保护。',
+    note: '如需更正图片地点、说明或署名信息，可联系网站编辑。核对期间保留已发布的图片。',
+    back: '返回清曼寺首页',
+  },
+}[lang];
+---
+
+<BaseLayout lang={lang} messages={messages} title={`${copy.title} | Wat Chiang Man`} description={copy.intro}>
+  <Header lang={lang} messages={messages} />
+  <main class="bg-ivory text-ink min-h-[70vh] pt-28 pb-20">
+    <article class="max-w-3xl mx-auto px-5">
+      <a href={`/${lang}/`} class="text-teak hover:text-gold text-sm">← {copy.back}</a>
+      <h1 class="mt-8 font-display text-4xl md:text-5xl text-teak font-semibold">{copy.title}</h1>
+      <p class="mt-6 text-lg leading-relaxed">{copy.intro}</p>
+      <section class="mt-10 rounded-2xl bg-white border border-gold/30 p-7">
+        <h2 class="font-display text-2xl text-teak">{copy.heading}</h2>
+        <p class="mt-4 leading-relaxed">{copy.detail}</p>
+        <p class="mt-5 text-sm leading-relaxed text-ink/70">{copy.note}</p>
+        <a href="mailto:laupetter72@gmail.com" class="mt-5 inline-block text-teak underline">laupetter72@gmail.com</a>
+      </section>
+    </article>
+  </main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

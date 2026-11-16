@@ -25,10 +25,11 @@ const navItems = [
   { label: h.gallery, href: '#gallery' },
   { label: h.facilities, href: '#facilities' },
   { label: h.responsibility, href: '#responsibility' },
-  { label: h.reviews, href: '#reviews' },
+  { label: h.reviews, href: `/${lang}/reviews/` },
+  { label: { th: 'แหล่งข้อมูล', en: 'Sources', zh: '资料来源' }[lang], href: `/${lang}/sources/` },
   { label: { th: 'เที่ยวใกล้เคียง', en: 'Explore', zh: '周边景点' }[lang], href: '#nearby-explore' },
   { label: h.map, href: '#map' },
-].filter((i) => Boolean(i.label)).map((i) => ({ ...i, href: onHome ? i.href : `/${lang}/${i.href}` }));
+].filter((i) => Boolean(i.label)).map((i) => ({ ...i, href: i.href.startsWith('/') || onHome ? i.href : `/${lang}/${i.href}` }));
 
 const switchTo = (target: Lang) => {
   const relative = Astro.url.pathname.replace(/^\/(th|en|zh)(?=\/|$)/, '');

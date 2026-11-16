@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Reviews from '../../components/Reviews.astro';
+import { languagesList, type Lang } from '../../i18n/ui';
+import en from '../../i18n/en.json';
+import th from '../../i18n/th.json';
+import zh from '../../i18n/zh.json';
+export function getStaticPaths() { return languagesList.map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const messages = { en, th, zh }[lang];
+---
+<BaseLayout lang={lang} messages={messages} title={`${messages.reviews.heading} | Wat Chiang Man`} description={messages.reviews.intro}>
+  <Header lang={lang} messages={messages} />
+  <main class="pt-16 bg-teakDeep min-h-[65vh]"><Reviews messages={messages} /></main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

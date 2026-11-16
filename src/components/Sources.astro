@@ -28,6 +28,7 @@ const imageCopyright = messages.imageCopyright;
             </li>
           ))}
         </ul>
+        {imageCopyright && <p class="mt-4 text-sm text-ivory/70">{imageCopyright}</p>}
       </div>
       <div>
         <h3 class="font-display text-xl text-goldBright">{s.factTitle}</h3>
@@ -83,7 +84,5 @@ const imageCopyright = messages.imageCopyright;
       </a>
     </div>
 
-    <p class="mt-8 text-xs text-ivory/45">© {new Date().getFullYear()} {s.copyright}</p>
-    {imageCopyright && <p class="mt-2 text-xs text-ivory/45">{imageCopyright}</p>}
   </div>
 </section>

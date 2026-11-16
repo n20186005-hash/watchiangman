@@ -10,7 +10,6 @@ const gallery = messages.gallery;
 const alts: string[] = gallery.alts;
 const count = alts.length;
 const mapsUrl = siteConfig.mapsUrl;
-const imageCopyright = messages.imageCopyright;
 // Alt 语义绑定：实体名 + 城市
 const altFor = (alt: string, i: number) =>
   i === 0
@@ -25,7 +24,6 @@ const altFor = (alt: string, i: number) =>
     <p class="mt-4 max-w-2xl text-ink/80">{gallery.intro}</p>
     {gallery.historicalNote && <p class="mt-2 max-w-2xl text-ink/70 italic text-sm">{gallery.historicalNote}</p>}
     <p class="mt-3 text-xs text-ink/50">{gallery.credits}</p>
-    {imageCopyright && <p class="mt-1 text-xs text-ink/50">{imageCopyright}</p>}
 
     <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[180px]">
       {Array.from({ length: count }).map((_, i) => {
